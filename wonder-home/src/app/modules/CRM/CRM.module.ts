@@ -4,7 +4,8 @@ import { CommonModule } from '@angular/common';
 import { AddnewloanComponent } from './addnewloan/addnewloan.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EnquiryComponent } from './enquiry/enquiry.component';
-import { CreditManagerRoutingModule } from './CreditManager-routing.module';
+import { CRMRoutingModule } from './CRM-routing.module';
+
 
 
 @NgModule({
@@ -14,9 +15,9 @@ import { CreditManagerRoutingModule } from './CreditManager-routing.module';
   ],
   imports: [
     CommonModule,
-    CreditManagerRoutingModule,
+    CRMRoutingModule,
     FormsModule,
     ReactiveFormsModule
   ]
 })
-export class CreditManagerModule { }
+export class CRMModule { }

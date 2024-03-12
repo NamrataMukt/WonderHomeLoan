@@ -35,8 +35,8 @@ export class LoginComponent  implements OnInit
     }
     else if(un ==='crm'&& pass ==='crm111')
     {
-        this.router.navigateByUrl('user-dashboard/Loan_Officer')
-        sessionStorage.setItem('userType','Loan_Officer')
+        this.router.navigateByUrl('user-dashboard/CRM')
+        sessionStorage.setItem('userType','CRM')
     }
     else
     {

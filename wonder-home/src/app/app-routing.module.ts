@@ -34,8 +34,8 @@ const routes: Routes = [
         (file => file.AdminModule),
       },
       {
-        path:'Loan_Officer',loadChildren:()=>import('./modules/CreditManager/CreditManager').then
-        (file=>file.CreditManagerModule)
+        path:'CRM',loadChildren:()=>import('./modules/CRM/CRM.module').then
+        (file=>file.CRMModule)
       }
     ]
   },

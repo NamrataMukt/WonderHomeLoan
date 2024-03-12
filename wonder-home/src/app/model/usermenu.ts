@@ -9,7 +9,7 @@ export class Usermenu
                 {label:'Add New resourse' ,link:'add_employee'},
                 {label:'update resourse' , link:'update_employee'}   
             ],
-            Loan_Officer:[
+            CRM:[
                 {label:'Enquiry',link:'enquiry'},
                 {label:'New Loan Application',link:'addnewloan'},
                 {label:'My Profile',link:'crmprofile'},
