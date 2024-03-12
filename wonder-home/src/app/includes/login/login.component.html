@@ -1,0 +1,25 @@
+
+<div class="log">
+    
+    <div style="background-color:wheat; width: 250px;">
+        <a routerLink="/home"><img style="width:250px; height:60px;"
+            src="assets/img/logo.01e51a11.png" alt="..." ></a>
+    </div>
+    
+    <form [formGroup]="loginform" (ngSubmit)="onSubmit()">
+    
+      <div class="smallbox">
+        <h3> Welocme To <br> Wonder Finance</h3>
+          <br>
+            <input class="form-control"formControlName="username" placeholder="Enter User Name"> <br>
+            <input class="form-control" formControlName="password" placeholder="Enter User Password"><br>
+            <button class="btn btn-secondary" type="submit">SignIn&nbsp;<i class="fa fa-sign-in"></i></button>&nbsp;&nbsp;&nbsp;
+        </div>
+
+    </form>
+
+   
+    </div>
+    
+
+

@@ -1,0 +1,35 @@
+.log{
+    background-image: url("/../assets/img/Login.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+  width: 100%;
+  background-position: center center;
+  padding: 55px;
+}
+.btn{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.form-control{  
+    border-style: groove;
+  display: flex;
+  background:white;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: large;
+  font-weight: bold;
+}
+form{
+    padding: 60px;
+    display: flex;
+    margin-left:600px;
+   
+}
+h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+}
+.smallbox{
+    height:350px;
+    width:800px;
+    padding :40px;
+    background:url('/assets/img/gradient-green-color.avif');
+}

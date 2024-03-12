@@ -1,0 +1,358 @@
+<form [formGroup]="applicationform" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-12 col-md-offset-3" id="msform">
+        <!-- progressbar -->
+        <ul id="progressbar">
+          <li [ngClass]="step >= 1 ? 'active ' : 'inactive'">Applicant Details </li>
+          <li [ngClass]="step >= 2 ? 'active' : 'inactive'">Address Details</li>
+          <li [ngClass]="step >= 3 ? 'active' : 'inactive'"> Employment Details</li>
+          <li [ngClass]="step >= 4 ? 'active' : 'inactive'">Dependent Details</li>
+          <li [ngClass]="step == 5 ? 'active' : 'inactive'">Guarantor Details</li>
+        </ul>
+        <!-- fieldsets -->
+        <!--<div formGroupName="person" id="msform">-->
+        <div formGroupName="applicantDetails" id="msform">
+          <fieldset *ngIf="step == 1">
+            <h2 class="fs-title">Applicant Details</h2>
+         <div class="row">
+            <div class="col col-6">
+            <input type="text" formControlName="customerName" placeholder="Applicant Name" />
+            <input type="number" formControlName="customerMobileNumber" placeholder="Mobile Number"/>
+        </div>
+        <div class="col col-6">
+            <input
+              type="text"
+              formControlName="customerEmailId"
+              placeholder="Email"
+            />
+            <input
+              type="number"
+              formControlName="adharNumber"
+              placeholder="Aadhaar Number"
+            />
+        </div>
+        <div class="col col-6">
+            <input
+              type="number"
+              formControlName="pancardNumber"
+              placeholder="Pancard Number"
+            />
+            <input type="text" formControlName="gender" placeholder="Gender" />
+            <input
+              type="text"
+              formControlName="customerDOB"
+              placeholder="Date Of Birth"
+            />
+        </div>
+        <div class="col col-6">
+            <input type="number" formControlName="age" placeholder="Age" />
+            <input
+              type="text"
+              formControlName="loanType"
+              placeholder="Loan Type"
+            />
+            <input
+              type="text"
+              formControlName="maritalStatus"
+              placeholder="Marital Status"
+            />
+            </div>
+            <div class="col col-6">
+            <input
+              type="text"
+              formControlName="statusCode"
+              placeholder="StatusCode"
+            />
+            <input
+              type="number"
+              formControlName="totalLoanRequired"
+              placeholder="Total loan Required"
+            />
+            </div>
+            <div class="col col-6">
+            <input
+              type="number"
+              formControlName="cibilScore"
+              placeholder="CibilScore"
+            />
+  </div></div>
+            <input
+              (click)="next()"
+              type="button"
+              name="next"
+              class="next action-button"
+              value="Next"
+            />
+        
+          </fieldset>
+        </div>
+  
+        <div formGroupName="addressDetails" id="msform">
+          <fieldset *ngIf="step == 2">
+            <h2 class="fs-title">Address Details</h2>
+            <!-- <input
+              type="text"
+              formControlName="permenantAddress"
+              placeholder="Permanant Address"
+            /> -->
+            <div formGroupName="permenantAddress" id="msform">
+              <input
+                type="text"
+                formControlName="houseNo"
+                placeholder="Permenant House Number"
+              />
+              <input
+                type="text"
+                formControlName="areaName"
+                placeholder="Permenant Area Name"
+              />
+              <input
+                type="text"
+                formControlName="streetName"
+                placeholder="Permenant Street Name"
+              />
+              <input
+                type="text"
+                formControlName="cityName"
+                placeholder="Permenant City Name"
+              />
+              <input
+                type="text"
+                formControlName="district"
+                placeholder="Permenant District"
+              />
+              <input
+                type="text"
+                formControlName="state"
+                placeholder="Permenant state"
+              />
+              <input
+                type="text"
+                formControlName="pincode"
+                placeholder="Permenant pincode"
+              />
+            </div>
+            <!-- <input
+              type="text"
+              formControlName="localAddress"
+              placeholder="Local Address"
+            /> -->
+            <div formGroupName="localAddress" id="msform">
+              <input
+                type="text"
+                formControlName="houseNo"
+                placeholder="Local House Number"
+              />
+              <input
+                type="text"
+                formControlName="areaName"
+                placeholder="Local Area Name"
+              />
+              <input
+                type="text"
+                formControlName="streetName"
+                placeholder="Local Street Name"
+              />
+              <input
+                type="text"
+                formControlName="cityName"
+                placeholder="Local City Name"
+              />
+              <input
+                type="text"
+                formControlName="district"
+                placeholder="Local District"
+              />
+              <input
+                type="text"
+                formControlName="state"
+                placeholder="Local state"
+              />
+              <input
+                type="text"
+                formControlName="pincode"
+                placeholder="Local pincode"
+              />
+            </div>
+  
+            <input
+              (click)="previous()"
+              type="button"
+              name="previous"
+              class="previous action-button-previous"
+              value="Previous"
+            />
+            <input
+              (click)="next()"
+              type="button"
+              name="next"
+              class="next action-button"
+              value="Next"
+            />
+          </fieldset>
+        </div>
+  
+        <div formGroupName="guarantorDetails" id="msform">
+          <fieldset *ngIf="step == 3">
+            <h2 class="fs-title">Guarantor Details</h2>
+            <input
+              type="text"
+              formControlName="guarantorName"
+              placeholder="Full Name"
+            />
+            <input
+              type="text"
+              formControlName="guarantorDOB"
+              placeholder="Date Of Birth"
+            />
+            <input
+              type="text"
+              formControlName="guarantorRelationshipWithApplicant"
+              placeholder=" Relationship With Applicant"
+            />
+            <input
+              type="number"
+              formControlName="guarantorMobileNumber"
+              placeholder="Mobile Number"
+            />
+            <input
+              type="number"
+              formControlName="aadhaarcardNumber"
+              placeholder="Aadhaarcard Number"
+            />
+            <input
+              type="text"
+              formControlName="guarantorCityName"
+              placeholder="City Name"
+            />
+            <input
+              type="text"
+              formControlName="guarantorJobDetails"
+              placeholder="Job Details"
+            />
+            <input
+              type="text"
+              formControlName="guarantorAreaName"
+              placeholder="Area name"
+            />
+  
+            <input
+              (click)="previous()"
+              type="button"
+              name="previous"
+              class="previous action-button-previous"
+              value="Previous"
+            />
+            <input
+              (click)="next()"
+              type="button"
+              name="next"
+              class="next action-button"
+              value="Next"
+            />
+          </fieldset>
+        </div>
+  
+        <div formGroupName="employmentDetails" id="msform">
+          <fieldset *ngIf="step == 4">
+            <h2 class="fs-title">Employment Details</h2>
+            <input
+              type="text"
+              formControlName="companyName"
+              placeholder="Company Name"
+            />
+            <input type="number" formControlName="salary" placeholder="Salary" />
+            <input
+              type="text"
+              formControlName="employeeWorkingPeriod"
+              placeholder="Employee Working Period"
+            />
+            <input
+              type="text"
+              formControlName="professionDesignation"
+              placeholder="Profession Designation"
+            />
+            Salary Slip:<input
+              type="file"
+              placeholder="Upload SalarySlip"
+              (change)="onselectSalarySlip($event)"
+            />
+  
+            <input
+              (click)="previous()"
+              type="button"
+              name="previous"
+              class="previous action-button-previous"
+              value="Previous"
+            />
+  
+            <input
+              (click)="next()"
+              type="button"
+              name="next"
+              class="next action-button"
+              value="Next"
+            />
+          </fieldset>
+        </div>
+  
+        <div formGroupName="dependantDetails" id="msform">
+          <fieldset *ngIf="step == 5">
+            <h2 class="fs-title">Dependent Details</h2>
+            <input
+              type="text"
+              formControlName="fatherName"
+              placeholder="Father Name "
+            />
+            <input
+              type="text"
+              formControlName="motherName"
+              placeholder="Mother Name"
+            />
+            <input
+              type="text"
+              formControlName="maritalStatus"
+              placeholder="Marital Status"
+            />
+            <input
+              type="number"
+              formControlName="numberOfChild"
+              placeholder="Number Of Child"
+            />
+  
+            <input
+              type="number"
+              formControlName="familyIncome"
+              placeholder="Family Income"
+            />
+            <input
+              type="text"
+              formControlName="spouseName"
+              placeholder="Spouse Name"
+            />
+            <input
+              type="number"
+              formControlName="noOfFamilyMember"
+              placeholder="No Of Family Member"
+            />
+  
+            <input
+              (click)="previous()"
+              type="button"
+              name="previous"
+              class="previous action-button-previous"
+              value="Previous"
+            />
+  
+            <input
+              type="submit"
+              name="submit"
+              class="submit action-button"
+              value="Submit"
+            />
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </form>
+  

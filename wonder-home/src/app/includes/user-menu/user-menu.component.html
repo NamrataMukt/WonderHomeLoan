@@ -1,0 +1,10 @@
+<div class="menu">
+    <br>
+    <div class="bb">
+        <h2 class="text-white">{{type}}</h2>
+    </div>
+    
+    <div *ngFor ="let u of userOption[0][type]" class="lab d-flex justify-content">
+        <a class="btn btn-danger mt-2 w-100" (click)="navigateTo(u.link)"> {{u.label}}</a>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="col-md-9 col-xl-10 py-3">
+    <!-- Shortcut Options for Menu -->
+    <div class="card">
+        <div class="card-header">
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">
+                    <a (click)="navigateToMenuOption('applicants')" class="btn btn-light">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i> 
+                        Applicants
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a (click)="navigateToMenuOption('approved-customer')" class="btn btn-light">
+                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                        Approved Customers
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a (click)="navigateToMenuOption('verification-required')" class="btn btn-light">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Verification Required
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  
+    <!-- Display menu data here -->
+    <router-outlet></router-outlet>
+
+    
+</div>

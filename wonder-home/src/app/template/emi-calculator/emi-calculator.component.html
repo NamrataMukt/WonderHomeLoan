@@ -1,0 +1,79 @@
+<div class="emi">
+<div class="container">
+        <h3 class="mb-4">EMI Calculator</h3>    
+    <div id="left" style="width: 30%; float: left;">
+          <form (ngSubmit)="calculateEMI()" #emiForm="ngForm">
+            <div class="mb-3">
+              <label for="loanAmount" class="form-label">Loan Amount (₹):</label>
+              <input type="number" class="form-control " id="loanAmount" name="loanAmount" [(ngModel)]="loanAmount" required>
+            </div>
+            <div class="mb-3">
+              <label for="interestRate" class="form-label">Interest Rate (%):</label>
+              <input type="number" class="form-control " id="interestRate" name="interestRate" [(ngModel)]="interestRate" required>
+            </div>
+            <div class="mb-3">
+              <label for="loanTenure" class="form-label">Loan Tenure (Months):</label>
+              <input type="number" class="form-control" id="loanTenure" name="loanTenure" [(ngModel)]="loanTenure" required>
+            </div>
+            <button type="submit" class="btn btn-primary me-1">Calculate EMI</button>
+            <button type="reset" class="btn btn-primary" (click)="onReset()">Reset</button>
+          </form>
+          </div>
+          <div id="right" style="width: 60%; float: right;">
+            
+                <h3>Your EMI</h3>
+                <!--<div *ngIf="emiAmount">-->
+                  <br>
+                  <p>EMI -   {{ emiAmount | currency:'INR':'symbol':'1.2-2' }}</p>
+                  <p>Total Interest -   {{ totalInterest | currency:'INR':'symbol':'1.2-2' }}</p>
+                  <p>Total Payout -    {{ totalPayableAmount | currency:'INR':'symbol':'1.2-2' }}</p>
+                
+        </div>
+    </div>
+
+    <br>
+    <div class="ab">
+      <h3>EMI Amount:&nbsp; {{ emiAmount | currency:'INR':'symbol':'1.2-2' }}</h3>
+    </div>
+    
+    <div class="tableFixHead" *ngIf="emiDetails.length">
+      
+      <table class="table table-striped">
+
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Beginning Loan Balance</th>
+            <th>EMI</th>
+            <th>Principle</th>
+            <th>Monthly Interest</th>
+            <th>Outstanding Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emiDetail of paginatedData">
+            <td>{{ emiDetail.month }}</td>
+            <td>{{ emiDetail.beginningBalance | currency:'INR':'symbol':'1.2-2' }}</td>
+            <td>{{ emiDetail.emi | currency:'INR':'symbol':'1.2-2' }}</td>
+            <td>{{ emiDetail.principle | currency:'INR':'symbol':'1.2-2' }}</td>
+            <td>{{ emiDetail.interest | currency:'INR':'symbol':'1.2-2' }}</td>
+            <td>{{ emiDetail.outstandingBalance | currency:'INR':'symbol':'1.2-2' }}</td>
+          </tr>
+        </tbody>
+        <app-pagination [totalItems]="emiDetails.length"
+      [itemPerPage]="itemPerPage"
+      [currentPage]="currentPage"
+      (onClick)="changePage($event)">
+    </app-pagination>
+  
+      </table>
+
+      </div>
+      
+    </div>  
+  
+
+
+    
+    
+    

@@ -1,0 +1,19 @@
+
+.menu{
+    position:fixed;
+    top:60px;
+    background-image: url("/assets/img/green-blur.avif");
+    height: 600px;
+}
+.bb{
+    border: 1px groove;
+    height:60px;
+    width:250px;
+    text-align: center;
+    background-color:palevioletred;
+    font-family: 'Times New Roman', Times, serif;
+}
+.btn{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:larger;
+}
