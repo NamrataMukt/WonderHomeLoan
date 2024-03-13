@@ -22,6 +22,7 @@
     "font-awesome": "^4.7.0",
     "module": "^1.2.5",
     "node": "^21.7.1",
+    "node-module": "^2.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"

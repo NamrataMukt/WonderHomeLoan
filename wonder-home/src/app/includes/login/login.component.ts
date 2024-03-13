@@ -38,10 +38,15 @@ export class LoginComponent  implements OnInit
         this.router.navigateByUrl('user-dashboard/CRM')
         sessionStorage.setItem('userType','CRM')
     }
+    else if(un ==='ah'&& pass ==='ah123')
+    {
+        this.router.navigateByUrl('user-dashboard/accounthead')
+        sessionStorage.setItem('userType','accounthead')
+    }
     else
     {
       alert('Enter valid authentication details...!')
     }
   }
-  
+ 
 }

@@ -14,7 +14,14 @@ export class Usermenu
                 {label:'New Loan Application',link:'addnewloan'},
                 {label:'My Profile',link:'crmprofile'},
                 {label:'Loan Applied',link:'loanapplied'}
+            ],
+            accounthead:[
+                {label:'Ledger',link:'ledger'},
+                {label:'Loan Disbursement',link:'loandisbursement'},
+                {label:'Defaulter List',link:'defaulter'},
+              
             ]
+
         }
     ]
 }

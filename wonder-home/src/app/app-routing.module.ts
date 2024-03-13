@@ -36,6 +36,10 @@ const routes: Routes = [
       {
         path:'CRM',loadChildren:()=>import('./modules/CRM/CRM.module').then
         (file=>file.CRMModule)
+      },
+      {
+        path:'accounthead',loadChildren:()=>import('./modules/account-head/account-head.module').then
+        (file=>file.AccountHeadModule)
       }
     ]
   },
