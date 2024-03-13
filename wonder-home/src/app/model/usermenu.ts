@@ -14,6 +14,9 @@ export class Usermenu
                 {label:'New Loan Application',link:'addnewloan'},
                 {label:'My Profile',link:'crmprofile'},
                 {label:'Loan Applied',link:'loanapplied'}
+            ],
+            CreditManager:[
+                {label:'Dashboard',link:'c-dash'}
             ]
         }
     ]

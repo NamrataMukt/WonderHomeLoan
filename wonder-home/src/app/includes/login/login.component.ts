@@ -38,6 +38,11 @@ export class LoginComponent  implements OnInit
         this.router.navigateByUrl('user-dashboard/CRM')
         sessionStorage.setItem('userType','CRM')
     }
+    else if(un==='cm' && pass=== 'cm11')
+    {
+      this.router.navigateByUrl('user-dashboard/cm')
+      sessionStorage.setItem('userType','CreditManager')
+    }
     else
     {
       alert('Enter valid authentication details...!')

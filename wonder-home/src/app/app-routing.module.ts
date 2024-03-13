@@ -36,6 +36,10 @@ const routes: Routes = [
       {
         path:'CRM',loadChildren:()=>import('./modules/CRM/CRM.module').then
         (file=>file.CRMModule)
+      },
+      {
+        path:'cm',loadChildren:()=>import('./modules/creditmanager/creditmanager.module').then
+        (file=>file.CreditmanagerModule)
       }
     ]
   },
