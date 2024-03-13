@@ -38,8 +38,13 @@ const routes: Routes = [
         (file=>file.CRMModule)
       },
       {
+<<<<<<< HEAD
         path:'cm',loadChildren:()=>import('./modules/creditmanager/creditmanager.module').then
         (file=>file.CreditmanagerModule)
+=======
+        path:'accounthead',loadChildren:()=>import('./modules/account-head/account-head.module').then
+        (file=>file.AccountHeadModule)
+>>>>>>> aa72b2790d969d78e40a9145c51dba6fe0d834e7
       }
     ]
   },

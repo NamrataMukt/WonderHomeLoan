@@ -17,7 +17,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ],
   imports: [
     CommonModule,
-    OperationalManagerRoutingModule
+    OperationalManagerRoutingModule,
+  
   ]
 })
 export class OperationalManagerModule { }
