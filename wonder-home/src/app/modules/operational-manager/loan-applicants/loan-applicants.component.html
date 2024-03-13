@@ -1,21 +1,40 @@
 <p>loan-applicants works!</p>
 
-<table class="table table-striped mt-3" *ngIf="showApplicantsTable">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone Number</th>
-            <!-- Include other applicant details as needed -->
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let applicant of applicants">
-            <td>{{ applicant.name }}</td>
-            <td>{{ applicant.email }}</td>
-            <td>{{ applicant.phoneNumber }}</td>
-            <!-- Include other applicant details as needed -->
-        </tr>
-    </tbody>
-</table>
-
+<div class="table-responsive">
+    <table class="table table-striped mt-5" *ngIf="showApplicantsTable">
+        <thead class="table-header">
+            <tr>
+                <th>Applicant Id</th>
+                <th>Applicant Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>Pancard Number</th>
+                <th>City</th>
+                <th>Pincode</th>
+                <th>Date</th>
+                <th>Enquiry</th>
+                <th>Cibil Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let applicant of applicants">
+                <td>{{ applicant.applicantId }}</td>
+                <td>{{ applicant.applicantName }}</td>
+                <td>{{ applicant.age }}</td>
+                <td>{{ applicant.email }}</td>
+                <td>{{ applicant.mobileNumber }}</td>
+                <td>{{ applicant.pancardNumber }}</td>
+                <td>{{ applicant.city }}</td>
+                <td>{{ applicant.pincode }}</td>
+                <td>{{ applicant.date }}</td>
+                <td>{{ applicant.enquiry }}</td>
+                <td>{{ applicant.cibilScore }}</td>
+                <td>{{ applicant.cibilScore ? applicant.cibilScore.cibilScore : 'Not Available' }}</td>
+    <td>
+        <button (click)="generateCibilScore(applicant)">Generate CIBIL Score</button>
+    </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

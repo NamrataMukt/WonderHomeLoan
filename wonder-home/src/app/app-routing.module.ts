@@ -34,6 +34,9 @@ const routes: Routes = [
         (file => file.AdminModule),
       },
       {
+        path:'opm' ,loadChildren:()=>import('./modules/operational-manager/operational-manager.module').then(file=>file.OperationalManagerModule)
+      },
+      {
         path:'Loan_Officer',loadChildren:()=>import('./modules/CreditManager/CreditManager').then
         (file=>file.CreditManagerModule)
       }

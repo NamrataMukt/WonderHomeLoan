@@ -6,6 +6,7 @@ import { LoanApplicantsComponent } from './loan-applicants/loan-applicants.compo
 import { ApprovedCustomerComponent } from './approved-customer/approved-customer.component';
 import { VerificationRequiredComponent } from './verification-required/verification-required.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ],
   imports: [
     CommonModule,
-    OperationalManagerRoutingModule
+    OperationalManagerRoutingModule,
+    HttpClientModule
   ]
 })
 export class OperationalManagerModule { }

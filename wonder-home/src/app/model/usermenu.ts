@@ -14,6 +14,14 @@ export class Usermenu
                 {label:'New Loan Application',link:'addnewloan'},
                 {label:'My Profile',link:'crmprofile'},
                 {label:'Loan Applied',link:'loanapplied'}
+            ],
+            opm:[
+                {label:'Dashboard',link:'dashboard'},
+                {label:'applicants' , link:'applicants'},
+                {label:'approved-customer' , link:'approved-customer'},
+                {label:'verification required' ,link:'verification-required'}
+                
+
             ]
         }
     ]
