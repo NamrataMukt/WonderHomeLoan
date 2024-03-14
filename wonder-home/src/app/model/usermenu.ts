@@ -15,16 +15,20 @@ export class Usermenu
                 {label:'My Profile',link:'crmprofile'},
                 {label:'Loan Applied',link:'loanapplied'}
             ],
-<<<<<<< HEAD
+
             CreditManager:[
                 {label:'Dashboard',link:'c-dash'}
-=======
+            ],
             accounthead:[
                 {label:'Ledger',link:'ledger'},
                 {label:'Loan Disbursement',link:'loandisbursement'},
                 {label:'Defaulter List',link:'defaulter'},
-              
->>>>>>> aa72b2790d969d78e40a9145c51dba6fe0d834e7
+            ],
+            opm:[
+                {label:'Dashboard',link:'dashboard'},
+                {label:'applicants' , link:'applicants'},
+                {label:'approved-customer' , link:'approved-customer'},
+                {label:'verification required' ,link:'verification-required'}
             ]
 
         }

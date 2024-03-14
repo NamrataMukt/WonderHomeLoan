@@ -50,6 +50,12 @@ export class LoginComponent  implements OnInit
         sessionStorage.setItem('userType','accounthead')
 
     }
+    else if(un==='opm' && pass==='opm123')
+    {
+      alert('User is an opm..!')
+      sessionStorage.setItem('userType','opm')
+      this.router.navigateByUrl('user-dashboard/opm')
+    }
     else
     {
       alert('Enter valid authentication details...!')
