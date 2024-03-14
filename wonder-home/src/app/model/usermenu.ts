@@ -5,9 +5,9 @@ export class Usermenu
         {
             Admin:[
                 //0 index
-                {label:'App Statastics' , link:'statastics'},
+                
                 {label:'Add New resourse' ,link:'add_employee'},
-                {label:'update resourse' , link:'update_employee'}   
+                {label:'View Resources' , link:'view_employee'}   
             ],
             CRM:[
                 {label:'Enquiry',link:'enquiry'},

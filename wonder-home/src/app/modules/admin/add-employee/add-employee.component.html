@@ -1,0 +1,34 @@
+<p style="color: brown;border: 0cap; font-size: larger;">Add Product Details</p>
+<form [formGroup]="employeeForm"  (ngSubmit)="onSubmit()">
+
+  <div>
+    
+           <br>
+           <br>
+            <label for="empId">product Id</label>
+            <input type="number" formControlName="empId" >
+            <br>
+            <br>
+            <label for="empUserName">Product Name</label>
+            <input type="text" formControlName="empUserName" >
+            <br>
+            <br>
+            <label for="empUserPassword">Product Price ></label>
+            <input type="text" formControlName="empUserPassword" >
+            <br>
+            <br>
+            <label for="email">Product Price ></label>
+            <input type="text" formControlName="email" >
+            <br>
+            <br>
+            <label for="mobileNumber">Product Price ></label>
+            <input type="number" formControlName="mobileNumber" >
+            <br>
+            <br>
+            
+            <button type="submit">Add Employee</button>
+            <br>
+            <br>
+        </div>  
+ 
+</form>
