@@ -12,4 +12,8 @@ export class EnquiryService {
   getEnquiry(){
     return this.http.get('http://localhost:9090/view_Enquiry')
   }
+
+  submitEnquiry(applicant:ApplicantDetails){
+    return this.http.post('http://localhost:9090/Customers',applicant)
+  }
 }

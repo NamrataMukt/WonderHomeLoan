@@ -4,12 +4,14 @@ import { AddnewloanComponent } from './addnewloan/addnewloan.component';
 import { EnquiryComponent } from './enquiry/enquiry.component';
 
 const routes: Routes = [
+  
   {
-    path:'addnewloan',component:AddnewloanComponent
+    path: 'enquiry', component: EnquiryComponent
   },
   {
-    path:'enquiry',component:EnquiryComponent
-  }
+    path: 'addnewloan', component: AddnewloanComponent
+  },
+  
 ];
 
 @NgModule({

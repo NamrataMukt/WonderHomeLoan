@@ -1,35 +1,49 @@
+
 <div class="enq">
-    
-<form >
-    <table>
-    <thead>
-        <h1>Enquiry Form</h1>
-    </thead>
-<tbody>
-    
-    <tr><Label>Enter Applicant Name </Label>
-    <input type="text"  formControlName="applicantname"></tr>
-
-    <tr><Label>Enter Applicant Age</Label>
-    <input type="text"  formControlName="age"></tr>
-
-    <tr><Label>Enter Applicant Email </Label>
-    <input type="text"  formControlName="email"></tr>
-
-   <tr> <Label>Enter Applicant MobileNo. </Label>
-    <input type="text"  formControlName="mbno"></tr>
-
-    <tr><Label>Enter Applicant PanCard No. </Label>
-    <input type="text"  formControlName="applicantname"></tr>
-
-    <tr><Label>Enter  City</Label>
-    <input type="text"  formControlName="city"></tr>
-
-    <tr><Label>Enter  PinCode</Label>
-    <input type="text"  formControlName="pincode"></tr>
-
-   <tr><Label>Enter </Label>
-    <input type="text"  formControlName="applicantname"></tr>
-</tbody>
-</table>
-</form>
+    <form [formGroup]="enquiryForm" (ngSubmit)="submitEnquiry()">
+        <table class="table table-striped mt-5">
+            <thead>
+                <h1>Enquiry Form</h1>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><label for="applicantName">Enter Applicant Name</label></td>
+                    <td><input type="text" id="applicantName" formControlName="applicantName"></td>
+                </tr>
+                <tr>
+                    <td><label for="age">Enter Applicant Age</label></td>
+                    <td><input type="text" id="age" formControlName="age"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Enter Applicant Email</label></td>
+                    <td><input type="email" id="email" formControlName="email"></td>
+                </tr>
+                <tr>
+                    <td><label for="mobileNumber">Enter Applicant MobileNo.</label></td>
+                    <td><input type="text" id="mobileNumber" formControlName="mobileNumber"></td>
+                </tr>
+                <tr>
+                    <td><label for="pancardNumber">Enter Applicant PanCard No.</label></td>
+                    <td><input type="text" id="pancardNumber" formControlName="pancardNumber"></td>
+                </tr>
+                <tr>
+                    <td><label for="city">Enter  City</label></td>
+                    <td><input type="text" id="age" formControlName="city"></td>
+                </tr>
+                <tr>
+                    <td><label for="pincode">Enter  PinCode</label></td>
+                    <td><input type="text" id="pincode" formControlName="pincode"></td>
+                </tr>
+                <tr>
+                    <td><label for="date">Enter  date</label></td>
+                    <td><input type="text" id="pincode" formControlName="date"></td>
+                </tr>
+                <tr>
+                    <td><label for="enquiry">Enquiry</label></td>
+                    <td><input type="text" id="enquiry" formControlName="enquiry"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+</div>
