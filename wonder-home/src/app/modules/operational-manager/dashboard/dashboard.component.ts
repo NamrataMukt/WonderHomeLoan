@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
+<<<<<<< HEAD
 
+=======
+// import { Ussermenus } from '../../../model/';
+>>>>>>> ccd6e0be433ced5398c28d36a69e1e207143e621
 import { Router } from '@angular/router';
 import { Usermenu } from '../../../model/usermenu';
 
@@ -12,28 +16,20 @@ export class DashboardComponent {
   constructor(private router: Router) { }
   userOptions = Usermenu.menus[0].opm;
 
-  // ngOnInit(): void {
-  //   // Initialize userOptions array with shortcut options for the menu
-  //   this.userOptions = [
-  //     { label: 'Applicants', link: 'applicants' },
-  //     { label: 'Approved Customers', link: 'approved-customer' },
-  //     { label: 'Verification Required', link: 'verification-required' }
-  //   ];
-  // }
 
   
 
   navigateToMenuOption(option: string): void {
     switch(option) {
       case 'applicants':
-        this.router.navigateByUrl('/userdash/opm/applicants');
+        this.router.navigateByUrl('/user-dashboard/opm/applicants');
         console.log(option)
         break;
       case 'approved-customer':
-        this.router.navigate(['/userdash/opm/approved-customer']);
+        this.router.navigate(['/user-dashboard/opm/approved-customer']);
         break;
       case 'verification-required':
-        this.router.navigate(['/userdash/opm/verification-required']);
+        this.router.navigate(['/user-dashboard/opm/verification-required']);
         break;
       default:
         // Handle default case

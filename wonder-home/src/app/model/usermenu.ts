@@ -15,11 +15,13 @@ export class Usermenu
                 {label:'My Profile',link:'crmprofile'},
                 {label:'Loan Applied',link:'loanapplied'}
             ],
-            accounthead:[
-                {label:'Ledger',link:'ledger'},
-                {label:'Loan Disbursement',link:'loandisbursement'},
-                {label:'Defaulter List',link:'defaulter'},
-              
+            opm:[
+                {label:'Dashboard',link:'dashboard'},
+                {label:'applicants' , link:'applicants'},
+                {label:'approved-customer' , link:'approved-customer'},
+                {label:'verification required' ,link:'verification-required'}
+                
+
             ]
 
         }
