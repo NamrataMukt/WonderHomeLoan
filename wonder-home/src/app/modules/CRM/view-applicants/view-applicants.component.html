@@ -1,0 +1,41 @@
+<p>view-applicants works!</p>
+
+<div class="table-responsive">
+    <table class="table table-striped mt-5 mx-auto" style="width: 80%;" *ngIf="showApplicantsTable">
+        <thead class="table-header">
+            <tr>
+                <th>Applicant Id</th>
+                <th>Applicant Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>Pancard Number</th>
+                <th>City</th>
+                <th>Pincode</th>
+                <th>Date</th>
+                <th>Enquiry</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let applicant of applicants">
+                <td>{{ applicant.applicantId }}</td>
+                <td>{{ applicant.applicantName }}</td>
+                <td>{{ applicant.age }}</td>
+                <td>{{ applicant.email }}</td>
+                <td>{{ applicant.mobileNumber }}</td>
+                <td>{{ applicant.pancardNumber }}</td>
+                <td>{{ applicant.city }}</td>
+                <td>{{ applicant.pincode }}</td>
+                <td>{{ applicant.date }}</td>
+                <td>{{ applicant.enquiry }}</td> 
+                <td><button type="button" class="btn btn-primary btn-sm" (click)="editApplicant(applicant)">Edit</button></td>
+                <!-- Delete Button -->
+                <td><button type="button" class="btn btn-danger btn-sm" (click)="deleteApplicant(applicant)">Delete</button></td>
+        
+            
+            </tr>
+        </tbody>
+    </table>
+</div>
