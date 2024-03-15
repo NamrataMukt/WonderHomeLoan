@@ -29,15 +29,10 @@ import { UserMenuComponent } from './includes/user-menu/user-menu.component';
     UserHeaderComponent,
     EmiCalculatorComponent,
     PaginationComponent,
-    UserMenuComponent
+    UserMenuComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

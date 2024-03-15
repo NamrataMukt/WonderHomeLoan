@@ -1,1 +1,71 @@
 <p>loan-disbursement works!</p>
+
+<div class="disbursement">
+  <form [formGroup]="loanDisbursementForm" (ngSubmit)="onSubmit()">
+    <table>
+      <thead>
+        <h1>loanDisbursement Form</h1>
+      </thead>
+      <tbody>
+        <tr>
+          <Label>Enter loan Number </Label>
+          <input type="number" formControlName="loanNumber" />
+        </tr>
+
+        <tr>
+          <Label>Enter aggrement Date</Label>
+          <input type="number" formControlName="aggrementDate" />
+        </tr>
+
+        <tr>
+          <Label>Enter amount Pay Type </Label>
+          <input type="text" formControlName="amountPayType" />
+        </tr>
+
+        <tr>
+          <Label>Enter total Amount </Label>
+          <input type="number" formControlName="totalAmount" />
+        </tr>
+
+        <tr>
+          <Label>Enter bankName </Label>
+          <input type="text" formControlName="bankName" />
+        </tr>
+
+        <tr>
+          <Label>Enter accountNumber</Label>
+          <input type="number" formControlName="accountNumber" />
+        </tr>
+
+        <tr>
+          <Label>Enter ifscCode</Label>
+          <input type="text" formControlName="ifscCode" />
+        </tr>
+
+        <tr>
+          <Label>Enter accountType </Label>
+          <input type="text" formControlName="accountType" />
+        </tr>
+
+        <tr>
+          <Label>Enter transferAmount </Label>
+          <input type="number" formControlName="transferAmount" />
+        </tr>
+
+        <tr>
+          <Label>Enter paymentStatus </Label>
+          <input type="text" formControlName="paymentStatus" />
+        </tr>
+
+        <tr>
+          <Label>Enter amountPaidDate </Label>
+          <input type="text" formControlName="amountPaidDate" />
+        </tr>
+
+        <tr>
+          <button type="submit" class="btn btn-success">Save</button>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>
