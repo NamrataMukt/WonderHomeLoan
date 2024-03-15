@@ -1,3 +1,5 @@
+import { Cibilscore } from "./cibilscore";
+
 export class ApplicantDetails {
   applicantId: number;
   applicantName: string;
@@ -9,5 +11,5 @@ export class ApplicantDetails {
   pincode: string;
   date: string;
   enquiry: string;
-  cibilScore: number;
+  cibilScore: Cibilscore;
 }

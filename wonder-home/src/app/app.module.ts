@@ -15,6 +15,7 @@ import { UserHeaderComponent } from './includes/user-header/user-header.componen
 import { EmiCalculatorComponent } from './template/emi-calculator/emi-calculator.component';
 import { PaginationComponent } from './template/pagination/pagination.component';
 import { UserMenuComponent } from './includes/user-menu/user-menu.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,8 +31,16 @@ import { UserMenuComponent } from './includes/user-menu/user-menu.component';
     EmiCalculatorComponent,
     PaginationComponent,
     UserMenuComponent,
+    UserMenuComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+  ],
+
   providers: [],
   bootstrap: [AppComponent],
 })

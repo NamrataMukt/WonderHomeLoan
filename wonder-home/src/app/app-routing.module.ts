@@ -34,12 +34,22 @@ const routes: Routes = [
         (file => file.AdminModule),
       },
       {
+
         path:'CRM',loadChildren:()=>import('./modules/CRM/CRM.module').then
         (file=>file.CRMModule)
       },
       {
+
+        path:'cm',loadChildren:()=>import('./modules/creditmanager/creditmanager.module').then
+        (file=>file.CreditmanagerModule)
+      },
+      {
         path:'accounthead',loadChildren:()=>import('./modules/account-head/account-head.module').then
         (file=>file.AccountHeadModule)
+      }
+      ,
+      {
+        path:'opm' ,loadChildren:()=>import('./modules/operational-manager/operational-manager.module').then(file=>file.OperationalManagerModule)
       }
     ]
   },

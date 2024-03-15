@@ -1,7 +1,7 @@
-<p>loan-applicants works!</p>
+<p>view-applicants works!</p>
 
 <div class="table-responsive">
-    <table class="table table-striped mt-5" *ngIf="showApplicantsTable">
+    <table class="table table-striped mt-5 mx-auto" style="width: 80%;" *ngIf="showApplicantsTable">
         <thead class="table-header">
             <tr>
                 <th>Applicant Id</th>
@@ -14,7 +14,8 @@
                 <th>Pincode</th>
                 <th>Date</th>
                 <th>Enquiry</th>
-                <th>Cibil Score</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -28,12 +29,12 @@
                 <td>{{ applicant.city }}</td>
                 <td>{{ applicant.pincode }}</td>
                 <td>{{ applicant.date }}</td>
-                <td>{{ applicant.enquiry }}</td>
-                <td>{{ applicant.cibilScore }}</td>
-                <td>{{ applicant.cibilScore ? applicant.cibilScore.cibilScore : 'Not Available' }}</td>
-    <td>
-        <button (click)="generateCibilScore(applicant)">Generate CIBIL Score</button>
-    </td>
+                <td>{{ applicant.enquiry }}</td> 
+                <td><button type="button" class="btn btn-primary btn-sm" (click)="editApplicant(applicant)">Edit</button></td>
+                <!-- Delete Button -->
+                <td><button type="button" class="btn btn-danger btn-sm" (click)="deleteApplicant(applicant)">Delete</button></td>
+        
+            
             </tr>
         </tbody>
     </table>

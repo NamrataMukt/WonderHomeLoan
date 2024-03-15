@@ -38,10 +38,23 @@ export class LoginComponent  implements OnInit
         this.router.navigateByUrl('user-dashboard/CRM')
         sessionStorage.setItem('userType','CRM')
     }
+
+    else if(un==='cm' && pass=== 'cm11')
+    {
+      this.router.navigateByUrl('user-dashboard/cm')
+      sessionStorage.setItem('userType','CreditManager')
+    }
     else if(un ==='ah'&& pass ==='ah123')
     {
         this.router.navigateByUrl('user-dashboard/accounthead')
         sessionStorage.setItem('userType','accounthead')
+
+    }
+    else if(un==='opm' && pass==='opm123')
+    {
+      alert('User is an opm..!')
+      sessionStorage.setItem('userType','opm')
+      this.router.navigateByUrl('user-dashboard/opm')
     }
     else
     {
