@@ -1,149 +1,509 @@
-<form [formGroup]="applicationform" (ngSubmit)="onSubmit()">
-    <div class="row">
-      <div class="ll col-md-12 col-md-offset-3">
+<form [formGroup]="CustomerApplicationForm" (ngSubmit)="onSubmit()">
+<div class="container vertical-scrollable">
+<div class="row text-center">
+  <div class="col-sm-8">
         <!-- progressbar -->
-        <ul id="progressbar">
-          <li [ngClass]="step >= 1 ? 'active ' : 'inactive'">Applicant Details </li>
-          <li [ngClass]="step >= 2 ? 'active' : 'inactive'">Address Details</li>
-          <li [ngClass]="step >= 3 ? 'active' : 'inactive'"> Employment Details</li>
-          <li [ngClass]="step >= 4 ? 'active' : 'inactive'">Dependent Details</li>
-          <li [ngClass]="step == 5 ? 'active' : 'inactive'">Guarantor Details</li>
-        </ul>
-        
-        <div formGroupName="applicantDetails">
-          <fieldset *ngIf="step == 1">
-            <h2 class="fs-title">Applicant Details</h2>
-         <div class="row">
-            
-               <input type="text" formControlName="customerName" placeholder="Applicant Name" />
-               <div class="col col-6">
-                   <input type="number" formControlName="customerMobileNumber" placeholder="Mobile Number"/>
-                  <input type="text" formControlName="customerEmailId" placeholder="Email"/>
-                </div>
-              <div class="col col-6">
-                    <input type="number" formControlName="adharNumber" placeholder="Aadhaar Number"/>
-                     <input type="number" formControlName="pancardNumber"placeholder="Pancard Number"/>
-                 </div>
-            <div class="col col-6">
-                  <input type="text" formControlName="gender" placeholder="Gender" />
-                  <input type="text" formControlName="customerDOB" placeholder="Date Of Birth"/>
-            </div>
-        <div class="col col-6">
-            <input type="number" formControlName="age" placeholder="Age" />
-            <input type="text" formControlName="loanType" placeholder="Loan Type"/>
-            </div>
-            <div class="col col-6">
-            <input type="text" formControlName="maritalStatus"placeholder="Marital Status"/>
-              <input type="text" formControlName="statusCode" placeholder="StatusCode"/>
-              </div>
-              <div class="col col-6">
-              <input type="number" formControlName="totalLoanRequired" placeholder="Total loan Required"/>
-            <input type="number" formControlName="cibilScore" placeholder="CibilScore"/>
-          </div>
+          <ul id="progressbar">
+            <li [ngClass]="step >= 1 ? 'active' : 'inactive'">Applicant Details </li>
+            <li [ngClass]="step >= 2 ? 'active' : 'inactive'">Address Details</li>
+            <li [ngClass]="step >= 3 ? 'active' : 'inactive'"> Employment Details</li>
+            <li [ngClass]="step >= 4 ? 'active' : 'inactive'">Dependent Details</li>
+            <li [ngClass]="step >= 5 ? 'active' : 'inactive'">Mortage Details</li>
+            <li [ngClass]="step == 6 ? 'active' : 'inactive'">Applicant Document</li>
+          </ul>
       </div>
-            <input (click)="next()" type="button"name="next" class="next action-button"value="Next"/>
-        
-  </fieldset>
-</div>  
 
-        <div formGroupName="addressDetails" id="msform">
-          <fieldset *ngIf="step == 2">
-            <h2 class="fs-title">Address Details</h2>
-           
-            <div formGroupName="permenantAddress" id="msform">
-              <div class="row">
-                
-                  <input type="text" formControlName="houseNo" placeholder="Permenant House Number"/>
-                  <div class="col col-4">
-                  <input type="text" formControlName="areaName" placeholder="Permenant Area Name"/>      
-                  <input type="text" formControlName="streetName" placeholder="Permenant Street Name"/>
+  <div class="col-sm-8">
+    <div  formGroupName="cutomerDetails">
+    <div *ngIf ="step == 1">
+        <h2 class="fs-title">Applicant Details</h2> 
+             <div class="col">
+                <label>Applicant Name</label>
+                    <input type="text" formControlName="customerName"/>
+              </div>
+                <div class="col">
+                  <label>Mobile No</label>
+                  <input type="number" formControlName="customerMobileNumber"/>
+                </div>
+                <div class="col">
+                  <label>Email Id</label>
+                  <input type="text" formControlName="customerEmailId"/>
                   </div>
-                  <div class="col col-4">
-              <input type="text" formControlName="cityName"  placeholder="Permenant City Name"/>
-                  <input type="text" formControlName="district" placeholder="Permenant District"/>
-                 
-              </div>
-              <div class="col col-4">
-                <input type="text" formControlName="state" placeholder="Permenant state" />
-              <input type="text" formControlName="pincode" placeholder="Permenant pincode"/>
-              </div>
+                 <div class="col">
+                  <label>AadharCardNo</label>
+                  <input type="number" formControlName="adharNumber"/>
+                 </div>
+                 <div class="col">
+                  <label>PanCardNo</label>
+                 <input type="text" formControlName="pancardNumber"/>
+                 </div>
+                 <div class="col">
+                  <label>DOB(yy-dd-mm)</label>
+                  <input type="text" formControlName="customerDOB"/>
+                  </div>
+                  <div class="col">
+                    <label> Age(year) </label>
+                    <input type="number" formControlName="age"/>
+                   </div>
+                    <div class="col">
+                        <label>CibilScore</label>
+                          <input  type="number" formControlName="cibilScore"/>
+                    </div>
+                    
+                      <div class="col">
+                          <label>Cibil Status</label>
+                        <input type="text" formControlName="cibilScoreStatus"/>         
+                      </div>
+                      <div class="col">
+                        <label for="gender">Gender<br> </label>
+                        <select formControlName="gender" id="gender">
+                          <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                        </div>
+                       
+           <div class="col">
+            <label>Total loan Required</label>
+            <input type="number" formControlName="loanRequired"/>
             </div>
+            <div class="col">
+            <label>Amount Paid for Home</label>
+            <input type="number" formControlName="tokenmoney"/>
+        </div>
+        
+        <div class="col">
+          <input (click)="next()" type="button"name="next" class="next action-button"value="Next"/>
+      </div>
+    </div>
+</div>
+</div>
+<div class="col-sm-8">
+  <div *ngIf="step == 2" >
+ <div formGroupName="customerAddress">
+    <h2 class="fs-title">Address Details</h2>
+    <h3>Permenant Address</h3>
+    <div formGroupName="permenantAddress">
+      <div class="col">
+        <label>House No</label>
+          <input type="text" formControlName="houseNo"/>     
           </div>
-            <div formGroupName="localAddress" id="msform">
-              <div class="row">
-                <div class="col col-4">
-              <input type="text" formControlName="houseNo" placeholder="Local House Number"/>
-              <input type="text"formControlName="areaName" placeholder="Local Area Name" />
-              </div>
-              <div class="col col-4">
-              <input type="text" formControlName="streetName" placeholder="Local Street Name"/>
-              <input type="text" formControlName="cityName"  placeholder="Local City Name" />
-              </div>
-              <div class="col col-4">
-              <input  type="text"  formControlName="district" placeholder="Local District"  />
-              <input  type="text" formControlName="state" placeholder="Local state"/>
-              </div>
-              <div class="col col-4">
-              <input type="text" formControlName="pincode" placeholder="Local pincode"/>
-              </div>
-            </div>
-            </div>
-            <input  (click)="previous()" type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-            <input (click)="next()" type="button" name="next" class="next action-button" value="Next"/>          
-          </fieldset>
-        </div>
+        
+          <div class="col">
+          <label>Area </label><br>
+          <input type="text" formControlName="areaName"/>      
+          </div>
+          <div class="col">
+            <label>Street</label><br>
+          <input type="text" formControlName="streetName"/>
+          </div>
+          
+          <div class="col">
+            <label>City Name</label>
+          <input type="text" formControlName="cityName"/>
+          </div>
+          <div class="col">
+            <label>District</label><br>
+          <input type="text" formControlName="district"/>   
+          </div>
+          <div class="col">
+            <label>State</label><br>
+          <input type="text" formControlName="state"/>
+          </div>
+          <div class="col">
+            <label>Pincode</label><br>
+          <input type="text" formControlName="pincode"/>
+          </div>
+
+    </div>
+     
+    <div  style="float: right;"  formGroupName="localAddress">
+      <h3>local Address</h3>
+      <div class="col">  
+        <label>House No</label>
+      <input type="text" formControlName="houseNo"/>
+      </div>
+      <div class="col">
+        <label>Area</label><br>
+      <input type="text"formControlName="areaName"/>
+      </div>
+      <div class="col">
+        <label>Street</label><br>
+      <input type="text" formControlName="streetName"/>
+      </div>
+      <div class="col">
+        <label>City</label><br>
+      <input type="text" formControlName="cityName"/>
+      </div>
+      <div class="col">
+        <label>District</label><br>
+      <input  type="text"  formControlName="district"/>
+      </div>
+      <div class="col">
+        <label>State</label><br>
+      <input  type="text" formControlName="state"/>
+      </div>
+      <div class="col">
+        <label>Pincode</label><br>
+      <input type="text" formControlName="pincode"/>
+      </div>
+      </div>
+      </div>
+<div style="float: left;" formGroupName="customerbankDetail">
+    <h3>Customer Bank Details</h3>
+
+    <div class="col">
+      <label>Bank Account No</label>
+      <input type="number" formControlName="bankAccountNo">
+    </div>
+    <div class="col">
+      <label>Bank Name</label>
+      <input type="text" formControlName="bankName">
+    </div>
+    <div class="col">
+      <label>IFSC Code</label>
+      <input type="text" formControlName="bankIFSCCode">
+    </div>
+
+    <div class="col">
+      <label>Bank Address</label>
+      <input type="text" formControlName="bankAddress">
+    </div>
+
+    <div class="col">
+      <br><br>
+      </div>
+      <div class="col">
+        <br><br>
+        </div>        
+      <div class="col">
+      <input  (click)="previous()" type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+      <input (click)="next()" type="button" name="next" class="next action-button" value="Next"/>          
+     </div>
+     </div>
+     </div>
+    </div>
+    
+     <div class="col-sm-8">
+      <div *ngIf ="step == 3">
+      <div formGroupName="employmentDetails">
   
-        <div formGroupName="guarantorDetails" id="msform">
-          <fieldset *ngIf="step == 3">
-            <h2 class="fs-title">Guarantor Details</h2>
-            <input type="text"formControlName="guarantorName" placeholder="Full Name"/>
-            <input type="text" formControlName="guarantorDOB" placeholder="Date Of Birth"/>
-            <input type="text" formControlName="guarantorRelationshipWithApplicant" placeholder=" Relationship With Applicant"/>
-            <input type="number"formControlName="guarantorMobileNumber" placeholder="Mobile Number"/>
-            <input type="number"formControlName="aadhaarcardNumber" placeholder="Aadhaarcard Number"/>
-            <input type="text" formControlName="guarantorCityName" placeholder="City Name"/>
-            <input type="text" formControlName="guarantorJobDetails" placeholder="Job Details"/>
-            <input type="text"formControlName="guarantorAreaName" placeholder="Area name"/>
-            <div class="col col-6">
-            <input (click)="previous()"type="button" name="previous" class="previous action-button-previous"value="Previous"/>
-            <input (click)="next()" type="button" name="next"class="next action-button"value="Next"/>
-            </div>
-          </fieldset>
-        </div>
-  
-        <div formGroupName="employmentDetails" id="msform">
-          <fieldset *ngIf="step == 4">
             <h2 class="fs-title">Employment Details</h2>
-            <input type="text" formControlName="companyName" placeholder="Company Name"/>
-            <input type="number" formControlName="salary" placeholder="Salary" />
-            <input type="text" formControlName="employeeWorkingPeriod"placeholder="Employee Working Period"/>
-            <input type="text" formControlName="professionDesignation"placeholder="Profession Designation"/>
-            Salary Slip:<input type="file"  placeholder="Upload SalarySlip" (change)="onselectSalarySlip($event)"/>
-  
+            <h3>Company Details</h3>
+            <div class="col">
+              
+              <label>Company Name</label>
+            <input type="text" formControlName="companyName"/>
+            </div>
+            <div class="col">
+              <label>Salary</label><br>
+            <input type="number" formControlName="salary"/>
+            </div>
+            <div class="col">
+              <label>WorkingPeriod</label>
+            <input type="number" formControlName="employeeWorkingPeriod">
+            </div>
+            <div class="col">
+              <label>Designation</label>
+            <input type="text" formControlName="profDesignation"/>
+            </div>
+            <div class="col">
+            <label>Salary Slip<input type="file" (change)="onselectSalarySlip($event)"/>
+          </label>
+          </div>
+
+      </div>
+      
+            <div style="float: left;" formGroupName="previousloandata">
+        
+                <h3>Previous Loan Details</h3>
+        
+           
+            <div class="col">
+
+            <label>Loan Amount</label>
+            <input type="number" formControlName="previousloanAmount"/>
+          </div>
+          <div class="col">
+            <label>Paid Amount</label>
+            <input type="number" formControlName="paidAmount"/>
+          </div>
+
+        <div class="col">
+            <label>Remaining  Amount</label>
+            <input type="number" formControlName="remainingAmount"/>
+          </div>
+        
+          <div class="col">
+            <label>Tenure(year)</label>
+            <input type="number" formControlName="tenure"/>
+          </div>
+        
+          <div class="col">
+            <label>Bank Name</label>
+            <input type="text" formControlName="bankName"/>
+          </div>
+          
+          <div class="col">
+            <label>IFSC Code</label>
+            <input type="text" formControlName="ifscCode"/>
+          </div>
+          <div class="col">
+            <label>Bank Address</label>
+            <input type="text" formControlName="bankAddress"/>
+            </div>
+            <div class="col">
+              <br><br>
+              </div>
+              <div class="col">
+                <br><br>
+                </div>
+           
+          <div class="col">
             <input (click)="previous()"type="button" name="previous" class="previous action-button-previous" value="Previous"/>
             <input (click)="next()"type="button"name="next" class="next action-button"value="Next"/>
-          </fieldset>
-        </div>
-  
-        <div formGroupName="dependantDetails" id="msform">
-          <fieldset *ngIf="step == 5">
-            <h2 class="fs-title">Dependent Details</h2>
-            <input type="text"formControlName="fatherName"placeholder="Father Name "/>
-            <input type="text" formControlName="motherName" placeholder="Mother Name"/>
-            <inputt type="text" formControlName="maritalStatus" placeholder="Marital Status"/>
-            <input type="number" formControlName="numberOfChild" placeholder="Number Of Child"/>
-  
-            <input type="number" formControlName="familyIncome" placeholder="Family Income"/>
-            <input type="text" formControlName="spouseName" placeholder="Spouse Name"/>
-            <input type="number" formControlName="noOfFamilyMember" placeholder="No Of Family Member"/>
-  
-            <input (click)="previous()" type="button" name="previous"class="previous action-button-previous" value="Previous"/>
-  
-            <input type="submit" name="submit" class="submit action-button" value="Submit"/>
-          </fieldset>
+          </div>
+
+     </div>
+</div>
+</div>
+<div class="col-sm-8">
+  <div *ngIf="step == 4">
+          <div formGroupName="applicantDependant">
+              <h2 class="fs-title">Dependent Details</h2>
+              <h3>Dependent Details</h3>
+              <div class="col">
+                <label>FatherName</label>
+              <input type="text"formControlName="fatherName"/>
+              </div>
+              <div class="col">
+                <label>MotherName</label>
+              <input type="text" formControlName="motherName"/>
+              </div>
+              <div class="col">
+                <label>Marital Status</label>
+              <input type="text" formControlName="maritalStatus"/>
+              </div>
+              <div class="col">
+                <label>Spouse Name</label>
+                <input type="text" formControlName="spouseName"/>
+              </div>
+              <div class="col">
+                <label>No.Of Child</label>
+              <input type="number" formControlName="numberOfChild"/>
+                </div>
+                <div class="col">
+                  <label>No.Of Dependent Membar</label>
+                 <input type="number" formControlName="noOfDependentMember"/>
+                 </div>
+                 <div class="col">
+               <label>Anuual Family Income</label>  
+              <input type="number" formControlName="familyIncome"/>
+              </div>
+
+
+              <div class="col">
+                <br><br>
+                </div>
+                <div class="col">
+                  <br><br>
+                  </div>
+            </div>
+                  <div  style="float: left;"  formGroupName="guarantorDetails">
+                    <h3>Guarantor Details</h3>
+                  <div class="col">
+                    <label>Name</label><br>
+                    <input type="text"formControlName="guarantorName"/>
+                  </div> 
+                  <div class="col">
+                    <label>DOB(yy-mm-dd)</label>
+                    <input type="text" formControlName="guarantorDOB"/>
+                    </div>
+                    <div class="col">
+                      <label>Relationship With Applicant</label>
+                    <input type="text" formControlName="guarantorRelationshipWithApplicant"/>
+                    </div>
+                    <div class="col">
+                      <label>Mobile No</label>
+                    <input type="number"formControlName="guarantorMobileNumber"/>
+                    </div>
+                    <div class="col">
+                      <label>Aadhar Card</label>
+                    <input type="number"formControlName="aadhaarcardNumber"/>
+                    </div>
+                    <div class="col">
+                      <label>City </label><br>
+                    <input type="text" formControlName="guarantorCityName"/>
+                    </div>
+                    <div class="col">
+                      <label>Area</label><br>
+                    <input type="text"formControlName="guarantorAreaName"/>
+                             </div>
+                             <div class="col">
+                    <label>Aadhar Card Upload</label><input type="file" (change)="onselectgaadhar($event)"/>
+                </div>
+                <div class="col">
+                  <br><br>
+                  </div>
+                  <div class="col">
+                    <br><br>
+                    </div>
+                    <div class="col">
+                    <br><br>
+                    </div>     
+                    <div class="col">
+                      <input (click)="previous()"type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                      <input (click)="next()"type="button"name="next" class="next action-button"value="Next"/>
+                     </div>
+          </div>
+          </div>
+  </div>
+    <div class="col-sm-8">
+      <div *ngIf="step == 5">
+         <div formGroupName="mortage">
           
-        </div>
-        </div>
-      </div>
-      </form>
-  
+            <h2 class="fs-title">Mortage Details</h2>
+           <h3>Mortage Details</h3>
+
+           <div class="col">
+            <label>Property Value</label>
+            <input type="number" formControlName="propertyValue">
+            </div>
+
+            <div class="col">
+              <label>Rera No</label>
+              <input type="number" formControlName="reraNumber">
+              </div>
+
+        <div class="col">
+              <label>Property Type</label>
+              <input type="text" formControlName="propertyType">
+              </div>
+
+        <div class="col">
+              <label>Tenure(year)</label>
+              <input type="number" formControlName="tenure">
+              </div>
+        
+              <div class="col">
+                <label>Loan Required Amount</label>
+                <input type="number" formControlName="totalLoanRequired">
+                </div>
+
+                <div class="col">
+                  <label>Property Proof<input type="file"  (change)="onselectpropertyProof($event)"/>
+                </label>
+                </div>
+            
+           </div>
+
+           <div style="float: left;" formGroupName="builderdetails">
+            <h3>Builder Details</h3>
+            <div class="col">
+              <label>Builder Name</label>
+            <input type="text"formControlName="builderName"/>
+          </div>        
+          <div class="col">
+            <label>AadharCard</label>
+          <input type="number"formControlName="builderAdharcard"/>
+        </div> 
+
+    <div class="col">
+            <label>Pan Card</label>
+          <input type="text"formControlName="builderPancard"/>
+        </div> 
+        <div class="col">
+          <label> Address</label>
+        <input type="text"formControlName="builderAddress"/>
+      </div> 
+      <div class="col">
+        <label>Bank Name</label>
+      <input type="text"formControlName="bankName"/>
+    </div> 
+
+    <div class="col">
+      <label>Bank Accouunt No</label>
+    <input type="number"formControlName="bankAccno"/>
+  </div> 
+  <div class="col">
+    <label>IFSC Code</label>
+  <input type="text"formControlName="bankIfscCode"/>
+</div> 
+
+<div class="col">
+  <label>Aadhar Card<input type="file"  (change)="onselectbaadharCard($event)"/>
+</label>
+</div>
+<div class="col">
+  <label>Pan Card<input type="file" (change)="onselectbpanCard($event)"/>
+</label>
+</div>
+
+<div class="col">
+  <br><br>
+  </div>
+  <div class="col">
+    <input (click)="previous()"type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+    <input (click)="next()"type="button"name="next" class="next action-button"value="Next"/>
+   </div>
+</div>
+</div>
+</div>
+<div class="col-sm-8">
+  <div *ngIf ="step == 6">
+    <h2 class="fs-title">Applicant Document</h2>
+    <h4>Applicant Personal Document</h4>
+        <div style="float: left;width:50px; margin-top:5px;" formGroupName="documentUpload">
+           
+            <div class="col">
+              <label>PanCard<input type="file" (change)="onselectPanCard($event)"/>
+            </label>
+            </div>
+           
+            <div class="col">
+              <label>AadharCard<input type="file"  (change)="onselectAadharCard($event)"/>
+            </label>
+            </div>
+           
+            <div class="col">
+              <label>AddressProof<input type="file" (change)="onselectAddressProof($event)"/>
+            </label>
+            </div>
+           
+            <div class="col">
+              <label>BankCheque<input type="file"(change)="onselectCheque($event)"/>
+            </label>
+            </div>
+              
+            <div class="col">
+              <label>ApplicantPhoto<input type="file"(change)="onselectPhoto($event)"/>
+            </label>
+            </div>
+           
+            <div class="col">
+              <label>ApplicantSignature<input type="file"(change)="onselectSign($event)"/>
+            </label>
+            </div>
+            
+            <div class="col">
+              <label>IncomeTaxReturn<input type="file"(change)="onselectTax($event)"/>
+            </label>
+            </div>
+           
+            <div class="col">
+              <label>BankStatment<input type="file"(change)="onselectStatment($event)"/>
+            </label>
+            </div>
+            <div class="col">
+              <input (click)="previous()"type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+              <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+            </div>
+
+            </div>
+            </div>
+            </div>
+
+            
+    </div>
+    </div>
+    </form>
