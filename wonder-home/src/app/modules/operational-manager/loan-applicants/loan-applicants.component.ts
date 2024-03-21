@@ -35,7 +35,7 @@ export class LoanApplicantsComponent {
     applicant.cibilScore = { cibilScore };
 
     // Save the updated applicant object to the database
-    this.cs.saveCibilScore(applicant).subscribe(
+    this.cs.saveCibilScore(applicant.applicantId,applicant.cibilScore).subscribe(
         response => {
             console.log('CIBIL score generated and saved successfully:', response);
         },

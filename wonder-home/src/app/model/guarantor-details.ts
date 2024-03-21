@@ -8,4 +8,5 @@ export class GuarantorDetails {
   guarantorCityName: string;
   guarantorJobDetails: string;
   guarantorAreaName: string;
+  gadhaar:any;
 }

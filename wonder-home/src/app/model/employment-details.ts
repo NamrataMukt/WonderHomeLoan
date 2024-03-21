@@ -3,7 +3,6 @@ export class EmploymentDetails {
   companyName: string;
   salary: number;
   employeeWorkingPeriod: string;
-  professionDesignation: string;
-  // private byte[] salarySlip;
+  profDesignation: string;
   salarySlip: any;
 }

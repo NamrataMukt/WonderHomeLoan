@@ -12,7 +12,7 @@ export class UserMenuComponent implements OnInit
   constructor(private route:Router,private activatedRoute:ActivatedRoute){}
   userOption:Array<any>;
     type:string;
-
+  
   ngOnInit(): void 
   {
       this.userOption=Usermenu.menus;
