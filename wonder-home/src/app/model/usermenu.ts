@@ -14,7 +14,7 @@ export class Usermenu
                 {label:'New Loan Application',link:'addnewloan'},
                 {label:'View_Applicants' , link:'view_applicants'},
                 {label:'My Profile',link:'crmprofile'},
-                {label:'Loan Applied',link:'loanapplied'}
+                {label:'View Apply Loan Applicant',link:'viewloanapplied'}
             ],
 
             CreditManager:[
