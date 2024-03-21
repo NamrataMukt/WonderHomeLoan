@@ -2,68 +2,68 @@
 
 <div class="disbursement">
   <form [formGroup]="loanDisbursementForm" (ngSubmit)="onSubmit()">
-    <table>
+    <table class="table table-striped mt-5">
       <thead>
         <h1>loanDisbursement Form</h1>
       </thead>
       <tbody>
         <tr>
-          <Label>Enter loan Number </Label>
-          <input type="number" formControlName="loanNumber" />
+          <td><Label>Enter loan Number </Label></td>
+          <td><input type="number" formControlName="loanNumber" /></td>
         </tr>
 
         <tr>
-          <Label>Enter aggrement Date</Label>
-          <input type="number" formControlName="aggrementDate" />
+          <td><Label>Enter aggrement Date</Label></td>
+          <td><input type="number" formControlName="aggrementDate" /></td>
         </tr>
 
         <tr>
-          <Label>Enter amount Pay Type </Label>
-          <input type="text" formControlName="amountPayType" />
+          <td><Label>Enter amount Pay Type </Label></td>
+          <td><input type="text" formControlName="amountPayType" /></td>
         </tr>
 
         <tr>
-          <Label>Enter total Amount </Label>
-          <input type="number" formControlName="totalAmount" />
+          <td><Label>Enter total Amount </Label></td>
+          <td><input type="number" formControlName="totalAmount" /></td>
         </tr>
 
         <tr>
-          <Label>Enter bankName </Label>
-          <input type="text" formControlName="bankName" />
+          <td><Label>Enter bankName </Label></td>
+          <td><input type="text" formControlName="bankName" /></td>
         </tr>
 
         <tr>
-          <Label>Enter accountNumber</Label>
-          <input type="number" formControlName="accountNumber" />
+          <td><Label>Enter accountNumber</Label></td>
+          <td><input type="number" formControlName="accountNumber" /></td>
         </tr>
 
         <tr>
-          <Label>Enter ifscCode</Label>
-          <input type="text" formControlName="ifscCode" />
+          <td><Label>Enter ifscCode</Label></td>
+          <td><input type="text" formControlName="ifscCode" /></td>
         </tr>
 
         <tr>
-          <Label>Enter accountType </Label>
-          <input type="text" formControlName="accountType" />
+          <td><Label>Enter accountType </Label></td>
+          <td><input type="text" formControlName="accountType" /></td>
         </tr>
 
         <tr>
-          <Label>Enter transferAmount </Label>
-          <input type="number" formControlName="transferAmount" />
+          <td><Label>Enter transferAmount </Label></td>
+          <td><input type="number" formControlName="transferAmount" /></td>
         </tr>
 
         <tr>
-          <Label>Enter paymentStatus </Label>
-          <input type="text" formControlName="paymentStatus" />
+          <td><Label>Enter paymentStatus </Label></td>
+          <td><input type="text" formControlName="paymentStatus" /></td>
         </tr>
 
         <tr>
-          <Label>Enter amountPaidDate </Label>
-          <input type="text" formControlName="amountPaidDate" />
+          <td><Label>Enter amountPaidDate </Label></td>
+          <td><input type="text" formControlName="amountPaidDate" /></td>
         </tr>
 
         <tr>
-          <button type="submit" class="btn btn-success">Save</button>
+          <td><button type="submit" class="btn btn-success">Save</button></td>
         </tr>
       </tbody>
     </table>

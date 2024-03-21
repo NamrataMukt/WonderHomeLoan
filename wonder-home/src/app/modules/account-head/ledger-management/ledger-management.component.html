@@ -1,79 +1,81 @@
 <p>ledger-management works!</p>
-<div class="disbursement">
+<div class="ledger">
   <form [formGroup]="ledgerForm" (ngSubmit)="onSubmit()">
-    <table>
+    <table class="table table-striped mt-5">
       <thead>
         <h1>ledger Form</h1>
       </thead>
       <tbody>
         <tr>
-          <Label>Enter Ledger Created Date</Label>
-          <input type="number" formControlName="ledgerCreatedDate" />
+          <td><Label>Enter Ledger Created Date</Label></td>
+          <td><input type="number" formControlName="ledgerCreatedDate" /></td>
         </tr>
 
         <tr>
-          <Label>Enter otal Loan Amount</Label>
-          <input type="number" formControlName="totalLoanAmount" />
+          <td><Label>Enter otal Loan Amount</Label></td>
+          <td><input type="number" formControlName="totalLoanAmount" /></td>
         </tr>
 
         <tr>
-          <Label>Enter payable Amount With Interest </Label>
-          <input type="number" formControlName="payableAmountWithInterest" />
+          <td><Label>Enter payable Amount With Interest </Label></td>
+          <td>
+            <input type="number" formControlName="payableAmountWithInterest" />
+          </td>
         </tr>
 
         <tr>
-          <Label>Enter tenure </Label>
-          <input type="number" formControlName="tenure" />
+          <td><Label>Enter tenure </Label></td>
+          <td><input type="number" formControlName="tenure" /></td>
         </tr>
 
         <tr>
-          <Label>Enter monthlyEmi </Label>
-          <input type="number" formControlName="monthlyEmi" />
+          <td><Label>Enter monthlyEmi </Label></td>
+          <td><input type="number" formControlName="monthlyEmi" /></td>
         </tr>
 
         <tr>
-          <Label>Enter amountPaidTillDate</Label>
-          <input type="number" formControlName="amountPaidTillDate" />
+          <td><Label>Enter amountPaidTillDate</Label></td>
+          <td><input type="number" formControlName="amountPaidTillDate" /></td>
         </tr>
 
         <tr>
-          <Label>Enter remainingAmount</Label>
-          <input type="number" formControlName="remainingAmount" />
+          <td><Label>Enter remainingAmount</Label></td>
+          <td><input type="number" formControlName="remainingAmount" /></td>
         </tr>
 
         <tr>
-          <Label>Enter nextEmiDateStart </Label>
-          <input type="text" formControlName="nextEmiDateStart" />
+          <td><Label>Enter nextEmiDateStart </Label></td>
+          <td><input type="text" formControlName="nextEmiDateStart" /></td>
         </tr>
 
         <tr>
-          <Label>Enter nextEmiDateEnd </Label>
-          <input type="text" formControlName="nextEmiDateEnd" />
+          <td><Label>Enter nextEmiDateEnd </Label></td>
+          <td><input type="text" formControlName="nextEmiDateEnd" /></td>
         </tr>
 
         <tr>
-          <Label>Enter defaulterCount </Label>
-          <input type="number" formControlName="defaulterCount" />
+          <td><Label>Enter defaulterCount </Label></td>
+          <td><input type="number" formControlName="defaulterCount" /></td>
         </tr>
 
         <tr>
-          <Label>Enter previousEmiStatus </Label>
-          <input type="text" formControlName="previousEmiStatus" />
+          <td><Label>Enter previousEmiStatus </Label></td>
+          <td><input type="text" formControlName="previousEmiStatus" /></td>
         </tr>
 
         <tr>
-          <Label>Enter currentMonthEmiStatus </Label>
-          <input type="text" formControlName="currentMonthEmiStatus" />
+          <td><Label>Enter currentMonthEmiStatus </Label></td>
+          <td><input type="text" formControlName="currentMonthEmiStatus" /></td>
         </tr>
 
         <tr>
-          <Label>Enter loanEndDate </Label>
-          <input type="text" formControlName="loanEndDate" />
+          <td><Label>Enter loanEndDate </Label></td>
+          <td><input type="text" formControlName="loanEndDate" /></td>
         </tr>
 
         <tr>
-          <Label>Enter loanStatus </Label>
-          <input type="text" formControlName="loanStatus" />
+          <td><Label>Enter loanStatus </Label></td>
+          <td><input type="text" formControlName="loanStatus" /></td>
         </tr>
 
         <tr>
