@@ -40,14 +40,11 @@ const routes: Routes = [
       {
         path:'accounthead',loadChildren:()=>import('./modules/account-head/account-head.module').then
         (file=>file.AccountHeadModule)
-      }
+      },
         {
         path:'opm' ,loadChildren:()=>import('./modules/operational-manager/operational-manager.module').then(file=>file.OperationalManagerModule)
-      },
-      {
-        path:'Loan_Officer',loadChildren:()=>import('./modules/CreditManager/CreditManagerModule').then
-        (file=>file.CreditManagerModule)
       }
+    
     ]
   },
   {

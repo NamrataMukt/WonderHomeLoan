@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AddemployeeService } from '../../services/addemployee.service';
+import { EmployeeForm } from '../../model/employee-form';
 
 @Component({
   selector: 'app-login',
@@ -9,17 +11,24 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent  implements OnInit
 {
-  constructor(private fb:FormBuilder ,private router:Router){}
+  
+  constructor(private fb:FormBuilder ,private router:Router,private as:AddemployeeService){}
+
+ 
+  
   loginform:FormGroup;
 
   ngOnInit(): void 
   {
+   
     this.loginform=this.fb.group(
       {
         username:[],
-        password:[]
+        password:[],
+      
       }
-    )
+      )
+    // this.loadUserType();
   }
   
 
@@ -27,6 +36,8 @@ export class LoginComponent  implements OnInit
   {
     let un:string =this.loginform.controls['username'].value;
     let pass:string =this.loginform.controls['password'].value;
+   
+    
     
     if (un === 'admin' && pass === 'admin123') 
     {
@@ -54,5 +65,22 @@ export class LoginComponent  implements OnInit
       alert('Enter valid authentication details...!')
     }
   }
+    
+// employee:EmployeeForm[];
+
+//   loadUserType():void{
+
+//     this.as.getAllEmployees().subscribe(
+//       (data:EmployeeForm[])=>
+//         {
+//              this.employee=data;
+//         }
+//         )
+    
+
+
+  }
+
+  
  
-}
+

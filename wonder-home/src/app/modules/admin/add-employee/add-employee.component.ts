@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { AddemployeeService } from '../../../services/addemployee.service';
 
 @Component({
   selector: 'app-add-employee',
@@ -10,29 +11,35 @@ export class AddEmployeeComponent implements OnInit {
 
   employeeForm:FormGroup;
 
-  constructor(private fb:FormBuilder){
-     
+  constructor(private fb:FormBuilder,private as:AddemployeeService){ }
+
+  ngOnInit(): void {
+
     this.employeeForm=this.fb.group(
       {
         empId:[],
+        empName:[],
         empUserName:[],
         empUserPassword:[],
         email:[],
         mobileNumber:[],
+        designation:[],
+        userType:[]
         
        
       }
     )
-
+   
   }
 
-  ngOnInit(): void {
-    this.employeeForm
+  
+
+  onSubmit(){
+    console.log(this.employeeForm.value);
+    this.as.saveEmployee(this.employeeForm.value).subscribe();
+    this.employeeForm.reset();
   }
 
-  // onSubmit(){
-  //   this.as.addEmployee(this.employeeForm.value).subscribe()
-  // }
 
 }
 
