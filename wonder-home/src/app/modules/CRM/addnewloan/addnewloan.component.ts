@@ -11,6 +11,7 @@ import { GuarantorDetails } from '../../../model/guarantor-details';
 import { Mortage } from '../../../model/mortage';
 import { BuilderDetails } from '../../../model/builder-details';
 import { CustomerDocumentUpload } from '../../../model/customer-document-upload';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-addnewloan',
@@ -20,7 +21,7 @@ import { CustomerDocumentUpload } from '../../../model/customer-document-upload'
 export class AddnewloanComponent implements OnInit
 {
  
-  constructor(private fb: FormBuilder,private multistep:MultistepService) {}
+  constructor(private fb: FormBuilder,private multistep:MultistepService,private route: ActivatedRoute) {}
 
 
   step = 1;
@@ -164,6 +165,12 @@ export class AddnewloanComponent implements OnInit
       })
       
     });
+    this.route.queryParams.subscribe(params => {
+      if (params && params['applicantData']) {
+        const applicantData = JSON.parse(params['applicantData']);
+        this.populateForm(applicantData);
+      }
+    });
   }
 
   next() {
@@ -288,6 +295,21 @@ export class AddnewloanComponent implements OnInit
   onselectStatment(event:any)
   {
     this.statment=event.target.files[0];
+  }
+
+
+  populateForm(applicantData: any) {
+    // Populate the form controls with the received applicant data
+    this.CustomerApplicationForm.patchValue({
+      cutomerDetails: {
+        customerId: applicantData.customerId,
+        customerName: applicantData.customerName,
+        customerAge: applicantData.age
+        
+        // Populate other form fields similarly
+      },
+      // Populate other form groups and controls
+    });
   }
 
 }
