@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-// import { Ussermenus } from '../../../model/';
 import { Router } from '@angular/router';
 import { Usermenu } from '../../../model/usermenu';
 
@@ -10,7 +9,7 @@ import { Usermenu } from '../../../model/usermenu';
 })
 export class DashboardComponent {
   constructor(private router: Router) { }
-  userOptions = Usermenu.menus[0].opm
+  userOptions = Usermenu.menus[0].opm;
 
 
   

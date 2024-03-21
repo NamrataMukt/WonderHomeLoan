@@ -34,7 +34,6 @@ const routes: Routes = [
         (file => file.AdminModule),
       },
       {
-
         path:'CRM',loadChildren:()=>import('./modules/CRM/CRM.module').then
         (file=>file.CRMModule)
       },
@@ -51,6 +50,7 @@ const routes: Routes = [
       {
         path:'opm' ,loadChildren:()=>import('./modules/operational-manager/operational-manager.module').then(file=>file.OperationalManagerModule)
       }
+    
     ]
   },
   {

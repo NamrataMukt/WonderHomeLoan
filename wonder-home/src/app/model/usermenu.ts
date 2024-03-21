@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // export class Usermenu {
 //   public static menus: Array<any> = [
 //     {
@@ -39,6 +40,26 @@ export class Usermenu {
         { label: 'My Profile', link: 'crmprofile' },
         { label: 'Loan Applied', link: 'loanapplied' },
       ],
+=======
+export class Usermenu 
+{
+    public static menus:Array<any>=[
+         
+        {
+            Admin:[
+                //0 index
+                
+                {label:'Add New resourse' ,link:'add_employee'},
+                {label:'View Resources' , link:'view_employee'}   
+            ],
+            CRM:[
+                {label:'Enquiry',link:'enquiry'},
+                {label:'New Loan Application',link:'addnewloan'},
+                {label:'View_Applicants' , link:'view_applicants'},
+                {label:'My Profile',link:'crmprofile'},
+                {label:'Loan Applied',link:'loanapplied'}
+            ],
+>>>>>>> df2ddd51b84c4f802da94a373c9070ffefeb1b80
 
       CreditManager: [{ label: 'Dashboard', link: 'c-dash' }],
       accounthead: [
