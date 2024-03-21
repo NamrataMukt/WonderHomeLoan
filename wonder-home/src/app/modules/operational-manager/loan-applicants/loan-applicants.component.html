@@ -15,6 +15,7 @@
                 <th>Date</th>
                 <th>Enquiry</th>
                 <th>Cibil Score</th>
+                <th>Cibil</th>
             </tr>
         </thead>
         <tbody>
@@ -29,7 +30,7 @@
                 <td>{{ applicant.pincode }}</td>
                 <td>{{ applicant.date }}</td>
                 <td>{{ applicant.enquiry }}</td>
-                <td>{{ applicant.cibilScore }}</td>
+                <!-- <td>{{ applicant.cibilScore }}</td> -->
                 <td>{{ applicant.cibilScore ? applicant.cibilScore.cibilScore : 'Not Available' }}</td>
     <td>
         <button (click)="generateCibilScore(applicant)">Generate CIBIL Score</button>

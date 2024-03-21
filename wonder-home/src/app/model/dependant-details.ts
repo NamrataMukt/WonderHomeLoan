@@ -6,5 +6,6 @@ export class DependantDetails {
   numberOfChild: number;
   familyIncome: number;
   spouseName: string;
-  noOfFamilyMember: number;
+  noOfDependentMember: number;
+  
 }

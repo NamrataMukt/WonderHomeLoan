@@ -41,6 +41,9 @@ export class viewApplicantsComponent {
     console.log('Delete applicant:', applicant);
   }
 
+  applyForLoan(): void {
+    this.router.navigate(['user-dashboard/CRM/addnewloan'], { queryParams: { applicantData: JSON.stringify(this.applicants) } });
+  }
   
 
   
