@@ -1,15 +1,16 @@
 import { Cibilscore } from "./cibilscore";
 
 export class ApplicantDetails {
-  applicantId: number;
-  applicantName: string;
+  customerId: number;
+  customerName: string;
   age: number;
-  email: number;
-  mobileNumber: string;
+  customerEmailId: number;
+  customerMobileNumber: string;
   pancardNumber: number;
   city: number;
   pincode: string;
   date: string;
   enquiry: string;
   cibilScore: Cibilscore;
+
 }

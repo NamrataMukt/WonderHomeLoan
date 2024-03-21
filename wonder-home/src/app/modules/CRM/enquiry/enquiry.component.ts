@@ -26,16 +26,18 @@ export class EnquiryComponent {
 
     createForm() {
         this.enquiryForm = this.fb.group({
-          applicantId:[],
-          applicantName: [],
+          customerId:[],
+          customerName: [],
             age: [''],
-            email: [''],
-            mobileNumber: [''],
+            customerEmailId: [''],
+            customerMobileNumber: [''],
             pancardNumber: [''],
             city: [''],
             pincode: [''],
             date:[''],
             enquiry:['']
+
+        
             
         });
     }
