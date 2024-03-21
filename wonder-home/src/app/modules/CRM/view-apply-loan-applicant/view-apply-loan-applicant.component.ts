@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MultistepService } from '../../../services/multistep.service';
-import { CustomerBasicDetails } from '../../../model/customer-basic-details';
+import { CustomerApplicationForm } from '../../../model/customer-application-form';
 
 @Component({
   selector: 'app-view-apply-loan-applicant',
@@ -11,12 +11,12 @@ export class ViewApplyLoanApplicantComponent implements OnInit
 {
     constructor(private ms:MultistepService,){}
 
-    customerform:CustomerBasicDetails[]
+    customerform:CustomerApplicationForm[];
     
   ngOnInit(): void 
   {
     this.ms.getloanApplicant().subscribe(
-      (data:CustomerBasicDetails[])=>
+      (data:CustomerApplicationForm[])=>
       {
         this.customerform=data;
       }

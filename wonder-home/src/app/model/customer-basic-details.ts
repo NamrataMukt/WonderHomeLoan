@@ -12,6 +12,5 @@ export class CustomerBasicDetails
 	cibilScore:number;
     cibilScoreStatus:string;
 	tokenmoney:number;
-	loanRequired:number;
-		
+	loanRequired:number;		
 }

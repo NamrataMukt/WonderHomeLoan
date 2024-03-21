@@ -16,4 +16,9 @@ export class MultistepService {
   {
     return this.http.get('http://localhost:9090/getApplicant')
   }
+
+  getbasicData()
+  {
+      return this.http.get('http://localhost:9090/getcustomerAllBasicDetails')
+  }
 }

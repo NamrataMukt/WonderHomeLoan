@@ -12,9 +12,9 @@ export class CustomerApplicationForm
 {
    applicationNumber:number;
 	
-    cutomerDetails: CustomerBasicDetails;
+    cutomerDetails:CustomerBasicDetails;
 	
-      applicantDependant:DependantDetails;
+     applicantDependant:DependantDetails;
 	
     customerAddress: CustomerAddress;
 	employmentDetails: EmploymentDetails;
