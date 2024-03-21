@@ -13,6 +13,13 @@
           <br>
             <input class="form-control"formControlName="username" placeholder="Enter User Name"> <br>
             <input class="form-control" formControlName="password" placeholder="Enter User Password"><br>
+            <!-- <div  class="form-group">
+              <label for="empId">User Type </label>
+              <select class="form-control" formControlName="userType" placeholder="Enter User Type">
+                  <option *ngFor ="let type of userTypes" [ngValue]="type">{{type}}</option>
+              </select>
+            </div> -->
+            
             <button class="btn btn-secondary" type="submit">SignIn&nbsp;<i class="fa fa-sign-in"></i></button>&nbsp;&nbsp;&nbsp;
         </div>
 

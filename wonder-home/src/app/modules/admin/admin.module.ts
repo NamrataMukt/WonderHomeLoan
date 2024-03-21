@@ -3,12 +3,20 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 
+import { ViewEmployeeComponent } from './view-employee/view-employee.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
+
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AddEmployeeComponent,
+    ViewEmployeeComponent
+  ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }

@@ -14,7 +14,11 @@ export class CibilscoreService {
   //   return this.http.post('http://localhost:9090/savecibil'+applicantId,cibil)
   // }
 
-  saveCibilScore(applicantId: number, cibilScore: Cibilscore): Observable<any> {
-    return this.http.post(`http://localhost:9090/savecibil/${applicantId}`, cibilScore);
+  saveCibilScore(customerId: number, cibilScore: Cibilscore): Observable<any> {
+    return this.http.post(`http://localhost:9090/savecibil/${customerId}`, cibilScore);
+  }
+
+  getCibilScoreByApplicantId(customerId: number) {
+    return this.http.get(`http://localhost:9090/cibil/${customerId}`);
   }
 }
