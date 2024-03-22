@@ -8,7 +8,7 @@ export class BuilderDetails
 	bankName:string;
 	bankAccno:number;
 	bankIfscCode:string;
-	panCard:any;
-	aadharCard:any;
+	bpanCard:any;
+	baadharCard:any;
 
 }

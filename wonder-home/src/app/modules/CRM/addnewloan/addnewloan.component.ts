@@ -169,6 +169,7 @@ export class AddnewloanComponent implements OnInit
       if (params && params['applicantData']) {
         const applicantData = JSON.parse(params['applicantData']);
         this.populateForm(applicantData);
+        console.log("MultiStep"+applicantData)
       }
     });
   }
@@ -262,11 +263,12 @@ export class AddnewloanComponent implements OnInit
         customerId: applicantData.customerId,
         customerName: applicantData.customerName,
         customerAge: applicantData.age
-        
+       
         // Populate other form fields similarly
       },
       // Populate other form groups and controls
+      
     });
-  }
+      }
 
 }
