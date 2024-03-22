@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { CibilscoreService } from '../../../services/cibilscore.service';
 import { ApplicantDetails } from '../../../model/applicant-details';
 import { Router } from '@angular/router';
+import { Cibilscore } from '../../../model/cibilscore';
 
 @Component({
   selector: 'app-view-applicants',
@@ -50,6 +51,24 @@ export class viewApplicantsComponent {
   applyForLoan(applicant: any): void {
     this.router.navigate(['user-dashboard/CRM/addnewloan'], {
       state: { applicantData: applicant },
+    });
+  }
+
+  loadCibilScores(): void {
+    this.applicants.forEach((applicant) => {
+      if (applicant.customerId) {
+        this.cs.getCibilScoreByApplicantId(applicant.customerId).subscribe(
+          (cibilScore: Cibilscore) => {
+            applicant.cibilScore = cibilScore;
+          },
+          (error) => {
+            console.error(
+              `Error fetching CIBIL score for applicant ${applicant.customerId}:`,
+              error
+            );
+          }
+        );
+      }
     });
   }
 }
