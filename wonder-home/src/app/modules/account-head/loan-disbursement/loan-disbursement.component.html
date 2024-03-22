@@ -1,1 +1,71 @@
 <p>loan-disbursement works!</p>
+
+<div class="disbursement">
+  <form [formGroup]="loanDisbursementForm" (ngSubmit)="onSubmit()">
+    <table class="table table-striped mt-5">
+      <thead>
+        <h1>loanDisbursement Form</h1>
+      </thead>
+      <tbody>
+        <tr>
+          <td><Label>Enter loan Number </Label></td>
+          <td><input type="number" formControlName="loanNumber" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter aggrement Date</Label></td>
+          <td><input type="number" formControlName="aggrementDate" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter amount Pay Type </Label></td>
+          <td><input type="text" formControlName="amountPayType" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter total Amount </Label></td>
+          <td><input type="number" formControlName="totalAmount" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter bankName </Label></td>
+          <td><input type="text" formControlName="bankName" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter accountNumber</Label></td>
+          <td><input type="number" formControlName="accountNumber" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter ifscCode</Label></td>
+          <td><input type="text" formControlName="ifscCode" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter accountType </Label></td>
+          <td><input type="text" formControlName="accountType" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter transferAmount </Label></td>
+          <td><input type="number" formControlName="transferAmount" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter paymentStatus </Label></td>
+          <td><input type="text" formControlName="paymentStatus" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter amountPaidDate </Label></td>
+          <td><input type="text" formControlName="amountPaidDate" /></td>
+        </tr>
+
+        <tr>
+          <td><button type="submit" class="btn btn-success">Save</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>

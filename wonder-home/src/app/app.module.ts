@@ -30,16 +30,18 @@ import { HttpClientModule } from '@angular/common/http';
     UserHeaderComponent,
     EmiCalculatorComponent,
     PaginationComponent,
-    UserMenuComponent
+    UserMenuComponent,
+    UserMenuComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
+
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

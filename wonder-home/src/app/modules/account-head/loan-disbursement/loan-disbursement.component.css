@@ -1,3 +1,35 @@
-p{
-    padding: 70px;
-    }
+.disbursement {
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.disbursement form table {
+  width: 100%;
+}
+
+.disbursement form table td {
+  padding: 10px;
+}
+
+.disbursement form table td label {
+  font-weight: bold;
+}
+
+.disbursement form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.disbursement form button:hover {
+  background-color: #0056b3;
+}

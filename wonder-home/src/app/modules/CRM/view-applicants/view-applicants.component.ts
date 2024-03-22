@@ -9,32 +9,38 @@ import { Cibilscore } from '../../../model/cibilscore';
 @Component({
   selector: 'app-view-applicants',
   templateUrl: './view-applicants.component.html',
-  styleUrl: './view-applicants.component.css'
+  styleUrl: './view-applicants.component.css',
 })
 export class viewApplicantsComponent {
-
-  constructor(private fb:FormBuilder,private ps:EnquiryService,private cs:CibilscoreService,private router: Router){console.log(this.router.config);}
+  constructor(
+    private fb: FormBuilder,
+    private ps: EnquiryService,
+    private cs: CibilscoreService,
+    private router: Router
+  ) {
+    console.log(this.router.config);
+  }
 
   applicants: any[] = [];
   showApplicantsTable: boolean = true;
 
   ngOnInit(): void {
-    this.getApplicant(); 
+    this.getApplicant();
   }
-  
+
   getApplicant(): void {
     this.ps.getEnquiry().subscribe((data: any[]) => {
-      this.applicants = data; 
+      this.applicants = data;
     });
   }
 
   customers: ApplicantDetails[] = []; // Assuming you have an array of Applicant objects
   selectedApplicants: ApplicantDetails[] = [];
 
-  
-
   editApplicant(applicant: any) {
-    this.router.navigate(['/user-dashboard/CRM/enquiry'], { state: { applicantData: applicant } });
+    this.router.navigate(['/user-dashboard/CRM/enquiry'], {
+      state: { applicantData: applicant },
+    });
   }
 
   deleteApplicant(applicant: ApplicantDetails): void {
@@ -43,22 +49,26 @@ export class viewApplicantsComponent {
   }
 
   applyForLoan(applicant: any): void {
-    this.router.navigate(['user-dashboard/CRM/addnewloan'], { state: { applicantData: applicant } });
+    this.router.navigate(['user-dashboard/CRM/addnewloan'], {
+      state: { applicantData: applicant },
+    });
   }
 
   loadCibilScores(): void {
-    this.applicants.forEach(applicant => {
+    this.applicants.forEach((applicant) => {
       if (applicant.customerId) {
-        this.cs.getCibilScoreByApplicantId(applicant.customerId)
-          .subscribe((cibilScore: Cibilscore) => {
+        this.cs.getCibilScoreByApplicantId(applicant.customerId).subscribe(
+          (cibilScore: Cibilscore) => {
             applicant.cibilScore = cibilScore;
-          }, error => {
-            console.error(`Error fetching CIBIL score for applicant ${applicant.customerId}:`, error);
-          });
+          },
+          (error) => {
+            console.error(
+              `Error fetching CIBIL score for applicant ${applicant.customerId}:`,
+              error
+            );
+          }
+        );
       }
     });
   }
-  
-
-  
 }

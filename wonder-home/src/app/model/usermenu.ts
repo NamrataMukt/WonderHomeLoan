@@ -5,7 +5,6 @@ export class Usermenu
         {
             Admin:[
                 //0 index
-                
                 {label:'Add New resourse' ,link:'add_employee'},
                 {label:'View Resources' , link:'view_employee'}   
             ],
@@ -17,21 +16,19 @@ export class Usermenu
                 {label:'View Apply Loan Applicant',link:'viewloanapplied'}
             ],
 
-            CreditManager:[
-                {label:'Dashboard',link:'c-dash'}
-            ],
-            accounthead:[
-                {label:'Ledger',link:'ledger'},
-                {label:'Loan Disbursement',link:'loandisbursement'},
-                {label:'Defaulter List',link:'defaulter'},
-            ],
-            opm:[
-                {label:'Dashboard',link:'dashboard'},
-                {label:'applicants' , link:'applicants'},
-                {label:'approved-customer' , link:'approved-customer'},
-                {label:'verification required' ,link:'verification-required'}
-            ]
-
-        }
-    ]
+      accounthead: [
+        { label: 'Add Ledger', link: 'ledger' },
+        { label: 'view ledger', link: 'viewledger' },
+        { label: 'Add Loan Disbursement', link: 'loandisbursement' },
+        { label: 'Defaulter List', link: 'defaulter' },
+        { label: 'view loan disbursement', link: 'viewLoanDisbursement' },
+      ],
+      opm: [
+        { label: 'Dashboard', link: 'dashboard' },
+        { label: 'applicants', link: 'applicants' },
+        { label: 'approved-customer', link: 'approved-customer' },
+        { label: 'verification required', link: 'verification-required' },
+      ],
+    },
+  ];
 }

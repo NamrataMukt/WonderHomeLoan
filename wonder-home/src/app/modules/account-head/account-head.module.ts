@@ -6,19 +6,22 @@ import { LedgerManagementComponent } from './ledger-management/ledger-management
 import { LoanDisbursementComponent } from './loan-disbursement/loan-disbursement.component';
 import { DefaulterstableComponent } from './defaulterstable/defaulterstable.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { ViewLoanDisbursementComponent } from './view-loan-disbursement/view-loan-disbursement.component';
+import { ViewLedgerComponent } from './view-ledger/view-ledger.component';
 
 @NgModule({
   declarations: [
     LedgerManagementComponent,
     LoanDisbursementComponent,
-    DefaulterstableComponent
+    DefaulterstableComponent,
+    ViewLoanDisbursementComponent,
+    ViewLedgerComponent,
   ],
   imports: [
     CommonModule,
     AccountHeadRoutingModule,
     FormsModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+  ],
 })
-export class AccountHeadModule { }
+export class AccountHeadModule {}

@@ -1,1 +1,87 @@
 <p>ledger-management works!</p>
+<div class="ledger">
+  <form [formGroup]="ledgerForm" (ngSubmit)="onSubmit()">
+    <table class="table table-striped mt-5">
+      <thead>
+        <h1>ledger Form</h1>
+      </thead>
+      <tbody>
+        <tr>
+          <td><Label>Enter Ledger Created Date</Label></td>
+          <td><input type="number" formControlName="ledgerCreatedDate" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter otal Loan Amount</Label></td>
+          <td><input type="number" formControlName="totalLoanAmount" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter payable Amount With Interest </Label></td>
+          <td>
+            <input type="number" formControlName="payableAmountWithInterest" />
+          </td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter tenure </Label></td>
+          <td><input type="number" formControlName="tenure" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter monthlyEmi </Label></td>
+          <td><input type="number" formControlName="monthlyEmi" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter amountPaidTillDate</Label></td>
+          <td><input type="number" formControlName="amountPaidTillDate" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter remainingAmount</Label></td>
+          <td><input type="number" formControlName="remainingAmount" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter nextEmiDateStart </Label></td>
+          <td><input type="text" formControlName="nextEmiDateStart" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter nextEmiDateEnd </Label></td>
+          <td><input type="text" formControlName="nextEmiDateEnd" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter defaulterCount </Label></td>
+          <td><input type="number" formControlName="defaulterCount" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter previousEmiStatus </Label></td>
+          <td><input type="text" formControlName="previousEmiStatus" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter currentMonthEmiStatus </Label></td>
+          <td><input type="text" formControlName="currentMonthEmiStatus" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter loanEndDate </Label></td>
+          <td><input type="text" formControlName="loanEndDate" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter loanStatus </Label></td>
+          <td><input type="text" formControlName="loanStatus" /></td>
+        </tr>
+
+        <tr>
+          <button type="submit" class="btn btn-success">Save</button>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>

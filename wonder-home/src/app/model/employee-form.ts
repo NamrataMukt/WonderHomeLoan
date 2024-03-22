@@ -1,13 +1,10 @@
 export class EmployeeForm {
-
-    empId:number;
-    empName:Text;
-	 empUserName:Text;
-	 empUserPassword:Text;
-	 email:Text;
-	 mobileNumber:number;
-	designation:Text;
-    userType:Text;
+  empId: number;
+  empName: string;
+  empUserName: string;
+  empUserPassword: string;
+  email: string;
+  mobileNumber: number;
+  designation: string;
+  userType: string;
 }
-
-

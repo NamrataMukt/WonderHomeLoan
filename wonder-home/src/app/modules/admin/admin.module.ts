@@ -7,16 +7,8 @@ import { ViewEmployeeComponent } from './view-employee/view-employee.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 
-
 @NgModule({
-  declarations: [
-    AddEmployeeComponent,
-    ViewEmployeeComponent
-  ],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    ReactiveFormsModule
-  ]
+  declarations: [AddEmployeeComponent, ViewEmployeeComponent],
+  imports: [CommonModule, AdminRoutingModule, ReactiveFormsModule],
 })
-export class AdminModule { }
+export class AdminModule {}

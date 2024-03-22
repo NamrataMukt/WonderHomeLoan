@@ -1,0 +1,56 @@
+<p>view-ledger works!</p>
+<div>
+  <h1 class="text-center mb-3 text-white bg-primary">
+    <i class="fa fa-table" aria-hidden="true"></i>ledger Details
+  </h1>
+</div>
+<table class="table table-hover table-bordered table-striped table-hover mt-2">
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Loan-disbursement Id</th>
+      <th>loan-disbursement Number</th>
+      <th>Aggrement Date</th>
+      <th>Amount Pay Type</th>
+      <th>Total Amount</th>
+      <th>Bank Name</th>
+      <th>Account Number</th>
+      <th>IFSC Code</th>
+      <th>Account Type</th>
+      <th>Transfer Amount</th>
+      <th>Payment Status</th>
+      <th>amountPaidDate</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let l of ledger; index as i">
+      <td>{{ i }}</td>
+      <td>{{ l.ledgerCreatedDate }}</td>
+      <td>{{ l.totalLoanAmount }}</td>
+      <td>{{ l.payableAmountWithInterest }}</td>
+      <td>{{ l.tenure }}</td>
+      <td>{{ l.monthlyEmi }}</td>
+      <td>{{ l.amountPaidTillDate }}</td>
+      <td>{{ l.remainingAmount }}</td>
+      <td>{{ l.nextEmiDateStart }}</td>
+      <td>{{ l.nextEmiDateEnd }}</td>
+      <td>{{ l.defaulterCount }}</td>
+      <td>{{ l.previousEmiStatus }}</td>
+      <td>{{ l.currentMonthEmiStatus }}</td>
+      <td>{{ l.loanEndDate }}</td>
+      <td>{{ l.loanStatus }}</td>
+      <td>
+        <button class="btn btn-primary">
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+        </button>
+      </td>
+      <td>
+        <button class="btn btn-primary">
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
