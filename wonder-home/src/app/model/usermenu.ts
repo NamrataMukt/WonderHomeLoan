@@ -18,7 +18,11 @@ export class Usermenu
             ],
 
             CreditManager:[
-                {label:'Dashboard',link:'c-dash'}
+
+                {label:'Verified-Applications',link:'verifiedapplications'},
+                {label:'Approved-Applications',link:'approvedapplications'},
+                {label:'Credit-Procedure',link:'creditprocedure'},
+                
             ],
             accounthead:[
                 {label:'Ledger',link:'ledger'},
@@ -27,8 +31,8 @@ export class Usermenu
             ],
             opm:[
                 {label:'Dashboard',link:'dashboard'},
-                {label:'applicants' , link:'applicants'},
-                {label:'approved-customer' , link:'approved-customer'},
+                {label:'Loan-Enquiries' , link:'applicants'},
+                {label:'Loan-Applications' , link:'approved-customer'},
                 {label:'verification required' ,link:'verification-required'}
             ]
 

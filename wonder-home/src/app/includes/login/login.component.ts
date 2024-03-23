@@ -39,7 +39,7 @@ export class LoginComponent  implements OnInit
    
     
     
-    if (un === 'admin' && pass === 'admin123') 
+    if (un === 'admin' && pass === 'admin111') 
     {
       this.router.navigateByUrl('user-dashboard/Admin');
       sessionStorage.setItem('userType', 'Admin');
@@ -50,18 +50,18 @@ export class LoginComponent  implements OnInit
         sessionStorage.setItem('userType','CRM')
     }
 
-    else if(un==='cm' && pass=== 'cm11')
+    else if(un==='cm' && pass=== 'cm111')
     {
-      this.router.navigateByUrl('user-dashboard/cm')
+      this.router.navigateByUrl('user-dashboard/CreditManager')
       sessionStorage.setItem('userType','CreditManager')
     }
-    else if(un ==='ah'&& pass ==='ah123')
+    else if(un ==='ah'&& pass ==='ah111')
     {
         this.router.navigateByUrl('user-dashboard/accounthead')
         sessionStorage.setItem('userType','accounthead')
 
     }
-    else if(un==='opm' && pass==='opm123')
+    else if(un==='opm' && pass==='opm111')
     {
       alert('User is an opm..!')
       sessionStorage.setItem('userType','opm')

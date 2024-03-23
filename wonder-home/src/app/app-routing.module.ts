@@ -39,7 +39,7 @@ const routes: Routes = [
       },
       {
 
-        path:'cm',loadChildren:()=>import('./modules/creditmanager/creditmanager.module').then
+        path:'CreditManager',loadChildren:()=>import('./modules/creditmanager/creditmanager.module').then
         (file=>file.CreditmanagerModule)
       },
       {
