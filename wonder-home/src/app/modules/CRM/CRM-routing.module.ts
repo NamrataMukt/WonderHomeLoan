@@ -4,6 +4,7 @@ import { AddnewloanComponent } from './addnewloan/addnewloan.component';
 import { EnquiryComponent } from './enquiry/enquiry.component';
 import { LoanApplicantsComponent } from '../operational-manager/loan-applicants/loan-applicants.component';
 import { viewApplicantsComponent } from './view-applicants/view-applicants.component';
+import { ViewApplyLoanApplicantComponent } from './view-apply-loan-applicant/view-apply-loan-applicant.component';
 
 const routes: Routes = [
   
@@ -16,7 +17,9 @@ const routes: Routes = [
   {
     path: 'addnewloan', component: AddnewloanComponent
   },
-  
+  {
+    path:'viewloanapplied',component:ViewApplyLoanApplicantComponent
+  }  
 ];
 
 @NgModule({

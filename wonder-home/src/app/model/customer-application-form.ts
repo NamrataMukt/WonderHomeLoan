@@ -7,18 +7,19 @@ import { DependantDetails } from "./dependant-details";
 import { EmploymentDetails } from "./employment-details";
 import { GuarantorDetails } from "./guarantor-details";
 import { Mortage } from "./mortage";
+import { PreviousLoanDetails } from "./previous-loan-details";
 
 export class CustomerApplicationForm 
 {
    applicationNumber:number;
 	
-    cutomerDetails: CustomerBasicDetails;
+    cutomerDetails:CustomerBasicDetails;
 	
-      applicantDependant:DependantDetails;
+     applicantDependant:DependantDetails;
 	
     customerAddress: CustomerAddress;
 	employmentDetails: EmploymentDetails;
-	
+	previousloandata:PreviousLoanDetails;
 	mortage: Mortage; 
 	
 	 guarantorDetails: GuarantorDetails;

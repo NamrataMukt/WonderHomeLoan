@@ -8,8 +8,17 @@ import { CustomerApplicationForm } from '../model/customer-application-form';
 export class MultistepService {
 
   constructor(private http:HttpClient) { }
-  saveApplicant(appform:FormData)
+  saveloanApplicant(appform:FormData)
   {
    return this.http.post('http://localhost:9090/saveApplicant',appform) 
+  }
+  getloanApplicant()
+  {
+    return this.http.get('http://localhost:9090/getApplicant')
+  }
+
+  getbasicData()
+  {
+      return this.http.get('http://localhost:9090/getcustomerAllBasicDetails')
   }
 }

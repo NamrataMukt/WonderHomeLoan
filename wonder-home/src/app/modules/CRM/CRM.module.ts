@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EnquiryComponent } from './enquiry/enquiry.component';
 import { CRMRoutingModule } from './CRM-routing.module';
 import { viewApplicantsComponent } from './view-applicants/view-applicants.component';
+import { ViewApplyLoanApplicantComponent } from './view-apply-loan-applicant/view-apply-loan-applicant.component';
 
 
 
@@ -13,7 +14,8 @@ import { viewApplicantsComponent } from './view-applicants/view-applicants.compo
   declarations: [
     AddnewloanComponent,
     EnquiryComponent,
-    viewApplicantsComponent
+    viewApplicantsComponent,
+    ViewApplyLoanApplicantComponent
   ],
   imports: [
     CommonModule,

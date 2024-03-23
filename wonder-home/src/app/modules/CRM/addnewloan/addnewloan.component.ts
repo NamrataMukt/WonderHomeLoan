@@ -169,6 +169,7 @@ export class AddnewloanComponent implements OnInit
       if (params && params['applicantData']) {
         const applicantData = JSON.parse(params['applicantData']);
         this.populateForm(applicantData);
+        console.log("MultiStep"+applicantData)
       }
     });
   }
@@ -180,51 +181,8 @@ export class AddnewloanComponent implements OnInit
     this.step--;
   }
   onSubmit() {
-    
-
-    /*let applicantJson:string =JSON.stringify(this.applicantDetails.value)
-    console.log(applicantJson)
-    let addressJson:string=JSON.stringify(this.addressDetails.value)
-      console.log(addressJson)
-    let bankJson:string=JSON.stringify(this.BankDetails.value)
-      console.log(bankJson)
-    let employmentJson:string=JSON.stringify(this.employmentDetails.value)
-      console.log(employmentJson)
-    let preloanJson:string=JSON.stringify(this.PreviousLoanDetails.value) 
-      console.log(preloanJson)
-    let dependantJson:string=JSON.stringify(this.dependantDetails.value)  
-    console.log(dependantJson)
-    let guarantorJson:string=JSON.stringify(this.guarantorDetails.value)
-     console.log(guarantorJson)
-    let mortageJson:string=JSON.stringify(this.MortageDetails.value) 
-    console.log(mortageJson)
-    let builderJson:string=JSON.stringify(this.BuilderDetails.value)
-    console.log(builderJson)*/
-
-   /* const formData:FormData=new FormData();
-        formData.append('applicant',applicantJson)
-        formData.append('address',addressJson)
-        formData.append('bank',bankJson)
-        formData.append('employmentdetails',employmentJson)
-        formData.append('salaryslip',this.salaryslip)
-        formData.append('preloan',preloanJson)
-        formData.append('dependant',dependantJson)
-        formData.append('gurantor',guarantorJson)
-        formData.append('adhaar',this.Gaadhar)
-        formData.append('mortage',mortageJson)
-        formData.append('propertyProof',this.propertyproof)
-        formData.append('builder',builderJson)
-        formData.append('panCard',this.panCard)
-        formData.append('aadharCard',this.aadharCard)
-        formData.append('addressProof',this.addressProof)
-        formData.append('cheque',this.cheque)
-        formData.append('photo',this.photo)
-        formData.append('sign',this.sign)
-        formData.append('tax',this.tax)
-        formData.append('statment',this.statment) */
-
-        let applicantJson:string =JSON.stringify(this.CustomerApplicationForm.value)
-    console.log(applicantJson)
+    let applicantJson:string =JSON.stringify(this.CustomerApplicationForm.value)
+    console.log(this.CustomerApplicationForm.value)
     const formData:FormData=new FormData();
         formData.append('applicantdata',applicantJson)
         formData.append('salarySlip',this.salaryslip)
@@ -241,7 +199,7 @@ export class AddnewloanComponent implements OnInit
         formData.append('sign',this.sign)
         formData.append('tax',this.tax)
         formData.append('statment',this.statment)
-     this.multistep.saveApplicant(formData).subscribe();
+     this.multistep.saveloanApplicant(formData).subscribe();
 
   }
 
@@ -305,11 +263,12 @@ export class AddnewloanComponent implements OnInit
         customerId: applicantData.customerId,
         customerName: applicantData.customerName,
         customerAge: applicantData.age
-        
+       
         // Populate other form fields similarly
       },
       // Populate other form groups and controls
+      
     });
-  }
+      }
 
 }
