@@ -5,18 +5,19 @@ import { ViewEmployeeComponent } from './view-employee/view-employee.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 
 const routes: Routes = [
-
   {
-    path:'add_employee',component:AddEmployeeComponent
+    path: 'add_employee',
+    component: AddEmployeeComponent,
   },
   {
-    path:'view_employee',component:ViewEmployeeComponent
-  }
- 
+    path: 'view_employee',
+    component: ViewEmployeeComponent,
+  },
+  { path: 'edit/:data', component: AddEmployeeComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AdminRoutingModule { }
+export class AdminRoutingModule {}

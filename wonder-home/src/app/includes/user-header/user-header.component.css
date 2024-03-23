@@ -1,33 +1,33 @@
-.header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 50px;
-    background-color: #fff;
-    text-align: center;
-    background-image: url("/assets/img/green.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #fff;
+  text-align: center;
+  background-image: url("/assets/img/green.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-h4{
-    color: wheat;
-}
-.card{
-    position: fixed;
-    top:0;
-    left:0;
-}
-.pp{
-    position: fixed;
-    top:0;
-    right:0;
-}
-.hh{
-    position: relative;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%,0);
-    text-align: center;
 
+h4 {
+  color: wheat;
+}
+.card {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.pp {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+.hh {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%, 0);
+  text-align: center;
 }
