@@ -42,8 +42,10 @@ export class viewApplicantsComponent {
     console.log('Delete applicant:', applicant);
   }
 
-  applyForLoan(applicant: any): void {
-    this.router.navigate(['user-dashboard/CRM/addnewloan'], { state: { applicantData: applicant } });
+  applyForLoan(applicant: any){
+    //console.log('Applicant Data:', applicant);
+    this.router.navigate(['/user-dashboard/CRM/addnewloan'], { state: { applicantData: applicant } });
+    
   }
 
   loadCibilScores(): void {
