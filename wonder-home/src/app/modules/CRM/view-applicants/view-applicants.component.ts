@@ -37,10 +37,16 @@ export class viewApplicantsComponent {
     this.router.navigate(['/user-dashboard/CRM/enquiry'], { state: { applicantData: applicant } });
   }
 
-  deleteApplicant(applicant: ApplicantDetails): void {
-    // Implement delete logic here
-    console.log('Delete applicant:', applicant);
+  deleteApplicant(customerId: number): void {
+    if (confirm('Are you sure you want to delete this applicant?')) {
+      this.ps.deleteEnquiry(customerId).subscribe()
+          alert('Applicant deleted successfully.');
+          this.getApplicant();
+      
+    }
   }
+
+  
 
   applyForLoan(applicant: any){
     //console.log('Applicant Data:', applicant);

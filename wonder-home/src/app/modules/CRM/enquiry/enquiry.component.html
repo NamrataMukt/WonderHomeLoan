@@ -35,9 +35,9 @@
                     <td><input type="text" id="pincode" formControlName="pincode"></td>
                 </tr>
                 <tr>
-                    <td><label for="date">Enter  date</label></td>
-                    <td><input type="text" id="pincode" formControlName="date"></td>
-                </tr>
+                <td><label for="date">Enter Date (Format: YYYY-MM-DD)</label></td>
+                <td><input type="text" id="date" formControlName="date" placeholder="YYYY-MM-DD"></td>
+            </tr>
                 <tr>
                     <td><label for="enquiry">Enquiry</label></td>
                     <td><input type="text" id="enquiry" formControlName="enquiry"></td>
@@ -45,8 +45,6 @@
             </tbody>
         </table>
         <button type="submit">Submit</button>
-    </form>
-    <!-- <div *ngIf="enquiryForm.controls['applicantId'].value !== 0"> -->
         <button type="button" class="btn btn-primary btn-lg mb-2 w-100" (click)="onUpdate()">Update</button>
-    <!-- </div> -->
+    </form>
 </div>

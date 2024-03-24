@@ -42,10 +42,14 @@ export class EnquiryComponent {
         });
     }
 
+    isUpdateMode: boolean = false;
+
     submitEnquiry() {
+      
         
             this.enquiryService.submitEnquiry(this.enquiryForm.value).subscribe()
-            console.log(this.enquiryForm.value)  
+            alert("Enquiry submitted successfully.")
+            this.enquiryForm.reset();
     
     }
     populateForm(data: any) {

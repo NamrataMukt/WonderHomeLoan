@@ -22,6 +22,10 @@ export class EnquiryService {
   updateEnquiry(applicantId,updateenquiry:ApplicantDetails){
     return this.http.put("http://localhost:9090/updateEnquiry/"+applicantId,updateenquiry)
   }
+
+  deleteEnquiry(customerId: number){
+    return this.http.delete("http://localhost:9090/Customers/"+customerId)
+  }
   
 
   
