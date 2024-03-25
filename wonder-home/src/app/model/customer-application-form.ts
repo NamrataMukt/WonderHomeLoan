@@ -11,7 +11,7 @@ import { PreviousLoanDetails } from "./previous-loan-details";
 
 export class CustomerApplicationForm 
 {
-   applicationNumber:number;
+   applicationNumber:string;
 	
     cutomerDetails:CustomerBasicDetails;
 	

@@ -21,4 +21,9 @@ export class MultistepService {
   {
       return this.http.get('http://localhost:9090/getcustomerAllBasicDetails')
   }
+
+  deleteApplicant(applicantno:string)
+  {
+    return this.http.delete('http://localhost:9090/deleteApplicant/'+applicantno)
+  }
 }

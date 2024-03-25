@@ -169,7 +169,7 @@ export class AddnewloanComponent implements OnInit
       if (params && params['applicantData']) {
         const applicantData = JSON.parse(params['applicantData']);
         this.populateForm(applicantData);
-        console.log("MultiStep"+applicantData)
+        
       }
     });
   }
