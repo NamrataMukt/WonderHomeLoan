@@ -1,1 +1,70 @@
 <p>approved-customer works!</p>
+
+<!-- <div class="table-responsive">
+    <table class="table table-striped mt-5">
+        <thead class="table-header">
+            <tr>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>Pancard Number</th>
+                <th>City</th>
+                <th>Pincode</th>
+                <th>Date</th>
+                <th>Enquiry</th>
+                <th>Cibil Score</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let applicant of applicants">
+                <td>{{ applicant.customerId }}</td>
+                <td>{{ applicant.customerName }}</td>
+                <td>{{ applicant.age }}</td>
+                <td>{{ applicant.customerEmailId }}</td>
+                <td>{{ applicant.mobileNumber }}</td>
+                <td>{{ applicant.pancardNumber }}</td>
+                <td>{{ applicant.city }}</td>
+                <td>{{ applicant.pincode }}</td>
+                <td>{{ applicant.date }}</td>
+                <td>{{applicant.Status}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+
+<div class="table-responsive">
+    <table class="table table-striped mt-5 mx-auto table-responsive-sm" style="width: 100%;">
+        <thead class="table-header">
+            <tr>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>Pancard Number</th>
+                <th>City</th>
+                <th>Pincode</th>
+                <th>Date</th>
+                <th>Enquiry</th>
+                <th>Cibil Score</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let applicant of applicants">
+                <tr *ngIf="applicant.status === 'Approved'">
+                <td>{{ applicant.customerId }}</td>
+                <td>{{ applicant.customerName }}</td>
+                <td>{{ applicant.age }}</td>
+                <td>{{ applicant.customerEmailId }}</td>
+                <td>{{ applicant.customerMobileNumber }}</td>
+                <td>{{ applicant.pancardNumber }}</td>
+                <td>{{ applicant.city }}</td>
+                <td>{{ applicant.pincode }}</td>
+                <td>{{ applicant.date }}</td>
+                <td>{{applicant.status}}</td>
+            </tr>
+        </ng-container>
+        </tbody>
+    </table>
+</div>
+
