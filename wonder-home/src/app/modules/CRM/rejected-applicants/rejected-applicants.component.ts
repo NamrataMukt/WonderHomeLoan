@@ -3,15 +3,15 @@ import { MultistepService } from '../../../services/multistep.service';
 import { CustomerApplicationForm } from '../../../model/customer-application-form';
 
 @Component({
-  selector: 'app-view-apply-loan-applicant',
-  templateUrl: './view-apply-loan-applicant.component.html',
-  styleUrl: './view-apply-loan-applicant.component.css'
+  selector: 'app-rejected-applicants',
+  templateUrl: './rejected-applicants.component.html',
+  styleUrl: './rejected-applicants.component.css'
 })
-export class ViewApplyLoanApplicantComponent implements OnInit 
+export class RejectedApplicantsComponent implements OnInit 
 {
   step = 1;
   public showModal : boolean = false;
-  constructor(private ms:MultistepService){}
+  constructor(private ms:MultistepService ){}
 
     customerform:CustomerApplicationForm[];
     s:CustomerApplicationForm=new CustomerApplicationForm();
@@ -44,5 +44,6 @@ export class ViewApplyLoanApplicantComponent implements OnInit
   previous(){
     this.step--
   }
-
+  email()  {}
 }
+

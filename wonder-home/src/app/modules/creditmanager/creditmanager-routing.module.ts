@@ -4,8 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { VerifiedapplicationsComponent } from './verifiedapplications/verifiedapplications.component';
 
 import { CreditprocedureComponent } from './creditprocedure/creditprocedure.component';
-import { ApprovedCustomerComponent } from '../operational-manager/approved-customer/approved-customer.component';
-import { ApprovedapplicationsComponent } from './approvedapplications/approvedapplications.component';
+
+import { SacnctionapplicationComponent } from './sacnctionapplication/sacnctionapplication.component';
+import { ViewSanctionapplicationComponent } from './view-sanctionapplication/view-sanctionapplication.component';
+
 
 const routes: Routes = [
 
@@ -14,7 +16,11 @@ const routes: Routes = [
 }
 ,
 {
-  path:'approvedapplications',component:ApprovedapplicationsComponent
+  path:'sanctionapplications',component:SacnctionapplicationComponent
+}
+,
+{
+  path:'view-sanction',component:ViewSanctionapplicationComponent
 }
 ,
 {

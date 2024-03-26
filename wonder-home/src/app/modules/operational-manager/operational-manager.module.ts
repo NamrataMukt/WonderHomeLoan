@@ -7,6 +7,7 @@ import { ApprovedCustomerComponent } from './approved-customer/approved-customer
 import { VerificationRequiredComponent } from './verification-required/verification-required.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { VerifiedApplicationsComponent } from './verified-applications/verified-applications.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoanApplicantsComponent,
     ApprovedCustomerComponent,
     VerificationRequiredComponent,
-    DashboardComponent
+    DashboardComponent,
+    VerifiedApplicationsComponent
   ],
   imports: [
     CommonModule,

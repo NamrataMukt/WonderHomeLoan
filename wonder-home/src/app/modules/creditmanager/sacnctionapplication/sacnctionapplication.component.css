@@ -1,0 +1,36 @@
+.ledger {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .ledger form table {
+    width: 100%;
+  }
+  
+  .ledger form table td {
+    padding: 10px;
+  }
+  
+  .ledger form table td label {
+    font-weight: bold;
+  }
+  
+  .ledger form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .ledger form button:hover {
+    background-color: #0056b3;
+  }
+  

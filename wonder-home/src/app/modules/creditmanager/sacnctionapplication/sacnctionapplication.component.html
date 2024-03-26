@@ -1,0 +1,71 @@
+
+<div class="ledger">
+  <form [formGroup]="SanctionForm" (ngSubmit)="onSubmit()">
+    <table class="table table-striped mt-5">
+      <thead>
+        <h1>Sanction Form</h1>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><Label>Enter Sanction Created Date</Label></td>
+          <td><input type="text" formControlName="sanctionDate" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter Applicant Name</Label></td>
+          <td><input type="text" formControlName="applicantName" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter Contact Details </Label></td>
+          <td>
+            <input type="text" formControlName="contactDetails" />
+          </td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter Email id </Label></td>
+          <td><input type="text" formControlName="applicantemailid" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter Token Amount for Home </Label></td>
+          <td><input type="number" formControlName="tokenamountForHome" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter Loan Amount Sanctioned</Label></td>
+          <td><input type="number" formControlName="loanAmountSanctioned" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter Rate of Interest</Label></td>
+          <td><input type="number" formControlName="rateOfInterest" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter Loan Tenure </Label></td>
+          <td><input type="number" formControlName="loanTenure" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter Monthly Emi Amount </Label></td>
+          <td><input type="number" formControlName="monthlyEmiAmount" /></td>
+        </tr>
+
+        <tr>
+          <td><Label>Enter Sanction Status </Label></td>
+          <td><input type="text" formControlName="sanctionstatus" /></td>
+        </tr>
+
+       
+
+        
+        <tr>
+          <button type="submit" class="btn btn-success">Save</button>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>

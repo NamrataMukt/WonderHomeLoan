@@ -1,9 +1,11 @@
+
+<p>Verified Applications</p>
 <br>
 <br>
 <br>
 <div>
   <h1 class="text-center mb-3 text-white bg-primary">
-    <i class="fa fa-table" aria-hidden="true"></i>VeriFication Required For this Customers
+    <i class="fa fa-table" aria-hidden="true"></i>Verified Customers
   </h1>
 </div>
 <div class="container">
@@ -15,7 +17,7 @@
         <th>Mobile Number</th>
         <th>Email Id</th>
         <th>Action</th>
-        <th>Verify Again</th>
+        <th>Approved</th>
 
       </tr>
       </thead>
@@ -27,11 +29,10 @@
        <td>{{c.cutomerDetails.customerEmailId}}</td>
         <td>
             <button class="btn btn-sm btn-info" (click)="showData(c)">
-              <i class="fa fa-search"></i>Details</button> </td>
-              <td><button type="button" class="btn btn-success btn-sm" (click)="forward()">Forward</button></td>
+              <i class="fa fa-search"></i>Details</button></td>
+              <td><button type="button" class="btn btn-success btn-sm" (click)="forward()">Forward</button></td> 
             
-            
-         
+          
         </tr>
     </tbody>
     </table>
@@ -378,5 +379,4 @@
       </div>
     </div>
   </div>
-
 

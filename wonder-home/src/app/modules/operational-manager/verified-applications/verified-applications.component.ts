@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { MultistepService } from '../../../services/multistep.service';
 import { CustomerApplicationForm } from '../../../model/customer-application-form';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-view-apply-loan-applicant',
-  templateUrl: './view-apply-loan-applicant.component.html',
-  styleUrl: './view-apply-loan-applicant.component.css'
+  selector: 'app-verified-applications',
+  templateUrl: './verified-applications.component.html',
+  styleUrl: './verified-applications.component.css'
 })
-export class ViewApplyLoanApplicantComponent implements OnInit 
+export class VerifiedApplicationsComponent implements OnInit 
 {
   step = 1;
   public showModal : boolean = false;
-  constructor(private ms:MultistepService){}
+  constructor(private ms:MultistepService ,private router: Router){}
 
     customerform:CustomerApplicationForm[];
     s:CustomerApplicationForm=new CustomerApplicationForm();
@@ -44,5 +45,9 @@ export class ViewApplyLoanApplicantComponent implements OnInit
   previous(){
     this.step--
   }
-
+  forward(){
+    this.router.navigate(['/user-dashboard/CreditManager/verifiedapplications']);
+  }
+  
 }
+

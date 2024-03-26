@@ -1,1 +1,432 @@
-<p>approved-customer works!</p>
+<br>
+<br>
+<br>
+<div>
+  <h1 class="text-center mb-3 text-white bg-primary">
+    <i class="fa fa-table" aria-hidden="true"></i>All Loan Applications
+  </h1>
+</div>
+<div class="container">
+    <table class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Applicant Name</th>
+        <th>Mobile Number</th>
+        <th>Email Id</th>
+        <th>Action</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let c of customerform" >
+       <td>{{c.cutomerDetails.customerId}}</td>
+       <td>{{c.cutomerDetails.customerName}}</td>
+       <td>{{c.cutomerDetails.customerMobileNumber}}</td>
+       <td>{{c.cutomerDetails.customerEmailId}}</td>
+        <td>
+            <button class="btn btn-sm btn-info" (click)="showData(c)">
+              <i class="fa fa-search"></i>Details</button>
+            
+          </td>
+        </tr>
+    </tbody>
+    </table>
+    </div>
+            
+
+      
+     
+
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal" [ngClass]="{'show':showModal}">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Applicant</h4>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body" *ngIf="showModal">
+          <div *ngIf="step == 1">
+          <h5>Applicant Details</h5>
+            <table class="mod">
+           <tbody>
+          <tr>
+            <td>Customer Name </td>&nbsp;&nbsp;<td> {{s.cutomerDetails.customerName}}</td>
+            </tr>
+            <tr>
+            <td>Customer MobileNumber</td>&nbsp;&nbsp;<td>{{s.cutomerDetails.customerMobileNumber}}</td>
+          </tr>
+          <tr>
+            <td>Customer EmailId</td>&nbsp;&nbsp;<td>{{s.cutomerDetails.customerEmailId}}</td>
+          </tr>
+          <tr>
+            <td>Gender</td>&nbsp;&nbsp;<td>{{s.cutomerDetails.gender}}</td>
+          </tr>
+          <tr>
+            <td>DOB</td>&nbsp;&nbsp;<td>{{s.cutomerDetails.customerDOB}}</td>
+          </tr>
+          <tr>
+            <td>Age</td>&nbsp;&nbsp;<td>{{s.cutomerDetails.age}}</td>
+          </tr>
+          <tr>
+            <td>Aadhar Card</td>&nbsp;&nbsp;<td>{{s.cutomerDetails.adharNumber}}</td>
+          </tr>
+          <tr>
+            <td>Pan Card Number</td>&nbsp;&nbsp;<td>{{s.cutomerDetails.pancardNumber}}</td>
+          </tr>
+          <tr>
+            <td>Cibil Score</td>&nbsp;&nbsp;<td>{{s.cutomerDetails.cibilScore}}</td>
+          </tr>
+          <tr>
+            <td>Status</td>&nbsp;&nbsp;<td>{{s.cutomerDetails.cibilScoreStatus}}</td>
+          </tr>
+      <tr>
+        <td>House No</td>&nbsp;&nbsp;<td> {{s.customerAddress.permenantAddress.houseNo}}</td>
+        </tr>
+        <tr>
+        <td>Area</td>&nbsp;&nbsp;<td>{{s.customerAddress.permenantAddress.areaName}}</td>
+      </tr>
+      <tr>
+        <td>Street</td>&nbsp;&nbsp;<td>{{s.customerAddress.permenantAddress.streetName}}</td>
+      </tr>
+      <tr>
+        <td>City </td>&nbsp;&nbsp;<td>{{s.customerAddress.permenantAddress.cityName}}</td>
+      </tr>
+      <tr>
+        <td>District</td>&nbsp;&nbsp;<td>{{s.customerAddress.permenantAddress.district}}</td>
+      </tr>
+      <tr>
+        <td>State</td>&nbsp;&nbsp;<td>{{s.customerAddress.permenantAddress.state}}</td>
+      </tr>
+      <tr>
+        <td>Pin Code</td>&nbsp;&nbsp;<td>{{s.customerAddress.permenantAddress.pincode}}</td>
+      </tr>
+      <h5>Bank Details</h5>
+        <tr>
+          <td>Bank Account No</td>&nbsp;&nbsp;<td> {{s.customerAddress.permenantAddress.houseNo}}</td>
+          </tr>
+          <tr>
+          <td>Bank Name</td>&nbsp;&nbsp;<td>{{s.customerAddress.permenantAddress.areaName}}</td>
+        </tr>
+        <tr>
+          <td>Bank IFSC Code</td>&nbsp;&nbsp;<td>{{s.customerAddress.permenantAddress.streetName}}</td>
+        </tr>
+        <tr>
+          <td>Bank Address</td>&nbsp;&nbsp;<td>{{s.customerAddress.permenantAddress.cityName}}</td>
+        </tr>
+        <tr>
+          <td>Bank ContactNo</td>&nbsp;&nbsp;<td>{{s.customerAddress.permenantAddress.district}}</td>
+        </tr>
+        
+
+    </tbody>
+  </table>
+</div>
+<div *ngIf="step == 2">
+  <h5>Employement Details</h5>
+  <table class="mod">
+ <tbody>
+<tr>
+        <td>Company Name</td>&nbsp;&nbsp;<td> {{s.employmentDetails.companyName}}</td>
+        </tr>
+        <tr>
+        <td>Salary</td>&nbsp;&nbsp;<td>{{s.employmentDetails.salary}}</td>
+      </tr>
+      <tr>
+        <td>Designation</td>&nbsp;&nbsp;<td>{{s.employmentDetails.profDesignation}}</td>
+      </tr>
+      <tr>
+        <td>Working Period </td>&nbsp;&nbsp;<td>{{s.employmentDetails.profDesignation}}</td>
+      </tr>
+      <tr>
+        <td>Salary Slip</td>&nbsp;&nbsp;<td>
+          <img [src]="'data:image/jpeg;base64,'+ s.employmentDetails.salarySlip"
+                    height="150px" width="150px"><br>
+                    <input type="radio" id="option1" name="Verify" value="option1">
+                    <label for="option1">Verified</label><br>
+                    <input type="radio" id="option2" name="option" value="option2">
+                    <label for="option2">Reject</label><br></td>
+    
+      </tr>
+      <h5>Previous Loan Details</h5>
+      <tr>
+        <td>Previous Loan Amount</td>&nbsp;&nbsp;<td>{{s.previousloandata.previousloanAmount}}</td>
+      </tr>
+      <tr>
+        <td>Paid Amount</td>&nbsp;&nbsp;<td>{{s.previousloandata.paidAmount}}</td>
+      </tr>
+      
+        <tr>
+          <td>Remaining Amount</td>&nbsp;&nbsp;<td>{{s.previousloandata.remainingAmount}}</td>
+          </tr>
+          <tr>
+          <td>Tenure</td>&nbsp;&nbsp;<td>{{s.previousloandata.tenure}}</td>
+        </tr>
+        <tr>
+          <td>Bank Name</td>&nbsp;&nbsp;<td>{{s.previousloandata.bankName}}</td>
+        </tr>
+        <tr>
+          <td>Bank IFSC</td>&nbsp;&nbsp;<td>{{s.previousloandata.ifscCode}}</td>
+        </tr>
+        <tr>
+          <td>Bank Address</td>&nbsp;&nbsp;<td>{{s.previousloandata.bankAddress}}</td>
+        </tr>
+        <h5>Dependent Details</h5>
+        <tr>
+          <td>Father Name</td>&nbsp;&nbsp;<td>{{s.applicantDependant.fatherName}}</td>
+        </tr>
+        <tr>
+          <td>Mother Name</td>&nbsp;&nbsp;<td>{{s.applicantDependant.motherName}}</td>
+        </tr>
+        
+          <tr>
+            <td>Marital Status</td>&nbsp;&nbsp;<td>{{s.applicantDependant.maritalStatus}}</td>
+            </tr>
+            <tr>
+            <td>Spouse Name</td>&nbsp;&nbsp;<td>{{s.applicantDependant.spouseName}}</td>
+          </tr>
+          <tr>
+            <td>No Of Child</td>&nbsp;&nbsp;<td>{{s.applicantDependant.numberOfChild}}</td>
+          </tr>
+          <tr>
+            <td>Dependent Member</td>&nbsp;&nbsp;<td>{{s.applicantDependant.noOfDependentMember}}</td>
+          </tr>
+          <tr>
+            <td>Family Income</td>&nbsp;&nbsp;<td>{{s.applicantDependant.familyIncome}}</td>
+          </tr>        
+      </tbody>
+      </table>
+          </div>
+
+          <div *ngIf="step == 3">
+            <h5>Guarantor Details</h5>
+            <table class="mod">
+           <tbody>
+          <tr>
+                  <td>Guarantor Name</td>&nbsp;&nbsp;<td> {{s.guarantorDetails.guarantorName}}</td>
+                  </tr>
+                  <tr>
+                  <td>DOB</td>&nbsp;&nbsp;<td>{{s.guarantorDetails.guarantorDOB}}</td>
+                </tr>
+                <tr>
+                  <td>Relation with Applicant</td>&nbsp;&nbsp;<td>{{s.guarantorDetails.guarantorRelationshipWithApplicant}}</td>
+                </tr>
+                <tr>
+                  <td>Mobile Number</td>&nbsp;&nbsp;<td>{{s.guarantorDetails.guarantorMobileNumber}}</td>
+                </tr>
+                <tr>
+                  <td>Aadhar Card Upload</td>&nbsp;&nbsp;<td>
+                    <img [src]="'data:image/jpeg;base64,'+ s.guarantorDetails.gadhaar"
+                              height="150px" width="150px">
+                              <br>
+                              <input type="radio" id="option1" name="Verify" value="option1">
+                              <label for="option1">Verified</label><br>
+                              <input type="radio" id="option2" name="option" value="option2">
+                              <label for="option2">Reject</label><br></td>
+              
+                </tr>
+                <tr>
+                  <td>Aadhar Card</td>&nbsp;&nbsp;<td>{{s.guarantorDetails.aadhaarcardNumber}}</td>
+                </tr>
+                <tr>
+                  <td>Job Details</td>&nbsp;&nbsp;<td>{{s.guarantorDetails.guarantorJobDetails}}</td>
+                </tr>
+                <tr>
+                  <td>City</td>&nbsp;&nbsp;<td>{{s.guarantorDetails.guarantorCityName}}</td>
+                </tr>
+                <tr>
+                  <td>Area</td>&nbsp;&nbsp;<td>{{s.guarantorDetails.guarantorAreaName}}</td>
+                </tr>
+                <h5>Mortage Details</h5>
+        <tr>
+          <td>Property Value</td>&nbsp;&nbsp;<td>{{s.mortage.propertyValue}}</td>
+        </tr>
+        <tr>
+          <td>Rera Number</td>&nbsp;&nbsp;<td>{{s.mortage.reraNumber}}</td>
+        </tr>
+        
+          <tr>
+            <td>Property Type</td>&nbsp;&nbsp;<td>{{s.mortage.propertyType}}</td>
+            </tr>
+            <tr>
+              <td>Property Proof</td>&nbsp;&nbsp;<td>
+                <img [src]="'data:image/jpeg;base64,'+ s.mortage.propertyProof"
+                          height="150px" width="150px">
+                          <br>
+                          <input type="radio" id="option1" name="Verify" value="option1">
+                          <label for="option1">Verified</label><br>
+                          <input type="radio" id="option2" name="option" value="option2">
+                          <label for="option2">Reject</label><br></td>
+          
+            </tr>
+            <h5>Builder Details</h5>
+           <tr>
+            <td>Builder Name</td>&nbsp;&nbsp;<td>{{s.builderdetails.builderName}}</td>
+          </tr>
+          <tr>
+            <td>Aadhar Card</td>&nbsp;&nbsp;<td>{{s.builderdetails.builderAdharcard}}</td>
+          </tr>
+          <tr>
+            <td>Pan Card</td>&nbsp;&nbsp;<td>{{s.builderdetails.builderPancard}}</td>
+          </tr>
+          <tr>
+            <td>Address</td>&nbsp;&nbsp;<td>{{s.builderdetails.builderAddress}}</td>
+          </tr>
+          <tr>
+            <td>Bank Name</td>&nbsp;&nbsp;<td>{{s.builderdetails.bankName}}</td>
+          </tr>
+          <tr>
+            <td>Bank AccNo.</td>&nbsp;&nbsp;<td>{{s.builderdetails.bankAccno}}</td>
+          </tr>
+          
+  <tr>
+    <td>Bank IFSC Code</td>&nbsp;&nbsp;<td>{{s.builderdetails.bankIfscCode}}</td>
+  </tr>
+  <tr>
+    <td>Pan Card</td>&nbsp;&nbsp;<td>
+      <img [src]="'data:image/jpeg;base64,'+ s.builderdetails.bpanCard"
+                height="150px" width="150px"><br>
+                <input type="radio" id="option1" name="Verify" value="option1">
+                <label for="option1">Verified</label><br>
+                <input type="radio" id="option2" name="option" value="option2">
+                <label for="option2">Reject</label><br></td>
+
+  </tr>
+  
+  <tr>
+    <td>Aadhar Card</td>&nbsp;&nbsp;<td>
+      <img [src]="'data:image/jpeg;base64,'+ s.builderdetails.baadharCard"
+                height="150px" width="150px">
+                <br>
+                    <input type="radio" id="option1" name="Verify" value="option1">
+                    <label for="option1">Verified</label><br>
+                    <input type="radio" id="option2" name="option" value="option2">
+                    <label for="option2">Reject</label><br>
+        </td>
+  </tr>
+  
+  
+                </tbody>
+                </table>
+              
+                </div>
+                <div *ngIf="step == 4">
+                  <h5>Documnet Details</h5>
+                  <table class="mod">
+                 <tbody>
+                  <tr>
+                    <td>Aadhar Card</td>&nbsp;&nbsp;<td>
+                      <img [src]="'data:image/jpeg;base64,'+ s.documentUpload.aadharCard"
+                                height="150px" width="150px">
+                                <br>
+                    <input type="radio" id="option1" name="Verify" value="option1">
+                    <label for="option1">Verified</label><br>
+                    <input type="radio" id="option2" name="option" value="option2">
+                    <label for="option2">Reject</label><br>
+                        </td>
+                  </tr>
+                  <tr>
+                    <td>Pan Card</td>&nbsp;&nbsp;<td>
+                      <img [src]="'data:image/jpeg;base64,'+ s.documentUpload.panCard"
+                                height="150px" width="150px">
+                                <br>
+                    <input type="radio" id="option1" name="Verify" value="option1">
+                    <label for="option1">Verified</label><br>
+                    <input type="radio" id="option2" name="option" value="option2">
+                    <label for="option2">Reject</label><br>
+                        </td>
+                  </tr>
+                  <tr>
+                    <td>Address Proof</td>&nbsp;&nbsp;<td>
+                      <img [src]="'data:image/jpeg;base64,'+ s.documentUpload.addressProof"
+                                height="150px" width="150px">
+                                <br>
+                    <input type="radio" id="option1" name="Verify" value="option1">
+                    <label for="option1">Verified</label><br>
+                    <input type="radio" id="option2" name="option" value="option2">
+                    <label for="option2">Reject</label><br>
+                        </td>
+                  </tr>
+
+                  <tr>
+                    <td>Bank Cheque</td>&nbsp;&nbsp;<td>
+                      <img [src]="'data:image/jpeg;base64,'+ s.documentUpload.bankCheque"
+                                height="150px" width="150px">
+                                <br>
+                    <input type="radio" id="option1" name="Verify" value="option1">
+                    <label for="option1">Verified</label><br>
+                    <input type="radio" id="option2" name="option" value="option2">
+                    <label for="option2">Reject</label><br>
+                        </td>
+                  </tr>
+                   
+                  <tr>
+                    <td>Applicant Photo</td>&nbsp;&nbsp;<td>
+                      <img [src]="'data:image/jpeg;base64,'+ s.documentUpload.applicantPhoto"
+                                height="150px" width="150px">
+                                <br>
+                    <input type="radio" id="option1" name="Verify" value="option1">
+                    <label for="option1">Verified</label><br>
+                    <input type="radio" id="option2" name="option" value="option2">
+                    <label for="option2">Reject</label><br>
+                        </td>
+                  </tr>
+
+                  <tr>
+                    <td>Applicant Signature</td>&nbsp;&nbsp;<td>
+                      <img [src]="'data:image/jpeg;base64,'+ s.documentUpload.applicantSignature"
+                                height="150px" width="150px">
+                                <br>
+                    <input type="radio" id="option1" name="Verify" value="option1">
+                    <label for="option1">Verified</label><br>
+                    <input type="radio" id="option2" name="option" value="option2">
+                    <label for="option2">Reject</label><br>
+                        </td>
+                  </tr>
+                  
+                  <tr>
+                    <td>Applicant Income Tax Return</td>&nbsp;&nbsp;<td>
+                      <img [src]="'data:image/jpeg;base64,'+ s.documentUpload.incometaxReturn"
+                                height="150px" width="150px">
+                                <br>
+                    <input type="radio" id="option1" name="Verify" value="option1">
+                    <label for="option1">Verified</label><br>
+                    <input type="radio" id="option2" name="option" value="option2">
+                    <label for="option2">Reject</label><br>
+                        </td>
+                  </tr>
+                  <tr>
+                    <td>Bank Statement</td>&nbsp;&nbsp;<td>
+                      <img [src]="'data:image/jpeg;base64,'+ s.documentUpload.bankStatment"
+                                height="150px" width="150px">
+                                <br>
+                    <input type="radio" id="option1" name="Verify" value="option1">
+                    <label for="option1">Verified</label><br>
+                    <input type="radio" id="option2" name="option" value="option2">
+                    <label for="option2">Reject</label><br>
+                        </td>
+                  </tr>
+                  
+
+                    </tbody>
+                    </table>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button *ngIf="step == 1 || step == 2 || step == 3" type="button" class="btn btn-primary" (click)="next()">Next</button>
+          <button *ngIf="step == 2 || step == 3" type="button" class="btn btn-primary" (click)="previous()">Previous</button>
+         <button *ngIf="step == 4" type="button" class="btn btn-danger" (click)="showModal=false">Close</button>
+         <button *ngIf="step == 4" type="button" class="btn btn-primary" (click)="verify()">Verified</button>
+         <button *ngIf="step == 4" type="button" class="btn btn-primary" (click)="Reject()">Reject</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+

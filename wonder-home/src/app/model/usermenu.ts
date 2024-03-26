@@ -8,10 +8,12 @@ export class Usermenu {
       ],
       CRM: [
         { label: 'Enquiry', link: 'enquiry' },
+        { label: 'View Applicants', link: 'view_applicants' },
         { label: 'New Loan Application', link: 'addnewloan' },
-        { label: 'View_Applicants', link: 'view_applicants' },
-        { label: 'My Profile', link: 'crmprofile' },
         { label: 'View Apply Loan Applicants', link: 'viewloanapplied' },
+        { label: 'Rejected Applicants', link: 'rejectedapplicants' },
+        { label: 'My Profile', link: 'crmprofile' }
+       
       ],
 
       accounthead: [
@@ -23,14 +25,16 @@ export class Usermenu {
       ],
       opm: [
         { label: 'Dashboard', link: 'dashboard' },
-        { label: 'applicants', link: 'applicants' },
-        { label: 'approved-customer', link: 'approved-customer' },
+        { label: 'Enquiry-Applications', link: 'applicants' },
+        { label: 'Loan-Applications', link: 'approved-customer' },
+        { label: 'verified-Applications', link: 'verifiedapplications' },
         { label: 'verification required', link: 'verification-required' },
       ],
       CreditManager:[
 
         {label:'Verified-Applications',link:'verifiedapplications'},
-        {label:'Approved-Applications',link:'approvedapplications'},
+        {label:'Sanction-Applications',link:'sanctionapplications'},
+        {label:'View Sanction List',link:'view-sanction'},
         {label:'Credit-Procedure',link:'creditprocedure'},
         
     ],
