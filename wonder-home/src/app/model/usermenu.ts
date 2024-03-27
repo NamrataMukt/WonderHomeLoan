@@ -26,9 +26,8 @@ export class Usermenu {
       opm: [
         { label: 'Dashboard', link: 'dashboard' },
         { label: 'Enquiry-Applications', link: 'applicants' },
-        { label: 'Loan-Applications', link: 'approved-customer' },
-        { label: 'verified-Applications', link: 'verifiedapplications' },
-        { label: 'verification required', link: 'verification-required' },
+        { label: 'Loan-Applications', link: 'approved-customer' }
+        
       ],
       CreditManager:[
 
