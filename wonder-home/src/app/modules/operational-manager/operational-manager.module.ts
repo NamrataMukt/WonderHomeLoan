@@ -8,6 +8,9 @@ import { VerificationRequiredComponent } from './verification-required/verificat
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { VerifiedApplicationsComponent } from './verified-applications/verified-applications.component';
+import { VerifiedEnquiriesComponent } from './verified-enquiries/verified-enquiries.component';
+import { RejectesEnquiriesComponent } from './rejectes-enquiries/rejectes-enquiries.component';
+import { RejectedEnquiriesComponent } from './rejected-enquiries/rejected-enquiries.component';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { VerifiedApplicationsComponent } from './verified-applications/verified-
     ApprovedCustomerComponent,
     VerificationRequiredComponent,
     DashboardComponent,
-    VerifiedApplicationsComponent
+    VerifiedApplicationsComponent,
+    VerifiedEnquiriesComponent,
+    RejectesEnquiriesComponent,
+    RejectedEnquiriesComponent
   ],
   imports: [
     CommonModule,

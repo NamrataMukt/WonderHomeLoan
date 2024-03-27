@@ -26,6 +26,8 @@ export class Usermenu {
       opm: [
         { label: 'Dashboard', link: 'dashboard' },
         { label: 'Enquiry-Applications', link: 'applicants' },
+        {label:'verified-enquiries',link:'verified-enquiries'},
+        {label:'rejected-enquiries',link:'rejected-enquiries'},
         { label: 'Loan-Applications', link: 'approved-customer' },
         { label: 'verified-Applications', link: 'verifiedapplications' },
         { label: 'verification required', link: 'verification-required' },

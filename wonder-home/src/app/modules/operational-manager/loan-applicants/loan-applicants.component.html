@@ -35,6 +35,19 @@
     <td>
         <button (click)="generateCibilScore(applicant)">Generate CIBIL Score</button>
     </td>
+    <td>
+        <button *ngIf="applicant.cibilScore && applicant.cibilScore.cibilScore > 700 && !applicant.approved && !applicant.rejected" 
+                (click)="approveEnquiry(applicant)" 
+                [disabled]="applicant.status">
+            Approve Enquiry
+        </button>
+        <button *ngIf="!(applicant.cibilScore && applicant.cibilScore.cibilScore > 700) && !applicant.approved && !applicant.rejected"
+                (click)="rejectEnquiry(applicant)" 
+                [disabled]="applicant.status">
+            Reject Enquiry
+        </button>
+      </td>
+        </button>
             </tr>
         </tbody>
     </table>

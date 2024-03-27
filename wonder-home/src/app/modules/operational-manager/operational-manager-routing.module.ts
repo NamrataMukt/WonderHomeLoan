@@ -5,6 +5,8 @@ import { ApprovedCustomerComponent } from './approved-customer/approved-customer
 import { VerificationRequiredComponent } from './verification-required/verification-required.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VerifiedApplicationsComponent } from './verified-applications/verified-applications.component';
+import { VerifiedEnquiriesComponent } from './verified-enquiries/verified-enquiries.component';
+import { RejectedEnquiriesComponent } from './rejected-enquiries/rejected-enquiries.component';
 
 const routes: Routes = [
   {
@@ -17,6 +19,13 @@ const routes: Routes = [
   {
     path:'applicants',component:LoanApplicantsComponent
   },
+  {
+    path:'verified-enquiries',component:VerifiedEnquiriesComponent
+  },
+  {
+    path:'rejected-enquiries',component:RejectedEnquiriesComponent
+  },
+  
   {
     path:'approved-customer',component:ApprovedCustomerComponent
   },
