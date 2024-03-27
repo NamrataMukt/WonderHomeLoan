@@ -354,16 +354,8 @@
         <div class="modal-footer">
           <button *ngIf="step == 2 || step == 3 || step == 4" type="button" class="btn btn-primary" (click)="previous()">Previous</button>
           <button *ngIf="step == 1 || step == 2 || step == 3" type="button" class="btn btn-primary" (click)="next()">Next</button>
-<<<<<<< HEAD
-          
-         <button *ngIf="step == 4" type="button" class="btn btn-danger" (click)="closeModal()">Close</button>
-=======
-          <button *ngIf="step == 2 || step == 3" type="button" class="btn btn-primary" (click)="previous()">Previous</button>
          <button *ngIf="step == 4" type="button" class="btn btn-danger" (click)="showModal=false">Close</button>
-         <!-- <button *ngIf="step == 4" type="button" class="btn btn-primary" (click)="showModal=false">Verify</button>
-         <button *ngIf="step == 4" type="button" class="btn btn-primary" (click)="showModal=false">Close</button> -->
->>>>>>> 934bf33902e3054ea359be89ea6459e3017b3c83
-        </div>
+                 </div>
   
      
     </div>

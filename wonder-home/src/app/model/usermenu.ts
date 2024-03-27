@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-export class Usermenu 
-{
-    public static menus:Array<any>=[
-         
-        {
-            Admin:[
-                //0 index
-                {label:'Add New resourse' ,link:'add_employee'},
-                {label:'View Resources' , link:'view_employee'}   
-            ],
-            CRM:[
-                {label:'Enquiry',link:'enquiry'},
-                {label:'New Loan Application',link:'addnewloan'},
-                {label:'View_Applicants' , link:'view_applicants'},
-                {label:'My Profile',link:'crmprofile'},
-                {label:'View Apply Loan Applicant',link:'viewloanapplied'},
-                {label:'Edit Data',link:'edit'}
-            ],
-=======
 export class Usermenu {
   public static menus: Array<any> = [
     {
@@ -35,7 +15,6 @@ export class Usermenu {
         { label: 'My Profile', link: 'crmprofile' }
        
       ],
->>>>>>> 934bf33902e3054ea359be89ea6459e3017b3c83
 
       accounthead: [
         { label: 'Add Ledger', link: 'ledger' },
