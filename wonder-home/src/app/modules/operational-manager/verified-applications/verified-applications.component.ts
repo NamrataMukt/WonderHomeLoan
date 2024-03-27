@@ -3,26 +3,23 @@ import { MultistepService } from '../../../services/multistep.service';
 import { CustomerApplicationForm } from '../../../model/customer-application-form';
 import { Router } from '@angular/router';
 
-import { EnquiryService } from '../../../services/enquiry.service';
-
 @Component({
-  selector: 'app-approved-customer',
-  templateUrl: './approved-customer.component.html',
-  styleUrl: './approved-customer.component.css'
+  selector: 'app-verified-applications',
+  templateUrl: './verified-applications.component.html',
+  styleUrl: './verified-applications.component.css'
 })
-export class ApprovedCustomerComponent implements OnInit 
+export class VerifiedApplicationsComponent implements OnInit 
 {
   step = 1;
   public showModal : boolean = false;
-  constructor(private ms:MultistepService,private router: Router,private ps:EnquiryService){}
+  constructor(private ms:MultistepService ,private router: Router){}
 
     customerform:CustomerApplicationForm[];
     s:CustomerApplicationForm=new CustomerApplicationForm();
-    applicants: any[] = [];
-    
+   
   ngOnInit(): void 
   {
-    this.getApplicant(); 
+   
     this.ms.getloanApplicant().subscribe(
       (data:CustomerApplicationForm[])=>
       {
@@ -48,22 +45,9 @@ export class ApprovedCustomerComponent implements OnInit
   previous(){
     this.step--
   }
-  // this.m=CustomerApplicationFor{ key: 'value' };
-  verify(){
-
-    // this.router.navigate(['/user-dashboard/opm/verifiedapplications']);
-  }
-  Reject(){
-    this.router.navigate(['/user-dashboard/opm/verification-required']);
+  forward(){
+    this.router.navigate(['/user-dashboard/CreditManager/verifiedapplications']);
   }
   
-
-
-  getApplicant(): void {
-    this.ps.getEnquiry().subscribe((data: any[]) => {
-      this.applicants = data; 
-    });
-  }
-
 }
 

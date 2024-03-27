@@ -173,6 +173,7 @@ export class AddnewloanComponent implements OnInit
         if (state && state['applicantData']) {
           const applicantData = state['applicantData'];
           this.populateForm(this.applicantData);
+        console.log("MultiStep"+applicantData)
           console.log('Route State:', this.router.getCurrentNavigation()?.extras.state);
           console.log(applicantData)
 

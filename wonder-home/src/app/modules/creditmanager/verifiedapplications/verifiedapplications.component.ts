@@ -1,26 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { EnquiryService } from '../../../services/enquiry.service';
-import { CustomerApplicationForm } from '../../../model/customer-application-form';
 import { MultistepService } from '../../../services/multistep.service';
+import { Router } from '@angular/router';
+import { CustomerApplicationForm } from '../../../model/customer-application-form';
 
 @Component({
-  selector: 'app-verification-required',
-  templateUrl: './verification-required.component.html',
-  styleUrl: './verification-required.component.css'
+  selector: 'app-verifiedapplications',
+  templateUrl: './verifiedapplications.component.html',
+  styleUrl: './verifiedapplications.component.css'
 })
-export class VerificationRequiredComponent implements OnInit 
+export class VerifiedapplicationsComponent  implements OnInit 
 {
   step = 1;
   public showModal : boolean = false;
-  constructor(private ms:MultistepService,private ps:EnquiryService ){}
+  constructor(private ms:MultistepService ,private router: Router){}
 
     customerform:CustomerApplicationForm[];
     s:CustomerApplicationForm=new CustomerApplicationForm();
-    applicants: any[] = [];
    
   ngOnInit(): void 
   {
-    this.getApplicant(); 
+   
     this.ms.getloanApplicant().subscribe(
       (data:CustomerApplicationForm[])=>
       {
@@ -46,16 +45,11 @@ export class VerificationRequiredComponent implements OnInit
   previous(){
     this.step--
   }
-  forward()
-{}  
-
-
-
-  getApplicant(): void {
-    this.ps.getEnquiry().subscribe((data: any[]) => {
-      this.applicants = data; 
-    });
+  sanction(){
+   
+      this.router.navigate(['/user-dashboard/CreditManager/sanctionapplications']);
+    
   }
-
+  
+  
 }
-
