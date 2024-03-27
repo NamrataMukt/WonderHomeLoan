@@ -7,7 +7,7 @@ import { EnquiryComponent } from './enquiry/enquiry.component';
 import { CRMRoutingModule } from './CRM-routing.module';
 import { viewApplicantsComponent } from './view-applicants/view-applicants.component';
 import { ViewApplyLoanApplicantComponent } from './view-apply-loan-applicant/view-apply-loan-applicant.component';
-import { RejectedApplicantsComponent } from './rejected-applicants/rejected-applicants.component';
+import { EditLoanApplicantComponent } from './edit-loan-applicant/edit-loan-applicant.component'
 
 
 
@@ -17,7 +17,7 @@ import { RejectedApplicantsComponent } from './rejected-applicants/rejected-appl
     EnquiryComponent,
     viewApplicantsComponent,
     ViewApplyLoanApplicantComponent,
-    RejectedApplicantsComponent
+    EditLoanApplicantComponent
   ],
   imports: [
     CommonModule,

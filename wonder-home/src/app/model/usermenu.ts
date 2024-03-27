@@ -28,10 +28,8 @@ export class Usermenu {
         { label: 'Enquiry-Applications', link: 'applicants' },
         {label:'verified-enquiries',link:'verified-enquiries'},
         {label:'rejected-enquiries',link:'rejected-enquiries'},
-        { label: 'Loan-Applications', link: 'approved-customer' },
-        { label: 'verified-Applications', link: 'verifiedapplications' },
-        { label: 'verification required', link: 'verification-required' },
-      ],
+        { label: 'Loan-Applications', link: 'approved-customer'},
+          ],
       CreditManager:[
 
         {label:'Verified-Applications',link:'verifiedapplications'},
@@ -43,10 +41,3 @@ export class Usermenu {
     },
   ];
 }
-
-
-// opm:[
-//     {label:'Dashboard',link:'dashboard'},
-//     {label:'Loan-Enquiries' , link:'applicants'},
-//     {label:'Loan-Applications' , link:'approved-customer'},
-//     {label:'verification required' ,link:'verification-required'}

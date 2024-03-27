@@ -1,0 +1,355 @@
+<div class="container">
+  <form [formGroup]="applicationForm">
+    <div class="row">
+    <div *ngIf="step == 1">
+
+     <!--
+        <div class="col-md-6">
+            <input type="text" formControlName="retrievedImage" placeholder="image name" [(ngModel)]="retrievedImage" />
+        </div>  
+        <div class="col-md-12">
+            <div *ngIf=retrievedImage>
+                <img [src]="retrievedImage">
+            </div>
+       
+    </div>
+-->
+
+      
+    
+        <h4>Applicant Details</h4>
+        
+            <div class="col">
+                <label>Applicant Name</label>
+                    <input type="text" formControlName="customerName"/>
+              </div>
+                <div class="col">
+                  <label>Mobile No</label>
+                  <input type="number" formControlName="customerMobileNumber"/>
+                </div>
+                <div class="col">
+                  <label>Email Id</label>
+                  <input type="text" formControlName="customerEmailId"/>
+                  </div>
+                 <div class="col">
+                  <label>AadharCardNo</label>
+                  <input type="number" formControlName="adharNumber"/>
+                 </div>
+                 <div class="col">
+                  <label>PanCardNo</label>
+                 <input type="text" formControlName="pancardNumber"/>
+                 </div>
+                 <div class="col">
+                  <label>DOB(yy-dd-mm)</label>
+                  <input type="text" formControlName="customerDOB"/>
+                  </div>
+                  <div class="col">
+                    <label> Age(year) </label>
+                    <input type="number" formControlName="age"/>
+                   </div>
+                    <div class="col">
+                        <label>CibilScore</label>
+                          <input  type="number" formControlName="cibilScore"/>
+                    </div>
+                    
+                      <div class="col">
+                          <label>Cibil Status</label>
+                        <input type="text" formControlName="cibilScoreStatus"/>         
+                      </div>
+                      <div class="col">
+                        <label for="gender">Gender</label>
+                        <input type="text" formControlName="gender"/>         
+                      </div>
+                      <div class="col">
+                        <label>Total loan Required</label>
+                        <input type="number" formControlName="loanRequired"/>
+                        </div>
+                        <div class="col">
+                        <label>Amount Paid for Home</label>
+                        <input type="number" formControlName="tokenmoney"/>
+                    </div>
+                    <h4>Permenant Address</h4>
+                    <div class="col">
+                        <label>House No</label>
+                          <input type="text" formControlName="houseNo"/>     
+                          </div>
+                        
+                          <div class="col">
+                          <label>Area </label><br>
+                          <input type="text" formControlName="areaName"/>      
+                          </div>
+                          <div class="col">
+                            <label>Street</label><br>
+                          <input type="text" formControlName="streetName"/>
+                          </div>
+                          
+                          <div class="col">
+                            <label>City Name</label>
+                          <input type="text" formControlName="cityName"/>
+                          </div>
+                          <div class="col">
+                            <label>District</label><br>
+                          <input type="text" formControlName="district"/>   
+                          </div>
+                          <div class="col">
+                            <label>State</label><br>
+                          <input type="text" formControlName="state"/>
+                          </div>
+                          <div class="col">
+                            <label>Pincode</label><br>
+                          <input type="text" formControlName="pincode"/>
+                          </div>
+                          <div class="col">
+                            <br><br>
+                            </div>
+                            <div class="col">
+                              <br><br><br>
+                              </div>        
+                         
+
+                          <h3>Customer Bank Details</h3>
+
+                          <div class="col">
+                            <label>Bank Account No</label>
+                            <input type="number" formControlName="bankAccountNo">
+                          </div>
+                          <div class="col">
+                            <label>Bank Name</label>
+                            <input type="text" formControlName="bankName">
+                          </div>
+                          <div class="col">
+                            <label>IFSC Code</label>
+                            <input type="text" formControlName="bankIFSCCode">
+                          </div>
+                      
+                          <div class="col">
+                            <label>Bank Address</label>
+                            <input type="text" formControlName="bankAddress">
+                          </div>
+                          <div class="col">
+                            <br><br><br>
+                            </div>        
+                            <div class="col">
+                              <br><br><br>
+                              </div>        
+                         
+                          <h3>Company Details</h3>
+                          <div class="col">
+                            
+                            <label>Company Name</label>
+                          <input type="text" formControlName="companyName"/>
+                          </div>
+                          <div class="col">
+                            <label>Salary</label><br>
+                          <input type="number" formControlName="salary"/>
+                          </div>
+                          <div class="col">
+                            <label>WorkingPeriod</label>
+                          <input type="number" formControlName="employeeWorkingPeriod">
+                          </div>
+                          <div class="col">
+                            <label>Designation</label>
+                          <input type="text" formControlName="profDesignation"/>
+                          </div>
+                          <div class="col">
+                            <br><br>
+                            </div>
+                            <div class="col">
+                              <br><br><br>
+                              </div>
+                      
+
+                          <h3>Previous Loan Details</h3>
+        
+           
+                          <div class="col">
+              
+                          <label>Loan Amount</label>
+                          <input type="number" formControlName="previousloanAmount"/>
+                        </div>
+                        <div class="col">
+                          <label>Paid Amount</label>
+                          <input type="number" formControlName="paidAmount"/>
+                        </div>
+              
+                      <div class="col">
+                          <label>Remaining  Amount</label>
+                          <input type="number" formControlName="remainingAmount"/>
+                        </div>
+                      
+                        <div class="col">
+                          <label>Tenure(year)</label>
+                          <input type="number" formControlName="tenure"/>
+                        </div>
+                      
+                        <div class="col">
+                          <label>Bank Name</label>
+                          <input type="text" formControlName="bankName"/>
+                        </div>
+                        
+                        <div class="col">
+                          <label>IFSC Code</label>
+                          <input type="text" formControlName="ifscCode"/>
+                        </div>
+                        <div class="col">
+                          <label>Bank Address</label>
+                          <input type="text" formControlName="bankAddress"/>
+                          </div>
+                          <div class="col">
+                            <br><br>
+                            </div>
+                            <div class="col">
+                              <br><br><br>
+                              </div>
+                      
+                             
+                              <h3>Dependent Details</h3>
+                              <div class="col">
+                                <label>FatherName</label>
+                              <input type="text"formControlName="fatherName"/>
+                              </div>
+                              <div class="col">
+                                <label>MotherName</label>
+                              <input type="text" formControlName="motherName"/>
+                              </div>
+                              <div class="col">
+                                <label>Marital Status</label>
+                              <input type="text" formControlName="maritalStatus"/>
+                              </div>
+                              <div class="col">
+                                <label>Spouse Name</label>
+                                <input type="text" formControlName="spouseName"/>
+                              </div>
+                              <div class="col">
+                                <label>No.Of Child</label>
+                              <input type="number" formControlName="numberOfChild"/>
+                                </div>
+                                <div class="col">
+                                  <label>No.Of Dependent Membar</label>
+                                 <input type="number" formControlName="noOfDependentMember"/>
+                                 </div>
+                                 <div class="col">
+                               <label>Anuual Family Income</label>  
+                              <input type="number" formControlName="familyIncome"/>
+                              </div>
+                
+                
+                              <div class="col">
+                                <br><br>
+                                </div>
+                                <div class="col">
+                                  <br><br>
+                                  </div>
+                <input (click)="next()"type="button"name="next" class="next action-button"value="Next"/>
+              </div>
+            <div *ngIf="step == 2">
+                <h3>Guarantor Details</h3>
+                <div class="col">
+                  <label>Name</label><br>
+                  <input type="text"formControlName="guarantorName"/>
+                </div> 
+                <div class="col">
+                  <label>DOB(yy-mm-dd)</label>
+                  <input type="text" formControlName="guarantorDOB"/>
+                  </div>
+                  <div class="col">
+                    <label>Relationship With Applicant</label>
+                  <input type="text" formControlName="guarantorRelationshipWithApplicant"/>
+                  </div>
+                  <div class="col">
+                    <label>Mobile No</label>
+                  <input type="number"formControlName="guarantorMobileNumber"/>
+                  </div>
+                  <div class="col">
+                    <label>Aadhar Card</label>
+                  <input type="number"formControlName="aadhaarcardNumber"/>
+                  </div>
+                  <div class="col">
+                    <label>City </label><br>
+                  <input type="text" formControlName="guarantorCityName"/>
+                  </div>
+                  <div class="col">
+                    <label>Area</label><br>
+                  <input type="text"formControlName="guarantorAreaName"/>
+                  </div>
+                  <div class="col">
+                    <br><br>
+                    </div>
+                    <div class="col">
+                      <br><br><br>
+                      </div>
+  
+
+                  <h3>Mortage Details</h3>
+
+           <div class="col">
+            <label>Property Value</label>
+            <input type="number" formControlName="propertyValue">
+            </div>
+
+            <div class="col">
+              <label>Rera No</label>
+              <input type="number" formControlName="reraNumber">
+              </div>
+
+        <div class="col">
+              <label>Property Type</label>
+              <input type="text" formControlName="propertyType">
+              </div>
+
+        <div class="col">
+              <label>Tenure(year)</label>
+              <input type="number" formControlName="tenure">
+              </div>
+        
+              <div class="col">
+                <label>Loan Required Amount</label>
+                <input type="number" formControlName="totalLoanRequired">
+                </div>
+
+               
+                <div class="col">
+                  <br><br>
+                  </div>
+                  <div class="col">
+                    <br><br>
+                    </div>
+
+           
+            <h3>Builder Details</h3>
+            <div class="col">
+              <label>Builder Name</label>
+            <input type="text"formControlName="builderName"/>
+          </div>        
+          <div class="col">
+            <label>AadharCard</label>
+          <input type="number"formControlName="builderAdharcard"/>
+        </div> 
+
+    <div class="col">
+            <label>Pan Card</label>
+          <input type="text"formControlName="builderPancard"/>
+        </div> 
+        <div class="col">
+          <label> Address</label>
+        <input type="text"formControlName="builderAddress"/>
+      </div> 
+      <div class="col">
+        <label>Bank Name</label>
+      <input type="text"formControlName="bankName"/>
+    </div> 
+
+    <div class="col">
+      <label>Bank Accouunt No</label>
+    <input type="number"formControlName="bankAccno"/>
+  </div> 
+  <div class="col">
+    <label>IFSC Code</label>
+  <input type="text"formControlName="bankIfscCode"/>
+</div> 
+                 
+           
+        </div>
+    </div>
+  </form>
+</div>
