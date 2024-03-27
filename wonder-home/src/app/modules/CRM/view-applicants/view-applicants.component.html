@@ -1,5 +1,3 @@
-<p>view-applicants works!</p>
-
 <div class="table-responsive">
     <table class="table table-striped mt-5 mx-auto table-responsive-sm" style="width: 100%;">
         <thead class="table-header">
@@ -15,6 +13,7 @@
                 <th>Date</th>
                 <th>Enquiry</th>
                 <th>Cibil Score</th>
+                <th>Status</th>
                 <th>Edit</th>
                 <th>Delete</th>
                 <th>Apply Loan</th>
@@ -32,12 +31,19 @@
                 <td>{{ applicant.pincode }}</td>
                 <td>{{ applicant.date }}</td>
                 <td>{{ applicant.enquiry }}</td> 
-                <td>{{applicant.Cibilscore.cibilScore}}</td>
-                <!-- <td>{{ applicant.cibilScore ? applicant.cibilScore.cibilScore : 'Not Available' }}</td> -->
+                <td>{{applicant.cibilScore ? applicant.cibilScore.cibilScore : 'Not Available'}}</td>
+                <td>{{applicant.status}}</td>
                 <td><button type="button" class="btn btn-primary btn-sm" (click)="editApplicant(applicant)">Edit</button></td>
                 <!-- Delete Button -->
-                <td><button type="button" class="btn btn-danger btn-sm" (click)="deleteApplicant(applicant)">Delete</button></td>
-                <td><button type="button" class="btn btn-success btn-sm" (click)="applyForLoan(applicant)">Apply for Loan</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm" (click)="deleteApplicant(applicant.customerId)">Delete</button></td>
+                <td>
+                    <button type="button" 
+                            class="btn btn-success btn-sm" 
+                            (click)="applyForLoan(applicant)" 
+                            [disabled]="applicant.status !== 'Approved'">
+                        Apply for Loan
+                    </button>
+                </td>
         
             
             </tr>

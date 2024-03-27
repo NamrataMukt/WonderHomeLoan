@@ -11,6 +11,7 @@ export class ApplicantDetails {
   pincode: string;
   date: string;
   enquiry: string;
+  status:string;
   cibilScore: Cibilscore;
 
 }

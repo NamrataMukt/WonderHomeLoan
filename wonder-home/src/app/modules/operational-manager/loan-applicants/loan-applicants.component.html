@@ -15,7 +15,9 @@
                 <th>Date</th>
                 <th>Enquiry</th>
                 <th>Cibil Score</th>
+                <th>Status</th>   
                 <th>Cibil</th>
+                <th>Approve/Reject</th>
             </tr>
         </thead>
         <tbody>
@@ -32,9 +34,22 @@
                 <td>{{ applicant.enquiry }}</td>
                 <!-- <td>{{ applicant.cibilScore }}</td> -->
                 <td>{{ applicant.cibilScore ? applicant.cibilScore.cibilScore : 'Not Available' }}</td>
+                <td>{{applicant.status}}</td>
     <td>
-        <button (click)="generateCibilScore(applicant)">Generate CIBIL Score</button>
+        <button (click)="generateCibilScore(applicant)" [disabled]="applicant.cibilScore">Generate CIBIL Score</button>
     </td>
+    <button class="btn btn-success"
+    *ngIf="applicant.cibilScore && applicant.cibilScore.cibilScore > 700 && !applicant.approved && !applicant.rejected" 
+    (click)="approveEnquiry(applicant)" 
+    [disabled]="applicant.status === 'Approved' || applicant.status === 'Rejected'">
+Approve Enquiry
+</button>
+<button class="btn btn-danger"
+    *ngIf="!(applicant.cibilScore && applicant.cibilScore.cibilScore > 700) && !applicant.approved && !applicant.rejected"
+    (click)="rejectEnquiry(applicant)" 
+    [disabled]="applicant.status === 'Approved' || applicant.status === 'Rejected'">
+Reject Enquiry
+</button>
             </tr>
         </tbody>
     </table>

@@ -151,10 +151,6 @@ export class EditLoanApplicantComponent  implements OnInit
     
   }
   
-  retrievedImage: any;
-  base64Data: any;
-salaryslip: any;
-  
   
   patchValue()
   {
@@ -169,6 +165,8 @@ salaryslip: any;
             this.retrievedImage = 'data:image/jpeg;base64,'+ this.base64Data;
             console.log(this.applicationForm.value)*/
            // console.log(this.a)
+
+           
         })
   }
 

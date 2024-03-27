@@ -43,15 +43,21 @@ export class viewApplicantsComponent {
     });
   }
 
-  deleteApplicant(applicant: ApplicantDetails): void {
-    // Implement delete logic here
-    console.log('Delete applicant:', applicant);
+  deleteApplicant(customerId: number): void {
+    if (confirm('Are you sure you want to delete this applicant?')) {
+      this.ps.deleteEnquiry(customerId).subscribe()
+          alert('Applicant deleted successfully.');
+          this.getApplicant();
+      
+    }
   }
 
-  applyForLoan(applicant: any): void {
-    this.router.navigate(['user-dashboard/CRM/addnewloan'], {
-      state: { applicantData: applicant },
-    });
+  
+
+  applyForLoan(applicant: any){
+    //console.log('Applicant Data:', applicant);
+    this.router.navigate(['/user-dashboard/CRM/addnewloan'], { state: { applicantData: applicant } });
+    
   }
 
   loadCibilScores(): void {
