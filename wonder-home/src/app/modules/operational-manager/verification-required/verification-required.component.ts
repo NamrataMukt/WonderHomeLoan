@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MultistepService } from '../../../services/multistep.service';
+import { EnquiryService } from '../../../services/enquiry.service';
 import { CustomerApplicationForm } from '../../../model/customer-application-form';
+import { MultistepService } from '../../../services/multistep.service';
 
 @Component({
   selector: 'app-verification-required',
@@ -11,14 +12,15 @@ export class VerificationRequiredComponent implements OnInit
 {
   step = 1;
   public showModal : boolean = false;
-  constructor(private ms:MultistepService ){}
+  constructor(private ms:MultistepService,private ps:EnquiryService ){}
 
     customerform:CustomerApplicationForm[];
     s:CustomerApplicationForm=new CustomerApplicationForm();
+    applicants: any[] = [];
    
   ngOnInit(): void 
   {
-   
+    this.getApplicant(); 
     this.ms.getloanApplicant().subscribe(
       (data:CustomerApplicationForm[])=>
       {
@@ -46,5 +48,14 @@ export class VerificationRequiredComponent implements OnInit
   }
   forward()
 {}  
+
+
+
+  getApplicant(): void {
+    this.ps.getEnquiry().subscribe((data: any[]) => {
+      this.applicants = data; 
+    });
+  }
+
 }
 

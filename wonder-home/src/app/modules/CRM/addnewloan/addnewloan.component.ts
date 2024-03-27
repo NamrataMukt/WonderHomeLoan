@@ -11,7 +11,8 @@ import { GuarantorDetails } from '../../../model/guarantor-details';
 import { Mortage } from '../../../model/mortage';
 import { BuilderDetails } from '../../../model/builder-details';
 import { CustomerDocumentUpload } from '../../../model/customer-document-upload';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
+import { Cibilscore } from '../../../model/cibilscore';
 
 @Component({
   selector: 'app-addnewloan',
@@ -21,8 +22,9 @@ import { ActivatedRoute } from '@angular/router';
 export class AddnewloanComponent implements OnInit
 {
  
-  constructor(private fb: FormBuilder,private multistep:MultistepService,private route: ActivatedRoute) {}
-
+  constructor(private fb: FormBuilder,private multistep:MultistepService,private route: ActivatedRoute,private router: Router) {}
+  applicantData: any;
+  
 
   step = 1;
   CustomerApplicationForm:FormGroup;
@@ -165,11 +167,17 @@ export class AddnewloanComponent implements OnInit
       })
       
     });
-    this.route.queryParams.subscribe(params => {
-      if (params && params['applicantData']) {
-        const applicantData = JSON.parse(params['applicantData']);
-        this.populateForm(applicantData);
+    this.router.events.subscribe((val) => {
+      if (val instanceof NavigationStart) {
+        const state = this.router.getCurrentNavigation()?.extras.state;
+        if (state && state['applicantData']) {
+          const applicantData = state['applicantData'];
+          this.populateForm(this.applicantData);
         console.log("MultiStep"+applicantData)
+          console.log('Route State:', this.router.getCurrentNavigation()?.extras.state);
+          console.log(applicantData)
+
+        }
       }
     });
   }
@@ -257,18 +265,28 @@ export class AddnewloanComponent implements OnInit
 
 
   populateForm(applicantData: any) {
-    // Populate the form controls with the received applicant data
-    this.CustomerApplicationForm.patchValue({
-      cutomerDetails: {
-        customerId: applicantData.customerId,
-        customerName: applicantData.customerName,
-        customerAge: applicantData.age
+    // Check if applicantData is defined
+    if (applicantData !== undefined && applicantData !== null) {
+        // Access properties only if applicantData is defined
+        this.CustomerApplicationForm.patchValue({
+            customerDetails: {
+                // Use optional chaining (?.) to safely access properties
+                customerName: applicantData.customerName,
+                customerAge: applicantData.age,
+                customerEmailId: applicantData.customerEmailId,
+                customerMobileNumber: applicantData.customerMobileNumber,
+                pancardNumber: applicantData.pancardNumber,
+                //city: applicantData.city,
+               // pincode: applicantData.pincode,
+                //date: applicantData.date,
+               // enquiry: applicantData.enquiry,  
+                cibilScore:applicantData.cibilScore.cibilScore
+            }
+        });
+    } else {
        
-        // Populate other form fields similarly
-      },
-      // Populate other form groups and controls
-      
-    });
-      }
-
+        console.error('Applicant data is undefined or null.');
+       
+    }
+}
 }

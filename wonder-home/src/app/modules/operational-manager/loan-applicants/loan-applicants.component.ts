@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { EnquiryService } from '../../../services/enquiry.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CibilscoreService } from '../../../services/cibilscore.service';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-loan-applicants',
@@ -10,7 +12,8 @@ import { CibilscoreService } from '../../../services/cibilscore.service';
 })
 export class LoanApplicantsComponent {
 
-  constructor(private fb:FormBuilder,private ps:EnquiryService,private cs:CibilscoreService){}
+  constructor(private fb:FormBuilder,private ps:EnquiryService,private cs:CibilscoreService,private cdr: ChangeDetectorRef,private router: Router,
+    private http: HttpClient){}
 
   applicants: any[] = [];
   showApplicantsTable: boolean = true;
@@ -45,4 +48,30 @@ export class LoanApplicantsComponent {
     );
 }
 
+approveEnquiry(applicant: any): void {
+  if (applicant.cibilScore && applicant.cibilScore.cibilScore > 700) {
+    this.updateEnquiryStatus(applicant, 'Approved');
+  }
+}
+
+rejectEnquiry(applicant: any): void {
+  this.updateEnquiryStatus(applicant, 'Rejected');
+}
+
+private updateEnquiryStatus(applicant: any, status: string): void {
+  this.http.put<any>(`http://localhost:9090/updateEnquiryStatus/${applicant.customerId}`, { status })
+    .subscribe(
+      response => {
+        console.log('Enquiry status updated successfully:', response);
+        applicant.status = status;
+        applicant.approved = status === 'Approved';
+        applicant.rejected = status === 'Rejected';
+      },
+      error => {
+        console.error('Error updating enquiry status:', error);
+      }
+    );
+
+  alert(`Enquiry has been ${status.toLowerCase()}.`);
+}
 }

@@ -12,13 +12,12 @@
             <li [ngClass]="step == 6 ? 'active' : 'inactive'">Applicant Document</li>
           </ul>
       </div>
-
   <div class="col-sm-8">
     <div  formGroupName="cutomerDetails">
     <div *ngIf ="step == 1">
         <h2 class="fs-title">Applicant Details</h2> 
              <div class="col">
-                <label>Applicant Name</label>
+                <label>Applicant Name {{applicantData}} </label>
                     <input type="text" formControlName="customerName"/>
               </div>
                 <div class="col">

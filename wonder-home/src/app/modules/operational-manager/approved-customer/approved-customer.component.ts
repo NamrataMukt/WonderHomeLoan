@@ -3,6 +3,8 @@ import { MultistepService } from '../../../services/multistep.service';
 import { CustomerApplicationForm } from '../../../model/customer-application-form';
 import { Router } from '@angular/router';
 
+import { EnquiryService } from '../../../services/enquiry.service';
+
 @Component({
   selector: 'app-approved-customer',
   templateUrl: './approved-customer.component.html',
@@ -12,14 +14,15 @@ export class ApprovedCustomerComponent implements OnInit
 {
   step = 1;
   public showModal : boolean = false;
-  constructor(private ms:MultistepService,private router: Router){}
+  constructor(private ms:MultistepService,private router: Router,private ps:EnquiryService){}
 
     customerform:CustomerApplicationForm[];
     s:CustomerApplicationForm=new CustomerApplicationForm();
+    applicants: any[] = [];
     
   ngOnInit(): void 
   {
-   
+    this.getApplicant(); 
     this.ms.getloanApplicant().subscribe(
       (data:CustomerApplicationForm[])=>
       {
@@ -53,5 +56,14 @@ export class ApprovedCustomerComponent implements OnInit
   Reject(){
     this.router.navigate(['/user-dashboard/opm/verification-required']);
   }
+  
+
+
+  getApplicant(): void {
+    this.ps.getEnquiry().subscribe((data: any[]) => {
+      this.applicants = data; 
+    });
+  }
+
 }
 
