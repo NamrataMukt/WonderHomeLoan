@@ -26,4 +26,18 @@ export class MultistepService {
   {
     return this.http.delete('http://localhost:9090/deleteApplicant/'+applicantno)
   }
+  findbyData(applicantno:string)
+  {
+    return this.http.get('http://localhost:9090/editApplicant/'+applicantno)
+  }
+
+  updateData(formapp:FormData)
+  {
+    return this.http.put('http://localhost:9090/updateApplicant/',formapp)
+  }
+
+  getStatus(status:string)
+  {
+    return this.http.get('http://localhost:9090/findbystatus/'+status)
+  }
 }

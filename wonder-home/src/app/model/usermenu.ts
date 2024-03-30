@@ -26,7 +26,8 @@ export class Usermenu {
       opm: [
         { label: 'Dashboard', link: 'dashboard' },
         { label: 'Enquiry-Applications', link: 'applicants' },
-        { label: 'Loan-Applications', link: 'approved-customer' }
+        { label: 'Loan-Applications', link: 'approved-customer' },
+        { label: 'View Apply Loan Applicants', link: 'viewloanapplied' }
         
       ],
       CreditManager:[

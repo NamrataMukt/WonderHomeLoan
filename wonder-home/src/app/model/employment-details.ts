@@ -4,5 +4,5 @@ export class EmploymentDetails {
   salary: number;
   employeeWorkingPeriod: string;
   profDesignation: string;
-  salarySlip: any;
+  salaryslip: any;
 }

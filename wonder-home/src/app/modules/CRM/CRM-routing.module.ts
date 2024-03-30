@@ -23,7 +23,7 @@ const routes: Routes = [
     path:'viewloanapplied',component:ViewApplyLoanApplicantComponent
   },
   {
-    path:'edit/:s',component:EditLoanApplicantComponent
+    path:'edit/:cid',component:EditLoanApplicantComponent
   } 
 ];
 

@@ -8,12 +8,13 @@ import { EmploymentDetails } from "./employment-details";
 import { GuarantorDetails } from "./guarantor-details";
 import { Mortage } from "./mortage";
 import { PreviousLoanDetails } from "./previous-loan-details";
+import { StatusCheck } from "./status-check";
 
 export class CustomerApplicationForm 
 {
    applicationNumber:string;
 	
-    cutomerDetails:CustomerBasicDetails;
+    customerDetails:CustomerBasicDetails;
 	
      applicantDependant:DependantDetails;
 	
@@ -30,5 +31,5 @@ export class CustomerApplicationForm
 	
 	 documentUpload:CustomerDocumentUpload ;
 	
-
+	statuscheck:StatusCheck;
 }

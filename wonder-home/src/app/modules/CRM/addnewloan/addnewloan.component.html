@@ -13,7 +13,7 @@
           </ul>
       </div>
   <div class="col-sm-8">
-    <div  formGroupName="cutomerDetails">
+    <div  formGroupName="customerDetails">
     <div *ngIf ="step == 1">
         <h2 class="fs-title">Applicant Details</h2> 
              <div class="col">
@@ -207,10 +207,10 @@
             <input type="text" formControlName="profDesignation"/>
             </div>
             <div class="col">
-            <label>Salary Slip<input type="file" (change)="onselectSalarySlip($event)"/>
-          </label>
+            <label>Salary Slip</label><input type="file" (change)="onselectsalarySlip($event)"/>
           </div>
-
+         
+      
       </div>
       
             <div style="float: left;" formGroupName="previousloandata">
@@ -339,6 +339,7 @@
                     <input type="text"formControlName="guarantorAreaName"/>
                              </div>
                              <div class="col">
+                              
                     <label>Aadhar Card Upload</label><input type="file" (change)="onselectgaadhar($event)"/>
                 </div>
                 <div class="col">

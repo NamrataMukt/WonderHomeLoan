@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MultistepService } from '../../../services/multistep.service';
 import { Router } from '@angular/router';
 import { CustomerApplicationForm } from '../../../model/customer-application-form';
+import { StatusCheck } from '../../../model/status-check';
 
 @Component({
   selector: 'app-verifiedapplications',
@@ -16,11 +17,17 @@ export class VerifiedapplicationsComponent  implements OnInit
 
     customerform:CustomerApplicationForm[];
     s:CustomerApplicationForm=new CustomerApplicationForm();
-   
+   status:string='ACCEPTED';
+   statuscheck:StatusCheck[];
+
   ngOnInit(): void 
   {
-   
-    this.ms.getloanApplicant().subscribe(
+   this.loadStatusData();
+    
+  }
+  loadStatusData()
+  {
+    this.ms.getStatus(this.status).subscribe(
       (data:CustomerApplicationForm[])=>
       {
         this.customerform=data;

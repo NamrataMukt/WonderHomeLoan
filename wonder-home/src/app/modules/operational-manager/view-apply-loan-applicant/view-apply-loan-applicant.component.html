@@ -1,3 +1,4 @@
+
 <div class="container">
     <table class="table table-bordered table-striped">
       <thead>
@@ -6,29 +7,30 @@
         <th>Applicant Name</th>
         <th>Mobile Number</th>
         <th>Email Id</th>
+        <th>Status</th>
         <th>Action</th>
-
+        
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let c of customerform" >
+      <tr *ngFor="let c of customerform">
         <td>{{c.applicationNumber}}</td>
        <td>{{c.customerDetails.customerName}}</td>
        <td>{{c.customerDetails.customerMobileNumber}}</td>
        <td>{{c.customerDetails.customerEmailId}}</td>
-        <td>
-            <button class="btn btn-sm btn-info" (click)="showData(c)">
-              <i class="fa fa-search"></i>Details</button>
-            <button class="btn btn-sm btn-warning" (click)="edit(c)">
-              <i class="fa fa-edit"></i>Edit</button>
-            <button class="btn btn-sm btn-danger" (click)="deleteData(c.applicationNumber)">
-              <i class="fa fa-remove"></i>Delete</button>
-          </td>
+       <td>{{c.statuscheck?.status}}</td>
+       <td>
+        <button class="btn btn-sm btn-info" (click)="showData(c)">
+          <i class="fa fa-search"></i>Details</button>
+      </td>
+
         </tr>
     </tbody>
     </table>
     </div>
-            
+
+
+
 <!-- The Modal -->
 <div class="modal" id="myModal" [ngClass]="{'show':showModal}">
     <div class="modal-dialog modal-dialog-scrollable">
@@ -342,15 +344,23 @@
 
                     </tbody>
                     </table>
+                    
+                    <tr>
+                      <td>Status</td>&nbsp;&nbsp;<td>{{s.statuscheck.status}}</td>
+                    </tr>       
         </div>
       </div>
         <!-- Modal footer -->
         <div class="modal-footer">
           <button *ngIf="step == 2 || step == 3 || step == 4" type="button" class="btn btn-primary" (click)="previous()">Previous</button>
+          <button  *ngIf="step == 4"class="btn btn-sm btn-primary"  (click)="updateStatus(s.applicationNumber,'ACCEPTED')">Accept</button>
+          <button *ngIf="step == 4" class="btn btn-sm btn-danger" (click)="updateStatus(s.applicationNumber,'REJECTED')">Reject</button>
           <button *ngIf="step == 1 || step == 2 || step == 3" type="button" class="btn btn-primary" (click)="next()">Next</button>
          <button *ngIf="step == 4" type="button" class="btn btn-danger" (click)="closeModal()">Close</button>
+        
+        </div>
         </div>
   
-     
+                            
     </div>
   </div>

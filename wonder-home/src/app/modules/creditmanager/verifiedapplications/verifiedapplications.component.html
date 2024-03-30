@@ -14,6 +14,7 @@
         <th>Applicant Name</th>
         <th>Mobile Number</th>
         <th>Email Id</th>
+        <th>Status</th>
         <th>Action</th>
         <th>Saction Applications</th>
 
@@ -21,10 +22,11 @@
       </thead>
       <tbody>
       <tr *ngFor="let c of customerform" >
-       <td>{{c.cutomerDetails.customerId}}</td>
-       <td>{{c.cutomerDetails.customerName}}</td>
-       <td>{{c.cutomerDetails.customerMobileNumber}}</td>
-       <td>{{c.cutomerDetails.customerEmailId}}</td>
+       <td>{{c.customerDetails.customerId}}</td>
+       <td>{{c.customerDetails.customerName}}</td>
+       <td>{{c.customerDetails.customerMobileNumber}}</td>
+       <td>{{c.customerDetails.customerEmailId}}</td>
+       <td>{{c.statuscheck?.status}}</td>
         <td>
             <button class="btn btn-sm btn-info" (click)="showData(c)">
               <i class="fa fa-search"></i>Details</button></td>
@@ -38,9 +40,7 @@
             
 
       
-     
-
-
+  
 <!-- The Modal -->
 <div class="modal" id="myModal" [ngClass]="{'show':showModal}">
     <div class="modal-dialog modal-dialog-scrollable">
@@ -58,34 +58,34 @@
             <table class="mod">
            <tbody>
           <tr>
-            <td>Customer Name </td>&nbsp;&nbsp;<td> {{s.cutomerDetails.customerName}}</td>
+            <td>Customer Name </td>&nbsp;&nbsp;<td> {{s.customerDetails.customerName}}</td>
             </tr>
             <tr>
-            <td>Customer MobileNumber</td>&nbsp;&nbsp;<td>{{s.cutomerDetails.customerMobileNumber}}</td>
+            <td>Customer MobileNumber</td>&nbsp;&nbsp;<td>{{s.customerDetails.customerMobileNumber}}</td>
           </tr>
           <tr>
-            <td>Customer EmailId</td>&nbsp;&nbsp;<td>{{s.cutomerDetails.customerEmailId}}</td>
+            <td>Customer EmailId</td>&nbsp;&nbsp;<td>{{s.customerDetails.customerEmailId}}</td>
           </tr>
           <tr>
-            <td>Gender</td>&nbsp;&nbsp;<td>{{s.cutomerDetails.gender}}</td>
+            <td>Gender</td>&nbsp;&nbsp;<td>{{s.customerDetails.gender}}</td>
           </tr>
           <tr>
-            <td>DOB</td>&nbsp;&nbsp;<td>{{s.cutomerDetails.customerDOB}}</td>
+            <td>DOB</td>&nbsp;&nbsp;<td>{{s.customerDetails.customerDOB}}</td>
           </tr>
           <tr>
-            <td>Age</td>&nbsp;&nbsp;<td>{{s.cutomerDetails.age}}</td>
+            <td>Age</td>&nbsp;&nbsp;<td>{{s.customerDetails.age}}</td>
           </tr>
           <tr>
-            <td>Aadhar Card</td>&nbsp;&nbsp;<td>{{s.cutomerDetails.adharNumber}}</td>
+            <td>Aadhar Card</td>&nbsp;&nbsp;<td>{{s.customerDetails.adharNumber}}</td>
           </tr>
           <tr>
-            <td>Pan Card Number</td>&nbsp;&nbsp;<td>{{s.cutomerDetails.pancardNumber}}</td>
+            <td>Pan Card Number</td>&nbsp;&nbsp;<td>{{s.customerDetails.pancardNumber}}</td>
           </tr>
           <tr>
-            <td>Cibil Score</td>&nbsp;&nbsp;<td>{{s.cutomerDetails.cibilScore}}</td>
+            <td>Cibil Score</td>&nbsp;&nbsp;<td>{{s.customerDetails.cibilScore}}</td>
           </tr>
           <tr>
-            <td>Status</td>&nbsp;&nbsp;<td>{{s.cutomerDetails.cibilScoreStatus}}</td>
+            <td>Status</td>&nbsp;&nbsp;<td>{{s.customerDetails.cibilScoreStatus}}</td>
           </tr>
       <tr>
         <td>House No</td>&nbsp;&nbsp;<td> {{s.customerAddress.permenantAddress.houseNo}}</td>
@@ -147,7 +147,7 @@
       </tr>
       <tr>
         <td>Salary Slip</td>&nbsp;&nbsp;<td>
-          <img [src]="'data:image/jpeg;base64,'+ s.employmentDetails.salarySlip"
+          <img [src]="'data:image/jpeg;base64,'+ s.employmentDetails.salaryslip"
                     height="150px" width="150px"></td>
     
       </tr>
@@ -366,14 +366,15 @@
                     </tbody>
                     </table>
         </div>
+        </div>
         <!-- Modal footer -->
         <div class="modal-footer">
+          <button *ngIf="step == 2 || step == 3 || step == 4" type="button" class="btn btn-primary" (click)="previous()">Previous</button>
           <button *ngIf="step == 1 || step == 2 || step == 3" type="button" class="btn btn-primary" (click)="next()">Next</button>
-          <button *ngIf="step == 2 || step == 3" type="button" class="btn btn-primary" (click)="previous()">Previous</button>
           <button *ngIf="step == 4" type="button" class="btn btn-danger" (click)="showModal=false">Close</button>
         </div>
   
-      </div>
+      
     </div>
   </div>
 

@@ -1,22 +1,11 @@
 <div class="container">
-  <form [formGroup]="applicationForm">
+  
+  <form [formGroup]="applicationForm" (ngSubmit)="onUpdate()">
+   
     <div class="row">
     <div *ngIf="step == 1">
-
-     <!--
-        <div class="col-md-6">
-            <input type="text" formControlName="retrievedImage" placeholder="image name" [(ngModel)]="retrievedImage" />
-        </div>  
-        <div class="col-md-12">
-            <div *ngIf=retrievedImage>
-                <img [src]="retrievedImage">
-            </div>
-       
-    </div>
--->
-
-      
-    
+  
+<div  formGroupName="customerDetails">    
         <h4>Applicant Details</h4>
         
             <div class="col">
@@ -68,6 +57,9 @@
                         <label>Amount Paid for Home</label>
                         <input type="number" formControlName="tokenmoney"/>
                     </div>
+                    </div>
+                    <div formGroupName="customerAddress">
+                      <div formGroupName="permenantAddress">
                     <h4>Permenant Address</h4>
                     <div class="col">
                         <label>House No</label>
@@ -106,7 +98,9 @@
                               <br><br><br>
                               </div>        
                          
-
+</div>
+</div>
+<div formGroupName="customerbankDetail">
                           <h3>Customer Bank Details</h3>
 
                           <div class="col">
@@ -131,8 +125,9 @@
                             </div>        
                             <div class="col">
                               <br><br><br>
-                              </div>        
-                         
+                              </div>       
+  </div>
+                         <div formGroupName="employmentDetails">
                           <h3>Company Details</h3>
                           <div class="col">
                             
@@ -145,11 +140,16 @@
                           </div>
                           <div class="col">
                             <label>WorkingPeriod</label>
-                          <input type="number" formControlName="employeeWorkingPeriod">
+                          <input type="number" formControlName="employeeWorkingPeriod"/>
                           </div>
                           <div class="col">
                             <label>Designation</label>
                           <input type="text" formControlName="profDesignation"/>
+                          </div>
+                          <div class="col">
+                            <img [src]="slip" alt="nope" height="100px" width="100px">
+                            <label>Salary Slip<input type="file" (change)="onselectsalarySlip($event)"/>
+                          </label>
                           </div>
                           <div class="col">
                             <br><br>
@@ -158,12 +158,11 @@
                               <br><br><br>
                               </div>
                       
-
+</div>
+<div formGroupName="previousloandata">
                           <h3>Previous Loan Details</h3>
-        
-           
+
                           <div class="col">
-              
                           <label>Loan Amount</label>
                           <input type="number" formControlName="previousloanAmount"/>
                         </div>
@@ -202,7 +201,8 @@
                               <br><br><br>
                               </div>
                       
-                             
+     </div>
+     <div formGroupName="applicantDependant">                        
                               <h3>Dependent Details</h3>
                               <div class="col">
                                 <label>FatherName</label>
@@ -240,9 +240,15 @@
                                 <div class="col">
                                   <br><br>
                                   </div>
+                                  <div class="col">
+
+                                  </div>
+                     </div>           
                 <input (click)="next()"type="button"name="next" class="next action-button"value="Next"/>
               </div>
+              
             <div *ngIf="step == 2">
+              <div formGroupName="guarantorDetails">
                 <h3>Guarantor Details</h3>
                 <div class="col">
                   <label>Name</label><br>
@@ -273,50 +279,67 @@
                   <input type="text"formControlName="guarantorAreaName"/>
                   </div>
                   <div class="col">
-                    <br><br>
-                    </div>
+                    <img [src]="gaadhar" alt="nope" height="100px" width="100px">        
+                    <label>Aadhar Card Upload</label><input type="file" (change)="onselectgaadhar($event)"/>
+                </div>
                     <div class="col">
-                      <br><br><br>
+                      <br><br>
                       </div>
+                      <div class="col">
+                        <br><br>
+                        </div>
+                        <div class="col">
+                          <br><br>
+                          </div>
+      
   
-
+</div>
+<div formGroupName="mortage">
                   <h3>Mortage Details</h3>
 
            <div class="col">
             <label>Property Value</label>
-            <input type="number" formControlName="propertyValue">
+            <input type="number" formControlName="propertyValue"/>
             </div>
 
             <div class="col">
               <label>Rera No</label>
-              <input type="number" formControlName="reraNumber">
+              <input type="number" formControlName="reraNumber"/>
               </div>
 
         <div class="col">
               <label>Property Type</label>
-              <input type="text" formControlName="propertyType">
+              <input type="text" formControlName="propertyType"/>
               </div>
+              
 
         <div class="col">
               <label>Tenure(year)</label>
-              <input type="number" formControlName="tenure">
+              <input type="number" formControlName="tenure"/>
               </div>
         
               <div class="col">
                 <label>Loan Required Amount</label>
-                <input type="number" formControlName="totalLoanRequired">
+                <input type="number" formControlName="totalLoanRequired"/>
                 </div>
 
-               
                 <div class="col">
-                  <br><br>
-                  </div>
-                  <div class="col">
-                    <br><br>
-                    </div>
-
-           
-            <h3>Builder Details</h3>
+                  <img [src]="propertyproof" alt="nope" height="100px" width="100px">
+                  <label>Property Proof<input type="file"  (change)="onselectpropertyProof($event)">
+                </label>
+              </div>   
+              <div class="col">
+                <br><br>
+              </div>               
+              <div class="col">
+                <br><br>
+              </div> 
+              <div class="col">
+                <br><br>
+              </div>     
+</div>
+<div  style="float: left;"  formGroupName="builderdetails">
+  <h3>Builder Details</h3>                
             <div class="col">
               <label>Builder Name</label>
             <input type="text"formControlName="builderName"/>
@@ -334,6 +357,7 @@
           <label> Address</label>
         <input type="text"formControlName="builderAddress"/>
       </div> 
+      
       <div class="col">
         <label>Bank Name</label>
       <input type="text"formControlName="bankName"/>
@@ -347,9 +371,97 @@
     <label>IFSC Code</label>
   <input type="text"formControlName="bankIfscCode"/>
 </div> 
-                 
+<div class="col">
+  <img [src]="baadharCard" alt="nope" height="100px" width="100px">
+  <label>Aadhar Card<input type="file"  (change)="onselectbaadharCard($event)"/>
+  </label>
+  </div>
+  <div class="col">
+  <img [src]="bpanCard" alt="nope" height="100px" width="100px">
+  <label>Pan Card<input type="file"  (change)="onselectbpanCard($event)"/>
+  </label>
+</div>
+
+          </div>       
+            
+          
+          <h4>Applicant Personal Document</h4>
+        <div formGroupName="documentUpload">
            
-        </div>
+            <div class="col">
+              <img [src]="panCard" alt="nope" height="100px" width="100px">
+              <label>PanCard<input type="file" (change)="onselectPanCard($event)"/>
+            </label>
+          </div>
+           
+          <div class="col">
+            <img [src]="aadharCard" alt="nope" height="100px" width="100px">
+              <label>AadharCard<input type="file"  (change)="onselectAadharCard($event)"/>
+            </label>
+            </div>
+           
+            <div class="col">
+              <img [src]="addressProof" alt="nope" height="100px" width="100px">
+              <label>AddressProof<input type="file" (change)="onselectAddressProof($event)"/>
+            </label>
+            </div>
+           
+            <div class="col">
+              <img [src]="cheque" alt="nope" height="100px" width="100px">
+              <label>BankCheque<input type="file"(change)="onselectCheque($event)"/>
+            </label>
+            </div>
+              
+            <div class="col">
+              <img [src]="photo" alt="nope" height="100px" width="100px">
+              <label>ApplicantPhoto<input type="file"(change)="onselectPhoto($event)"/>
+            </label>
+            </div>
+           
+            <div class="col">
+              <img [src]="sign" alt="nope" height="100px" width="100px">
+              <label>ApplicantSignature<input type="file"(change)="onselectSign($event)"/>
+            </label>
+            </div>
+            
+            <div class="col">
+              <img [src]="tax" alt="nope" height="100px" width="100px">
+              <label>IncomeTaxReturn<input type="file"(change)="onselectTax($event)"/>
+            </label>
+            </div>
+           
+            <div class="col">
+              <img [src]="statment" alt="nope" height="100px" width="100px">
+              <label>BankStatment<input type="file"(change)="onselectStatment($event)"/>
+            </label>
+            </div>
+            <div class="col">
+              <br><br>
+              </div>
+              <div class="col">
+                <br><br>
+                </div>
+                <div class="col">
+                  <br><br>
+                  </div>
+                  <div class="col">
+                    <br><br>
+                    </div>
+              <div class="col">
+
+              </div>         
+            <div class="col">
+
+            </div>
+  
+
+          </div>
+    
+              <input (click)="previous()"type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+             <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+            </div>
+
+           
     </div>
   </form>
 </div>

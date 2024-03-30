@@ -44,7 +44,7 @@ export class AddnewloanComponent implements OnInit
 
   ngOnInit(): void {
     this.CustomerApplicationForm = this.fb.group({
-      cutomerDetails: this.fb.group({
+      customerDetails: this.fb.group({
         customerId: [''],
         customerName: [''],
         customerMobileNumber: [''],
@@ -97,7 +97,7 @@ export class AddnewloanComponent implements OnInit
         salary: [''],
         employeeWorkingPeriod: [''],
         profDesignation: [''],
-        salarySlip: [''],
+        salaryslip: [''],
       }),
       previousloandata:this.fb.group({
         previousloanId:[''],
@@ -193,7 +193,7 @@ export class AddnewloanComponent implements OnInit
     console.log(this.CustomerApplicationForm.value)
     const formData:FormData=new FormData();
         formData.append('applicantdata',applicantJson)
-        formData.append('salarySlip',this.salaryslip)
+        formData.append('slip',this.salaryslip)
         formData.append('propertyProof',this.propertyproof)
         formData.append('Gaadhar',this.gaadhar)
         formData.append('Baadhar',this.baadharCard)
@@ -208,10 +208,10 @@ export class AddnewloanComponent implements OnInit
         formData.append('tax',this.tax)
         formData.append('statment',this.statment)
      this.multistep.saveloanApplicant(formData).subscribe();
-
+    alert("Data Save Successfully !!!!")
   }
 
-  onselectSalarySlip(event: any) {
+  onselectsalarySlip(event: any) {
     this.salaryslip = event.target.files[0];
   }
 

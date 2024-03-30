@@ -69,12 +69,13 @@ window.location.reload();
   closeModal()
   {
     this.showModal=false;
-    location.reload();
+    window.location.reload();
   }
 
   edit(c:CustomerApplicationForm)
   {
-    let s:string =encodeURIComponent(JSON.stringify(c))
-      this.router.navigateByUrl('/user-dashboard/CRM/edit/'+ s)
+
+     let cid:string=c.applicationNumber;
+      this.router.navigateByUrl('/user-dashboard/CRM/edit/'+ cid)
   }
 }

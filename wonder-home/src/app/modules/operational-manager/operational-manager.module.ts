@@ -7,6 +7,8 @@ import { LoanApplicantsComponent } from './loan-applicants/loan-applicants.compo
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ViewApplyLoanApplicantComponent } from './view-apply-loan-applicant/view-apply-loan-applicant.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -14,12 +16,15 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     LoanApplicantsComponent,
     DashboardComponent,
+    ViewApplyLoanApplicantComponent,
 
   ],
   imports: [
     CommonModule,
     OperationalManagerRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class OperationalManagerModule { }
