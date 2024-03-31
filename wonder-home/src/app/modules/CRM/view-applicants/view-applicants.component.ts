@@ -48,17 +48,12 @@ export class viewApplicantsComponent {
       this.ps.deleteEnquiry(customerId).subscribe()
           alert('Applicant deleted successfully.');
           this.getApplicant();
-      
-    }
+      }
   }
-
-  
-
   applyForLoan(applicant: any){
-    //console.log('Applicant Data:', applicant);
+    console.log('Applicant Data:', applicant);
     this.router.navigate(['/user-dashboard/CRM/addnewloan'], { state: { applicantData: applicant } });
-    
-  }
+    }
 
   loadCibilScores(): void {
     this.applicants.forEach((applicant) => {

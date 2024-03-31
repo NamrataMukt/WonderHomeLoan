@@ -32,9 +32,9 @@
                 <td>{{ applicant.enquiry }}</td>
                 <!-- <td>{{ applicant.cibilScore }}</td> -->
                 <td>{{ applicant.cibilScore ? applicant.cibilScore.cibilScore : 'Not Available' }}</td>
-    <td>
-        <button (click)="generateCibilScore(applicant)">Generate CIBIL Score</button>
-    </td>
+                <td>
+                    <button (click)="generateCibilScore(applicant)" [disabled]="applicant.cibilScore">Generate CIBIL Score</button>
+                </td>
     <td>
         <button *ngIf="applicant.cibilScore && applicant.cibilScore.cibilScore > 700 && !applicant.approved && !applicant.rejected" 
                 (click)="approveEnquiry(applicant)" 
@@ -47,7 +47,6 @@
             Reject Enquiry
         </button>
       </td>
-        </button>
             </tr>
         </tbody>
     </table>
