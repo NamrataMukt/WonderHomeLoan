@@ -1,6 +1,6 @@
 export class Sanction {
 
-    sanctionId:number;
+    sanctionId:string;
     sanctionDate:number;
 	applicantName:string;
 	contactDetails:string;

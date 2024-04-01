@@ -17,32 +17,26 @@ export class Usermenu {
       ],
 
       accounthead: [
+        {label:'View Sanction Applicant',link:'viewsanction'},
+        { label: 'Add Loan Disbursement', link: 'loandisbursment' },
+        { label: 'view loan disbursement', link: 'viewLoanDisbursement' },
         { label: 'Add Ledger', link: 'ledger' },
         { label: 'view ledger', link: 'viewledger' },
-        { label: 'Add Loan Disbursement', link: 'loandisbursement' },
-        { label: 'Defaulter List', link: 'defaulter' },
-        { label: 'view loan disbursement', link: 'viewLoanDisbursement' },
+      
       ],
       opm: [
         { label: 'Dashboard', link: 'dashboard' },
         { label: 'Enquiry-Applications', link: 'applicants' },
-<<<<<<< HEAD
-        { label: 'Loan-Applications', link: 'approved-customer' },
-        { label: 'View Apply Loan Applicants', link: 'viewloanapplied' }
-        
-      ],
-=======
         {label:'verified-enquiries',link:'verified-enquiries'},
         {label:'rejected-enquiries',link:'rejected-enquiries'},
-        { label: 'Loan-Applications', link: 'approved-customer'},
+        { label: 'View Loan-Applications', link: 'viewloanapplied'},
           ],
->>>>>>> 659f38299b77a480810b435b69cfe397b7ffbbab
       CreditManager:[
 
         {label:'Verified-Applications',link:'verifiedapplications'},
-        {label:'Sanction-Applications',link:'sanctionapplications'},
-        {label:'View Sanction List',link:'view-sanction'},
-        {label:'Credit-Procedure',link:'creditprocedure'},
+        {label:'Sanction-Applications',link:'sanctionform'},
+        {label:'View Sanction List',link:'view-sanction'}
+       
         
     ],
     },

@@ -16,18 +16,16 @@ export class LedgerManagementComponent implements OnInit {
     this.ledgerForm = this.fb.group({
       ledgerId: [],
       ledgerCreatedDate: [],
+      loannumber:[],
+      customername:[],
       totalLoanAmount: [],
       payableAmountWithInterest: [],
       tenure: [],
       monthlyEmi: [],
       amountPaidTillDate: [],
       remainingAmount: [],
-      nextEmiDateStart: [],
-      nextEmiDateEnd: [],
       defaulterCount: [],
-      previousEmiStatus: [],
-      currentMonthEmiStatus: [],
-      loanEndDate: [],
+      emiPayDate: [],
       loanStatus: [],
     });
   }

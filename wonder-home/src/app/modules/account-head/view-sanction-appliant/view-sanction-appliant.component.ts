@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Sanction } from '../../../model/sanction';
 import { SanctiondetalisService } from '../../../services/sanctiondetalis.service';
 import { Router } from '@angular/router';
+import { Sanction } from '../../../model/sanction';
 
 @Component({
-  selector: 'app-view-sanctionapplication',
-  templateUrl: './view-sanctionapplication.component.html',
-  styleUrl: './view-sanctionapplication.component.css'
+  selector: 'app-view-sanction-appliant',
+  templateUrl: './view-sanction-appliant.component.html',
+  styleUrl: './view-sanction-appliant.component.css'
 })
-export class ViewSanctionapplicationComponent implements OnInit {
+export class ViewSanctionAppliantComponent implements OnInit
+{
   constructor(private sl: SanctiondetalisService, private router: Router) {}
 
   sanction:Sanction[];
@@ -17,14 +18,11 @@ export class ViewSanctionapplicationComponent implements OnInit {
       this.sanction = data;
     });
   }
-  Generate(){
-    
+  Generate(s:Sanction)
+  {
+    let sid:string=s.sanctionId;
+    this.router.navigateByUrl('/user-dashboard/accounthead/loandisbursment/'+sid)
   }
 
+
 }
-
-
-  
-
- 
-

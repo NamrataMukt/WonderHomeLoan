@@ -34,7 +34,7 @@ export class VerifiedapplicationsComponent  implements OnInit
       }
 
     )
-    console.log(this.customerform)
+  
   
   }
    
@@ -52,10 +52,10 @@ export class VerifiedapplicationsComponent  implements OnInit
   previous(){
     this.step--
   }
-  sanction(){
-   
-      this.router.navigate(['/user-dashboard/CreditManager/sanctionapplications']);
-    
+  sanction(c:CustomerApplicationForm)
+  {
+    let cid:string=c.applicationNumber;
+     this.router.navigateByUrl('/user-dashboard/CreditManager/sanctionform/'+cid);
   }
   
   

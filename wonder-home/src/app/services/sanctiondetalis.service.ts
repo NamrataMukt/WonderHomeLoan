@@ -19,5 +19,9 @@ export class SanctiondetalisService {
   getSanctionList(){
     return this.http.get('http://localhost:9090/getAllsanctionLetter');
   }
+  finddata(sid:string)
+  {
+    return this.http.get('http://localhost:9090/findbysid/'+sid)
+  }
 }
 

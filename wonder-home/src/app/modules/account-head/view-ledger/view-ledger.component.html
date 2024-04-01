@@ -8,20 +8,17 @@
   <thead>
     <tr>
       <th>Sr.No.</th>
-      <th>Loan-disbursement Id</th>
-      <th>loan-disbursement Number</th>
-      <th>Aggrement Date</th>
-      <th>Amount Pay Type</th>
-      <th>Total Amount</th>
-      <th>Bank Name</th>
-      <th>Account Number</th>
-      <th>IFSC Code</th>
-      <th>Account Type</th>
-      <th>Transfer Amount</th>
-      <th>Payment Status</th>
-      <th>amountPaidDate</th>
-      <th>Edit</th>
-      <th>Delete</th>
+      <th>LedgerCreateDate</th>
+      <th>TotalLoanAmount</th>
+      <th>Pay Amount With Interest</th>
+      <th>tenure</th>
+      <th>MonthlyEmi</th>
+      <th>Amount Paid Till Date</th>
+      <th>Remaining Amount</th>
+      <th>Emi Pay Date</th>
+      <th>Default Counter</th>
+      <th>loan Status</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -34,23 +31,10 @@
       <td>{{ l.monthlyEmi }}</td>
       <td>{{ l.amountPaidTillDate }}</td>
       <td>{{ l.remainingAmount }}</td>
-      <td>{{ l.nextEmiDateStart }}</td>
-      <td>{{ l.nextEmiDateEnd }}</td>
+      <td>{{ l.emiPayDate }}</td>
       <td>{{ l.defaulterCount }}</td>
-      <td>{{ l.previousEmiStatus }}</td>
-      <td>{{ l.currentMonthEmiStatus }}</td>
-      <td>{{ l.loanEndDate }}</td>
+      
       <td>{{ l.loanStatus }}</td>
-      <td>
-        <button class="btn btn-primary">
-          <i class="fa fa-pencil" aria-hidden="true"></i>
-        </button>
-      </td>
-      <td>
-        <button class="btn btn-primary">
-          <i class="fa fa-trash" aria-hidden="true"></i>
-        </button>
-      </td>
-    </tr>
+         </tr>
   </tbody>
 </table>

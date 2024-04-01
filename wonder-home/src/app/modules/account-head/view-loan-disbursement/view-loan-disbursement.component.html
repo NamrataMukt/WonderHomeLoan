@@ -5,7 +5,7 @@
     <i class="fa fa-table" aria-hidden="true"></i>loan-disbursement Details
   </h1>
 </div>
-<table class="table table-hover table-bordered table-striped table-hover mt-2">
+<table class="table table-hover table-bordered table-striped table-hover ">
   <thead>
     <tr>
       <th>Sr.No.</th>
@@ -20,9 +20,8 @@
       <th>Account Type</th>
       <th>Transfer Amount</th>
       <th>Payment Status</th>
-      <th>amountPaidDate</th>
-      <th>Edit</th>
-      <th>Delete</th>
+      <th>amountPayDate</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -30,26 +29,18 @@
       <td>{{ i }}</td>
       <td>{{ l.aggrementId }}</td>
       <td>{{ l.loanNumber }}</td>
+      <td>{{l.applicantName}} </td>
       <td>{{ l.aggrementDate }}</td>
       <td>{{ l.amountPayType }}</td>
       <td>{{ l.totalAmount }}</td>
       <td>{{ l.bankName }}</td>
       <td>{{ l.accountNumber }}</td>
       <td>{{ l.ifscCode }}</td>
-      <td>{{ l.accountType }}</td>
+      
       <td>{{ l.transferAmount }}</td>
       <td>{{ l.paymentStatus }}</td>
-      <td>{{ l.amountPaidDate }}</td>
-      <td>
-        <button class="btn btn-primary">
-          <i class="fa fa-pencil" aria-hidden="true"></i>
-        </button>
-      </td>
-      <td>
-        <button class="btn btn-primary">
-          <i class="fa fa-trash" aria-hidden="true"></i>
-        </button>
-      </td>
+      <td>{{ l.amountPayDate }}</td>
+      
     </tr>
   </tbody>
 </table>

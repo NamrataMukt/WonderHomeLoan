@@ -12,4 +12,9 @@ export class AddledgerService {
   saveLedger(ledger: Ledger) {
     return this.http.post('http://localhost:9090/createLedger',ledger);
   }
+
+  getLedger()
+  {
+    return this.http.get('http://localhost:9090/getLedger')
+  }
 }
