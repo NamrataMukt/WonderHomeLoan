@@ -11,13 +11,19 @@ import { ViewApplyLoanApplicantComponent } from './view-apply-loan-applicant/vie
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
+import { VerifiedEnquiriesComponent } from './verified-enquiries/verified-enquiries.component';
+
+import { RejectedEnquiriesComponent } from './rejected-enquiries/rejected-enquiries.component';
+
+
 
 @NgModule({
   declarations: [
     LoanApplicantsComponent,
     DashboardComponent,
     ViewApplyLoanApplicantComponent,
-
+    VerifiedEnquiriesComponent,
+    RejectedEnquiriesComponent
   ],
   imports: [
     CommonModule,

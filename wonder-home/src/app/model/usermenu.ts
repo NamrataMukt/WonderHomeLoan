@@ -26,10 +26,17 @@ export class Usermenu {
       opm: [
         { label: 'Dashboard', link: 'dashboard' },
         { label: 'Enquiry-Applications', link: 'applicants' },
+<<<<<<< HEAD
         { label: 'Loan-Applications', link: 'approved-customer' },
         { label: 'View Apply Loan Applicants', link: 'viewloanapplied' }
         
       ],
+=======
+        {label:'verified-enquiries',link:'verified-enquiries'},
+        {label:'rejected-enquiries',link:'rejected-enquiries'},
+        { label: 'Loan-Applications', link: 'approved-customer'},
+          ],
+>>>>>>> 659f38299b77a480810b435b69cfe397b7ffbbab
       CreditManager:[
 
         {label:'Verified-Applications',link:'verifiedapplications'},
@@ -41,10 +48,3 @@ export class Usermenu {
     },
   ];
 }
-
-
-// opm:[
-//     {label:'Dashboard',link:'dashboard'},
-//     {label:'Loan-Enquiries' , link:'applicants'},
-//     {label:'Loan-Applications' , link:'approved-customer'},
-//     {label:'verification required' ,link:'verification-required'}
