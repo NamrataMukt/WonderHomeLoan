@@ -17,8 +17,10 @@ export class EnquiryComponent {
     ngOnInit(): void {
         this.createForm();
         this.applicantData = history.state.applicantData; // Retrieve the data passed from the previous component
+        console.log(this.applicantData)
     if (this.applicantData) {
       this.populateForm(this.applicantData); // Populate the form with the received data
+      console.log(this.applicantData)
     }
   
     }
@@ -54,17 +56,16 @@ export class EnquiryComponent {
     }
     populateForm(data: any) {
       this.enquiryForm.patchValue({
-        applicantName: data.applicantName,
+        customerName: data.customerName,
         age: data.age,
-        email: data.email,
-        mobileNumber: data.mobileNumber,
+        customerEmailId: data.customerEmailId,
+        customerMobileNumber: data.customerMobileNumber,
         pancardNumber: data.pancardNumber,
         city: data.city,
         pincode: data.pincode,
         date: data.date,
         enquiry: data.enquiry
       });
-
     }
     
     onUpdate() {

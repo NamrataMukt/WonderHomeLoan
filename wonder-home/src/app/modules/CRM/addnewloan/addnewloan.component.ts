@@ -13,6 +13,9 @@ import { BuilderDetails } from '../../../model/builder-details';
 import { CustomerDocumentUpload } from '../../../model/customer-document-upload';
 import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { Cibilscore } from '../../../model/cibilscore';
+import { HttpClient } from '@angular/common/http';
+import { EnquiryService } from '../../../services/enquiry.service';
+import { CibilscoreService } from '../../../services/cibilscore.service';
 
 @Component({
   selector: 'app-addnewloan',
@@ -22,8 +25,14 @@ import { Cibilscore } from '../../../model/cibilscore';
 export class AddnewloanComponent implements OnInit
 {
  
-  constructor(private fb: FormBuilder,private multistep:MultistepService,private route: ActivatedRoute,private router: Router) {}
+  constructor(private fb: FormBuilder,private multistep:MultistepService,private route: ActivatedRoute,
+    private router: Router,
+    private http: HttpClient,
+    private ps: EnquiryService,
+    private cs:CibilscoreService,
+    ) {}
   applicantData: any;
+  applicants: any[] = [];
   
 
   step = 1;
@@ -166,21 +175,35 @@ export class AddnewloanComponent implements OnInit
         bankStatment:['']
       })
       
+      
     });
-    this.router.events.subscribe((val) => {
-      if (val instanceof NavigationStart) {
-        const state = this.router.getCurrentNavigation()?.extras.state;
-        if (state && state['applicantData']) {
-          const applicantData = state['applicantData'];
-          this.populateForm(this.applicantData);
-        console.log("MultiStep"+applicantData)
-          console.log('Route State:', this.router.getCurrentNavigation()?.extras.state);
-          console.log(applicantData)
-
-        }
-      }
-    });
+        this.applicantData = history.state.applicantData; // Retrieve the data passed from the previous component
+        console.log(this.applicantData)
+    if (this.applicantData) {
+      this.populateForm(this.applicantData); // Populate the form with the received data
+      console.log(this.applicantData)
+    }
+    
+    
   }
+  
+populateForm(applicantData: any): void {
+  this.CustomerApplicationForm.patchValue({
+      cutomerDetails: {
+          customerId: applicantData.customerId,
+          customerName: applicantData.customerName,
+          customerMobileNumber: applicantData.customerMobileNumber,
+          customerEmailId: applicantData.customerEmailId,
+          pancardNumber: applicantData.pancardNumber,
+          age: applicantData.age,
+          cibilScoreStatus: applicantData.status,
+          cibilScore: applicantData.cibilScore.cibilScore,
+
+          
+      },
+      
+  });
+}
 
   next() {
     this.step++;
@@ -264,29 +287,5 @@ export class AddnewloanComponent implements OnInit
   }
 
 
-  populateForm(applicantData: any) {
-    // Check if applicantData is defined
-    if (applicantData !== undefined && applicantData !== null) {
-        // Access properties only if applicantData is defined
-        this.CustomerApplicationForm.patchValue({
-            customerDetails: {
-                // Use optional chaining (?.) to safely access properties
-                customerName: applicantData.customerName,
-                customerAge: applicantData.age,
-                customerEmailId: applicantData.customerEmailId,
-                customerMobileNumber: applicantData.customerMobileNumber,
-                pancardNumber: applicantData.pancardNumber,
-                //city: applicantData.city,
-               // pincode: applicantData.pincode,
-                //date: applicantData.date,
-               // enquiry: applicantData.enquiry,  
-                cibilScore:applicantData.cibilScore.cibilScore
-            }
-        });
-    } else {
-       
-        console.error('Applicant data is undefined or null.');
-       
-    }
-}
+  
 }
