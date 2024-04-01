@@ -177,27 +177,26 @@ export class AddnewloanComponent implements OnInit
       
       
     });
-        this.applicantData = history.state.applicantData; // Retrieve the data passed from the previous component
-        console.log(this.applicantData)
-    if (this.applicantData) {
-      this.populateForm(this.applicantData); // Populate the form with the received data
-      console.log(this.applicantData)
-    }
-    
+    this.applicantData = history.state.applicantData; // Retrieve the data passed from the previous component
+    console.log(this.applicantData)
+if (this.applicantData) {
+  this.populateForm(this.applicantData); // Populate the form with the received data
+  console.log(this.applicantData)
+}
+
     
   }
   
 populateForm(applicantData: any): void {
   this.CustomerApplicationForm.patchValue({
-      cutomerDetails: {
-          customerId: applicantData.customerId,
+      customerDetails: {
           customerName: applicantData.customerName,
           customerMobileNumber: applicantData.customerMobileNumber,
           customerEmailId: applicantData.customerEmailId,
           pancardNumber: applicantData.pancardNumber,
           age: applicantData.age,
           cibilScoreStatus: applicantData.status,
-          cibilScore: applicantData.cibilScore.cibilScore,
+          cibilScore: applicantData.cibilScore.cibilScore
 
           
       },
